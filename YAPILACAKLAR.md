@@ -3,13 +3,19 @@
 Projenin şu anki durumu: Oynanabilir prototip hazır (Bölüm 1: NavMesh yoldaş + köprü, Bölüm 2: Ollama NPC + kapı).
 Kalan işler: **README / rapor**, **texture pack**, **menü**, **görevleri zorlaştırma**.
 
+> 📄 **Ayrıntılı dosyalar:**
+> [KURULUM.md](KURULUM.md) — her iki bilgisayarda yapılacak kurulum + günlük Git akışı ve kurallar
+> [GOREVLER_ERDEM.md](GOREVLER_ERDEM.md) — Erdem'in adım adım görevleri
+> [GOREVLER_OMER.md](GOREVLER_OMER.md) — Ömer'in adım adım görevleri
+> **Repo:** https://github.com/10erdemsahin/taskapi
+
 İşler, iki kişi **aynı dosyaya aynı anda dokunmayacak** şekilde bölündü:
 
 | | **Ömer** — Görsel, Menü, Doküman | **Erdem** — Oynanış, Zorluk, Test |
 |---|---|---|
 | Ana iş | Texture pack + Ana menü + Duraklatma menüsü + README/rapor | Bölüm 1 ve Bölüm 2'yi zorlaştırma + testler |
-| Sahibi olduğu klasörler | `Assets/Art/`, `Assets/Materials/`, `Assets/Scripts/UI/`, `Assets/Scenes/MainMenu.unity`, `README.md` | `Assets/Scripts/` (UI hariç), `Assets/Editor/`, `Assets/Tests/`, `Assets/Data/`, `Assets/Scenes/Main.unity` |
-| Dokunmaması gereken | `Main.unity`, `GameManager.cs`, `SceneBuilder.cs` | `Scripts/UI/`, `Materials/`, `MainMenu.unity` |
+| Sahibi olduğu klasörler | `Assets/Art/`, `Assets/Materials/`, `Assets/Scripts/UI/`, `Assets/Scenes/MainMenu.unity`, Build Settings (sahne sırası), `README.md`, `Docs/` | `Assets/Scripts/` (UI hariç), `Assets/Editor/`, `Assets/Tests/`, `Assets/Data/`, `Assets/Scenes/Main.unity`, diğer `ProjectSettings/`, `Packages/` |
+| Dokunmaması gereken | `Main.unity`, `GameManager.cs`, `SceneBuilder.cs` | `Scripts/UI/`, `Materials/`, `MainMenu.unity`, `README.md` |
 
 > **Neden böyle?** Unity sahne dosyaları (`.unity`) birleştirilmesi (merge) en zor dosyalardır.
 > `Main.unity`'yi yalnızca Erdem değiştirir. Ömer'in texture'ları **materyal dosyalarının içine** girer
@@ -19,8 +25,10 @@ Kalan işler: **README / rapor**, **texture pack**, **menü**, **görevleri zorl
 
 ## 0. Ortak Başlangıç (ilk gün, birlikte — ~1 saat)
 
-- [ ] **Git kurulumu** (Erdem): GitHub'da private repo aç, Unity `.gitignore` ekle (`Library/`, `Temp/`, `Logs/`, `UserSettings/`, `*.csproj`, `*.sln` hariç tutulsun), ilk commit'i at, Ömer'i ekle.
-- [ ] **Unity ayarları** (Erdem): *Edit → Project Settings → Editor* → Asset Serialization: **Force Text**, Version Control: **Visible Meta Files**.
+- [x] **Git kurulumu:** yerel repo, Unity `.gitignore`, Git LFS, Smart Merge, ilk commit — yapıldı.
+- [x] **Unity ayarları:** Force Text + Visible Meta Files — zaten açık.
+- [ ] **GitHub'a gönder + Ömer'i ekle** (Erdem) → [GOREVLER_ERDEM.md](GOREVLER_ERDEM.md) Adım 0.
+- [ ] **Her iki bilgisayarda kurulum** → [KURULUM.md](KURULUM.md).
 - [ ] **Branch düzeni:** herkes kendi dalında çalışır → `omer/gorsel-menu`, `erdem/oynanis`. `main`'e sadece çalışan hâli birleştirin (Pull Request).
 - [ ] **GameManager'a duraklatma API'si** (Erdem, ilk gün): Ömer'in menüsü buna ihtiyaç duyuyor, bu yüzden en önce bu yapılır:
   ```csharp
