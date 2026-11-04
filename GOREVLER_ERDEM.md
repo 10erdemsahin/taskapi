@@ -148,6 +148,15 @@ Dal: `erdem/bolum2-zorluk`. **En az ikisini** yap; önerilen: A + B (+ C).
 - [ ] Sohbet penceresinde sistem mesajı: "Kalan hak: 2" / "Muhafız sırtını döndü (30 sn)". Bunu `IDialogueView.AppendMessage(DialogueSpeaker.System, ...)` ile yap → **DialogueUI'ye dokunma** (Ömer'in).
 - [ ] Bekleme sırasında gönderilen mesaj LLM'e **gitmez**.
 
+### C2) Cevap sızıntısı filtresi (gerçek testte bulundu — öncelikli)
+5 Kasım testinde `qwen2.5:7b`, oyuncu "cevap ayna mı?" diye sorunca persona yasaklamasına rağmen
+**"Sessizlik bu bilmeci bozar..."** diyerek cevabı söyledi (action doğru şekilde `none` idi).
+- [ ] `GuardNPC`: `action == none` iken NPC yanıtı bilmecenin cevabını (`sessizlik`, `sükût`) içeriyorsa → yanıtı gösterme,
+  aynı isteği **bir kez** daha gönder; yine sızarsa persona'daki yedek cümlelerden birini göster.
+- [ ] Cevap kelimeleri persona asset'inde ayrı bir alan olsun (`forbiddenWords`), koda gömülmesin.
+- [ ] `temperature`'ı 0.6 → 0.3–0.4 deneyin; sızıntı oranını 10 denemede karşılaştırıp rapora yazın.
+- [ ] Test: Mock'a "sızdıran yanıt" modu ekle → oyuncu cevabı göremiyor olmalı.
+
 ### D) (İsteğe bağlı) Güven puanı
 - [ ] Şemaya `"trust": integer (0-100)`. Kaba konuşma güveni düşürür. Güven < 60 iken kapı açılmaz (Unity doğrular).
 
