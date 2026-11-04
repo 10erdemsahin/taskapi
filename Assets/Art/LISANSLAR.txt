@@ -1,0 +1,19 @@
+YANKI TAPINAĞI — KULLANILAN ASSET'LER VE LİSANSLAR
+====================================================
+
+Tüm texture'lar ambientCG'den alınmıştır.
+Lisans: CC0 1.0 Universal (Public Domain) — atıf zorunlu değil, ticari kullanım dahil serbest.
+Lisans metni: https://docs.ambientcg.com/license/
+Çözünürlük: 1K (1024x1024), JPG. Projeye yalnızca Color, NormalGL ve AmbientOcclusion haritaları eklendi.
+
+Klasör                    | Asset       | Kaynak                                       | Kullanıldığı materyal
+--------------------------|-------------|----------------------------------------------|----------------------
+Textures/Ground/          | Ground068   | https://ambientcg.com/view?id=Ground068      | Materials/Ground.mat  (zemin, tiling 10x10)
+Textures/Stone/           | Bricks113A  | https://ambientcg.com/view?id=Bricks113A     | Materials/Stone.mat   (platform, duvar, tiling 2x2)
+Textures/Wood/            | Planks037A  | https://ambientcg.com/view?id=Planks037A     | Materials/Wood.mat    (köprü, tiling 1x3)
+Textures/Door/            | Rock063     | https://ambientcg.com/view?id=Rock063        | Materials/Door.mat    (taş kapı)
+Textures/Metal/           | Metal021    | https://ambientcg.com/view?id=Metal021       | Materials/Lever.mat   (paslı şalter kolu)
+
+Skybox/TempleSky.mat — Unity'nin yerleşik Skybox/Procedural shader'ı ile hazırlandı (harici asset yok).
+
+İndirme tarihi: 2026-11-05 — Ömer
