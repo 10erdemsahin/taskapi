@@ -1,211 +1,188 @@
-# Ömer'in Görevleri — Görsel, Menü, Doküman
+# Ömer'in Görevleri — Görsel, Menü, Toplama Görevi, Doküman
 
 Önce [KURULUM.md](KURULUM.md)'yi baştan sona uygula. Genel plan: [YAPILACAKLAR.md](YAPILACAKLAR.md).
 Erdem'in görevleri: [GOREVLER_ERDEM.md](GOREVLER_ERDEM.md).
 
-**Repo:** https://github.com/10erdemsahin/taskapi (Erdem'in davetini kabul etmeyi unutma)
+**Repo:** https://github.com/10erdemsahin/taskapi
 
 ## Senin Alanın (sadece bunlara dokunursun)
 
 | Sahibi olduğun | Dokunmayacağın (Erdem'in) |
 |---|---|
 | `Assets/Art/**` (texture, skybox, prefab, model, ses) | `Assets/Scenes/Main.unity` (açıp oynatabilirsin, **kaydetmezsin**) |
-| `Assets/Materials/**` (mevcut `.mat` dosyaları) | `Assets/Scripts/**` (**`Scripts/UI/` hariç**) |
-| `Assets/Scripts/UI/**` (DialogueUI, GameHUD, yeni menüler) | `Assets/Editor/**`, `Assets/Tests/**`, `Assets/Data/**` |
-| `Assets/Scenes/MainMenu.unity` (yeni) | `ProjectSettings/` (**Build Settings hariç**), `Packages/` |
+| `Assets/Materials/**` | `Assets/Scripts/**` (**`UI/` ve `Quest/` hariç**) — özellikle `Core/`, `GameManager.cs` |
+| `Assets/Scripts/UI/**` (DialogueUI, GameHUD, menüler) | `Assets/Editor/**`, `Assets/Tests/**` |
+| **`Assets/Scripts/Quest/**`** (toplama görevi — YENİ) | `Assets/Data/**` (**`Data/Quest/` hariç**) |
+| **`Assets/Data/Quest/**`** (ipucu verisi — YENİ) | `ProjectSettings/` (**Build Settings hariç**), `Packages/` |
+| `Assets/Scenes/MainMenu.unity` | |
 | `ProjectSettings/EditorBuildSettings.asset` (sahne sırası) | |
-| `README.md`, `Docs/**` (ekran görüntüleri) | |
+| `README.md`, `Docs/**` | |
 
-> **Main.unity'yi yanlışlıkla kaydettiysen** (Git'te değişmiş görünüyorsa) commit'lemeden geri al:
-> `git checkout -- Assets/Scenes/Main.unity`
+> **Main.unity'yi yanlışlıkla kaydettiysen** commit'lemeden geri al: `git checkout -- Assets/Scenes/Main.unity`
 > Sahnede bir değişiklik gerekiyorsa (materyal atama, buton ekleme, prefab yerleştirme) **Erdem'e yaz**, o yapar.
 
 **Bozulmayacak kurallar:**
 - `DialogueUI`'nin "düşünüyor..." göstergesi ve LLM beklerken girişin kilitlenmesi **kaldırılmaz** (ders isteri).
 - `DialogueUI` yalnızca gösterir; NPC/LLM mantığı UI'ye taşınmaz.
-- Menüden sahne yüklemeden önce **`Time.timeScale = 1f`** yapılır (yoksa oyun donuk başlar).
+- Toplama sistemi GameManager'ı **doğrudan çağırmaz**; sadece `ICollectionQuest` olaylarını yayınlar (GameManager dinler).
+- Menüden sahne yüklemeden önce **`Time.timeScale = 1f`** yapılır.
 
 ---
 
-## Adım 0 — Hazırlık (1. gün)
+## Adım 0 — Hazırlık ✅
 
-- [ ] [KURULUM.md](KURULUM.md) Adım 1–8 tamam: Unity **6000.6.7f1**, Git, **Git LFS**, Ollama, clone (`C:\Projeler\taskapi`), Smart Merge ayarı.
-- [ ] `Main.unity`'yi aç → Play → oyunu baştan sona bir kez oyna (F ile yoldaş, E ile muhafız). Oyunu tanı.
-- [ ] Kendi dalını aç:
-```bash
-git checkout -b omer/texture
-```
-- [ ] Erdem'in **`SetPaused` API'si** main'e girene kadar duraklatma menüsüne başlama (texture ve ana menü ile başla).
+- [x] Kurulum, clone, ilk commit'ler.
+- [ ] **5 Kasım commit temizliği sonrası senkron** (Erdem'in mesajındaki komutlar) — yapılmadıysa önce bunu yap.
+- [ ] Her işe başlarken: `git checkout main` → `git pull` → `git checkout -b omer/<iş-adı>`
 
 ---
 
-## Adım 1 — Texture Pack (1.–3. gün)
+## Adım 1 — Texture Pack ✅ (PR #1 ile main'de)
 
-Dal: `omer/texture`
+- [x] ambientCG CC0 1K texture'lar (Ground068, Bricks113A, Planks037A, Metal021), materyaller, TempleSky skybox materyali.
+- [x] `Assets/Art/LISANSLAR.txt` — var; yeni eklediğin her asset'i (ses, model, duvar texture'ı) buraya da yaz.
+- [ ] **Skybox'ı sahneye Erdem atayacak** (sahne onda) — sen bir şey yapmana gerek yok.
 
-### 1.1 Paket seç ve indir
-- [ ] Lisansı **CC0** olan (atıf zorunlu değil, ticari dahil serbest) kaynaklardan seç:
-  - **ambientCG.com** → Ground (çimen/toprak), Rock/Bricks (tapınak taşı), Wood (köprü), Metal (şalter)
-  - **polyhaven.com** → aynı kategoriler + HDRI gökyüzü
-  - **kenney.nl** → stilize / low-poly istersen
-- [ ] Tema: **antik tapınak / orman** (taş, yosun, eski ahşap). Hepsi aynı tarzda olsun (biri gerçekçi biri çizgi film olmasın).
-- [ ] **Boyut: 1K veya 2K, JPG.** 4K/8K indirme (GitHub LFS ücretsiz kota 1 GB, her clone bunu harcar).
-- [ ] ambientCG zip'inden sadece şunları al: `_Color` (renk), `_NormalGL` (normal — **GL** olanı, DX değil), varsa `_AmbientOcclusion`. Diğerlerini (Displacement, Roughness...) projeye koyma.
+### 1.6 Duvar materyali — `Assets/Materials/Wall.mat` (YENİ, 1. gün)
+Erdem haritanın yan ve arka kenarlarına 3 m yüksekliğinde, 21–22 m uzunluğunda duvarlar ekliyor. `Stone.mat` (tiling 2,2) bu boyutta **çok uzar**.
+- [ ] Dal: `omer/duvar-materyal`
+- [ ] Yeni materyal `Wall.mat`, Shader Standard, mevcut taş/tuğla texture'ı (Bricks113A) veya daha koyu, yosunlu bir taş (ambientCG, 1K).
+- [ ] **Tiling: (10, 1.5)** başlangıç; Erdem'in duvarları gelince oyunda bakıp ayarla.
+- [ ] Albedo rengi **beyaz**, Normal Map + Occlusion bağlı.
+- [ ] PR → Erdem'e: "`Wall.mat` hazır, duvarlara atar mısın?"
 
-### 1.2 Projeye ekle
-- [ ] Klasör yapısı (Unity'nin Project penceresinden oluştur):
-```
-Assets/Art/
-├── Textures/Ground/   Ground_Color.jpg, Ground_NormalGL.jpg
-├── Textures/Stone/
-├── Textures/Wood/
-├── Textures/Metal/
-├── Skybox/
-├── Prefabs/
-└── LISANSLAR.txt
-```
-- [ ] Her `_NormalGL` dosyasını seç → Inspector → **Texture Type: Normal map** → Apply.
-- [ ] Tüm texture'larda **Max Size: 2048**.
-- [ ] `Assets/Art/LISANSLAR.txt`: her paket için *ad, site, link, lisans (CC0)*. Raporda kullanılacak.
-
-### 1.3 Materyallere uygula (`Assets/Materials/*.mat`)
-Shader **Standard** (Built-in render pipeline). Her materyalde:
-- [ ] **Albedo**: `_Color` texture'ı sürükle, yanındaki renk kutusunu **BEYAZ** yap (yoksa texture renklenir).
-- [ ] **Normal Map**: `_NormalGL`, şiddet 1.
-- [ ] **Occlusion**: varsa `_AmbientOcclusion`.
-- [ ] **Smoothness**: taş/zemin 0.1–0.2, metal 0.5–0.6.
-- [ ] **Tiling** (önerilen başlangıç, oyunda bakıp ayarla):
-
-| Materyal | Nerede kullanılıyor | Texture | Tiling |
-|---|---|---|---|
-| `Ground.mat` | İki zemin (20×20 m) | Çimen/toprak | (10, 10) |
-| `Stone.mat` | Platform, duvarlar, şalter tabanı | Tapınak taşı | (2, 2) |
-| `Wood.mat` | Köprü güvertesi (3×7 m) | Ahşap tahta | (1, 3) |
-| `Door.mat` | Kapı paneli | Eski taş/metal kapı | (1, 1) |
-| `Lever.mat` | Şalter kolu | Paslı metal | (1, 1) |
-| `Player.mat`, `Companion.mat`, `Guard.mat` | Kapsüller | (renk kalsın veya kumaş) | — |
-
-- [ ] **Yeni materyal gerekirse** (ör. duvar için ayrı taş): `Assets/Materials/` içinde oluştur, **Erdem'e** "şu objeye şu materyali ata" diye yaz (atama sahneye kaydedilir → Erdem'in işi).
-- [ ] **Kontrol:** Git'te sadece `Assets/Art/**` ve `Assets/Materials/**` değişmiş olmalı, `Main.unity` **değişmemiş** olmalı:
-```bash
-git status
-```
-
-### 1.4 Skybox
-- [ ] Kolay yol: *Assets → Create → Material* → `Assets/Art/Skybox/TempleSky.mat` → Shader: **Skybox/Procedural** → güneş boyutu, atmosfer kalınlığı, renk ayarla.
-- [ ] Güzel yol: Poly Haven'dan **1K/2K `.hdr`** HDRI indir → texture'ı seç → *Texture Shape: Cube* → Apply → materyal Shader: **Skybox/Cubemap** → HDRI'yi ata.
-- [ ] Denemek için *Window → Rendering → Lighting → Environment → Skybox Material* → kendi materyalin → Play'de bak → **sahneyi KAYDETME**, Erdem'e "skybox hazır: `Assets/Art/Skybox/TempleSky.mat`" yaz.
-
-### 1.5 (İsteğe bağlı) Karakter modelleri
-- [ ] CC0 düşük poligon karakterler (Kenney → "Mini Characters" / "Blocky Characters") → `Assets/Art/Models/`.
-- [ ] Her biri için prefab: `Assets/Art/Prefabs/PlayerModel.prefab`, `CompanionModel.prefab`, `GuardModel.prefab`. Prefab **sadece görsel** olsun: collider, script, rigidbody **yok**. Boyu ~2 m, ayakları y = -1'de (kapsülün merkezine göre).
-- [ ] Erdem'e ver; o kapsüllerin altına yerleştirir.
-
-- [ ] **PR aç:** `omer/texture` → `main`. Erdem onaylayınca merge.
+### 1.7 Korkuluk görseli — düşmeyi engelleme (1.–2. gün, YENİ)
+Erdem uçurum kenarına ve köprünün iki yanına **görünmez 3 m'lik çarpışma duvarları** koyuyor (oyuncu hiçbir yerden düşemesin). Oyuncu bunların orada olduğunu görebilsin diye **görsel korkuluk** senin işin.
+- [ ] Dal: `omer/korkuluk`
+- [ ] `Assets/Art/Prefabs/StoneRailing.prefab`: **2 m uzunluk, 1 m yükseklik, ~0.3 m kalınlık** taş korkuluk modülü (alçak duvar + üst kapak taşı **veya** küçük sütunlar + üst kiriş). Yan yana dizilince birleşik görünmeli (uçların hizalı olması).
+  - Pivot: **alt-orta** (y = 0 zemin) → Erdem kolayca dizebilsin.
+- [ ] `Assets/Art/Prefabs/BridgeRailing.prefab`: ahşap köprü korkuluğu, **1 m uzunluk, 1 m yükseklik**, `Wood.mat` (köprü boyunca 7–8 tane dizilecek).
+- [ ] Materyal `Assets/Materials/Railing.mat` (Bricks/Stone texture, tiling ~2×1).
+- [ ] Prefab'larda **sadece görsel**: collider **yok**, script yok (çarpışmayı Erdem'in görünmez duvarları yapıyor; çift collider oyuncuyu takabilir).
+- [ ] Kontrol: `Main.unity`'ye geçici olarak birkaç tane koyup bak → **kaydetmeden kapat**.
+- [ ] PR → Erdem'e: "Korkuluk prefab'ları hazır: `StoneRailing`, `BridgeRailing`."
 
 ---
 
-## Adım 2 — Ana Menü (2.–4. gün)
+## Adım 2 — Ana Menü 🟡 (kod hazır, eksikler var)
 
-Dal: `omer/ana-menu` (önce `git checkout main` + `git pull`)
+Dal: `omer/ana-menu` (5 Kasım temizliğinden sonraki hâliyle devam et)
 
-### 2.1 Sahne
-- [ ] *File → New Scene → Basic (Built-in)* → `Assets/Scenes/MainMenu.unity` olarak kaydet.
-- [ ] *GameObject → UI → Canvas* → Canvas Scaler: **Scale With Screen Size**, 1920×1080, Match 0.5.
-- [ ] EventSystem objesinde **Standalone Input Module** olmalı (proje eski Input Manager kullanıyor; "Input System UI Input Module"e **çevirme**).
-- [ ] Hiyerarşi:
-```
-Canvas
-├── Background        (Image / oyundan ekran görüntüsü, hafif karartılmış)
-├── Title             (TMP: "Yankı Tapınağı")
-├── MainPanel
-│   ├── StartButton   "Başla"
-│   ├── HowToButton   "Nasıl Oynanır"
-│   ├── SettingsButton "Ayarlar"
-│   └── QuitButton    "Çıkış"
-├── HowToPanel        (kapalı başlar) → kontroller + kısa hikâye + "Geri"
-└── SettingsPanel     (kapalı başlar)
-    ├── SensitivitySlider (0.5 – 5, varsayılan 2) + değer yazısı
-    ├── VolumeSlider      (0 – 1, varsayılan 1)  + değer yazısı
-    └── BackButton "Geri"
-```
-- [ ] Tüm yazılar **TextMeshPro**. Türkçe karakterler (ı, ş, ğ, ü, ö, ç, İ) düzgün görünüyor mu kontrol et. Farklı font eklersen: fontu seç → *Window → TextMeshPro → Font Asset Creator* yerine sağ tık → *Create → TextMeshPro → Font Asset* → **Atlas Population Mode: Dynamic**.
+- [x] `MainMenuUI.cs`, `GameSettings.cs`, `MenuCameraOrbit.cs`, `MainMenuBuilder.cs` (editör aracı)
+- [x] `GameHUD`: `mainMenuButton` alanı + `GoToMainMenu()` + `Time.timeScale = 1f`
+- [ ] **`Assets/Scenes/MainMenu.unity` + `.meta` commit'lenmedi** → aracınla sahneyi oluştur, kaydet, commit'le.
+- [ ] **Build Settings:** 0: `MainMenu`, 1: `Main` → `ProjectSettings/EditorBuildSettings.asset` commit'le.
+- [ ] EventSystem'de **Standalone Input Module** olduğundan emin ol.
+- [ ] Türkçe karakterler (ı, ş, ğ, İ) düzgün görünüyor mu?
+- [ ] **PR aç:** `omer/ana-menu` → `main` (Draft değil). PR açıklamasına "Build Settings değişti" yaz.
+- [ ] Zafer panelindeki **buton objesini sahneye Erdem ekleyecek**; sen kodu bıraktın, yeterli.
 
-### 2.2 Script — `Assets/Scripts/UI/Menu/MainMenuUI.cs`
-- [ ] Namespace `AdventureGame` (diğer dosyalar gibi). İskelet:
+### Kabul ölçütleri
+- [ ] Menü → Başla → oyun açılıyor, fare kilitleniyor.
+- [ ] Ayarlardan hassasiyet değişince oyunda fare hızı değişiyor (Erdem'in `erdem/duraklatma-api` PR'ı main'e girince).
+- [ ] Ses ayarı kalıcı. Console'da hata yok.
+
+---
+
+## Adım 2B — Toplama Görevi: "Yankı Taşı Parçaları" (2.–3. gün, YENİ)
+
+Dal: `omer/toplama-gorevi`. **Önkoşul:** Erdem'in `ICollectionQuest` arayüzü main'de olmalı (1. gün). Arayüz:
 ```csharp
-using TMPro;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-
-namespace AdventureGame
+public interface ICollectionQuest
 {
-    public sealed class MainMenuUI : MonoBehaviour
-    {
-        public const string SensitivityKey = "MouseSensitivity"; // Erdem'in PlayerController'ı bu anahtarı okuyor
-        public const string VolumeKey = "MasterVolume";
-        private const string GameSceneName = "Main";
-
-        [SerializeField] private GameObject mainPanel, howToPanel, settingsPanel;
-        [SerializeField] private Slider sensitivitySlider, volumeSlider;
-        [SerializeField] private TMP_Text sensitivityValue, volumeValue;
-
-        private void Awake()
-        {
-            Time.timeScale = 1f;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            // Slider'ları PlayerPrefs'ten doldur, AudioListener.volume'u uygula, paneller: sadece mainPanel açık
-        }
-
-        public void StartGame() { Time.timeScale = 1f; SceneManager.LoadScene(GameSceneName); }
-        public void ShowPanel(GameObject panel) { /* diğerlerini kapat, bunu aç */ }
-        public void OnSensitivityChanged(float v) { PlayerPrefs.SetFloat(SensitivityKey, v); /* yazıyı güncelle */ }
-        public void OnVolumeChanged(float v) { PlayerPrefs.SetFloat(VolumeKey, v); AudioListener.volume = v; }
-        public void Quit()
-        {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
-        }
-    }
+    int CollectedCount { get; }
+    int RequiredCount { get; }
+    bool IsCompleted { get; }
+    string HintText { get; }
+    event Action<int, int> ProgressChanged;  // (toplanan, gereken)
+    event Action<string> Completed;          // ipucu metniyle, bir kez
 }
 ```
-- [ ] Butonların **OnClick**'ini Inspector'dan bağla (Slider → **On Value Changed** → *Dynamic float* olanı seç).
-- [ ] Ayar değişince `PlayerPrefs.Save()` çağır (panel kapanırken).
 
-### 2.3 Build Settings (sahne sırası senin sorumluluğunda)
-- [ ] *File → Build Profiles* (veya *Build Settings*) → Scene List:
-  - **0:** `Assets/Scenes/MainMenu.unity`
-  - **1:** `Assets/Scenes/Main.unity`
-- [ ] Commit'te `ProjectSettings/EditorBuildSettings.asset` değişecek, normal. PR açıklamasına "sahne sırası değişti" yaz.
+**Kurgu:** Tapınağın 5 Yankı Taşı parçası haritaya dağılmış. Hepsi toplanınca taşlar birleşir ve oyuncuya **muhafızın bilmecesi için ipucu** fısıldar. Parçalar tamamlanmadan muhafız kapıyı açmaz (bu kuralı Erdem GameManager'da uygular).
 
-### 2.4 Kabul ölçütleri
-- [ ] Menü → Başla → oyun açılıyor, fare kilitleniyor.
-- [ ] Ayarlardan hassasiyet değişince oyunda fare hızı değişiyor (Erdem'in `PlayerPrefs` satırı main'e girdikten sonra).
-- [ ] Ses ayarı kalıcı (oyunu kapatıp açınca hatırlıyor).
-- [ ] Console'da hata yok.
+### 2B.1 Toplanabilir parça — `Assets/Scripts/Quest/Collectible.cs`
+- [ ] `public sealed class Collectible : InteractableBase` (namespace `AdventureGame`) — mevcut şalterle aynı taban sınıf; böylece hem oyuncunun [E]'si hem yoldaşın sensörü **otomatik** çalışır.
+- [ ] Alanlar: `string shardId`, `GameObject visualRoot`, `ParticleSystem pickupEffectPrefab`, `AudioClip pickupSound`.
+- [ ] `public event Action<Collectible> Collected;`
+- [ ] `protected override bool IsAvailable => !_collected;` (toplanan parça ikinci kez alınmasın)
+- [ ] `OnInteract`: `_collected = true` → efekt + ses (`AudioSource.PlayClipAtPoint`) → `Collected?.Invoke(this)` → collider'ları kapat, `visualRoot`'u gizle (objeyi hemen `Destroy` etme; yoldaş o karede hâlâ referans tutuyor olabilir).
+- [ ] `Reset()`: `interactionPrompt = "Yankı Taşı parçasını al [E]"`.
+- [ ] **Yoldaş parçası:** platformdaki parça için Inspector'da `allowPlayer = false`, `allowAICompanion = true` (Erdem sahnede ayarlar; sen alanların çalıştığından emin ol).
 
-- [ ] **PR aç:** `omer/ana-menu` → `main`.
+### 2B.2 Görsel — `Assets/Scripts/Quest/FloatingSpin.cs` + prefab
+- [ ] `FloatingSpin`: parçayı yavaşça döndür + yukarı aşağı salla (`Mathf.Sin`). Sadece `visualRoot`'u hareket ettir, collider sabit kalsın.
+- [ ] Materyal `Assets/Materials/EchoShard.mat`: Standard, **Emission açık** (mavi/turkuaz parıltı).
+- [ ] Prefab `Assets/Art/Prefabs/EchoShard.prefab`:
+```
+EchoShard            [Collectible, SphereCollider r=0.4 (Is Trigger KAPALI), Layer: Interactable]
+└── Visual           [FloatingSpin]
+    ├── Crystal      (küçük kristal model veya döndürülmüş, ölçeklenmiş küp; EchoShard.mat)
+    └── Glow         (Point Light, Range 3, Intensity 1.5, turkuaz) — isteğe bağlı
+```
+  > Collider **trigger olmamalı**: oyuncunun ışını ve yoldaşın sensörü trigger'ları yok sayar.
+- [ ] Toplama efekti: küçük bir Particle System prefab'ı (`Assets/Art/Prefabs/ShardPickupFX.prefab`), 1 sn sonra kendini yok etsin.
+- [ ] Ses (CC0, ör. kenney.nl "Interface Sounds" / "Sci-fi Sounds"): `Assets/Art/Audio/shard_pickup.ogg` + `LISANSLAR.txt`'ye ekle.
+
+### 2B.3 İpucu verisi — `Assets/Scripts/Quest/QuestHintData.cs` + asset
+- [ ] `[CreateAssetMenu(menuName = "AdventureGame/Quest Hint")] public sealed class QuestHintData : ScriptableObject` — alanlar: `questName`, `[TextArea] hintText`, `[TextArea] completionMessage`.
+- [ ] Asset: `Assets/Data/Quest/EchoStoneHint.asset`
+  - `questName`: "Yankı Taşı"
+  - `completionMessage`: "Beş parça birleşti. Taş titreyerek fısıldıyor..."
+  - `hintText` (cevabı **söylemeyen**, yön gösteren bir ipucu yaz; örnek):
+    > "Bu tapınakta en değerli şey bir ses değil, sesin yokluğudur. Muhafızın sorusuna kelimeyle değil, kelimelerin bittiği yerle cevap ver."
+  - ⚠ İpucunda cevap kelimesi (`sessizlik`, `sükût`) **geçmesin**.
+
+### 2B.4 Görev sayacı — `Assets/Scripts/Quest/CollectionQuest.cs`
+- [ ] `public sealed class CollectionQuest : MonoBehaviour, ICollectionQuest`
+- [ ] `[SerializeField] private List<Collectible> collectibles;` `[SerializeField] private QuestHintData hintData;`
+- [ ] `RequiredCount => collectibles` içindeki **null olmayan** parça sayısı.
+- [ ] `OnEnable`: her parçanın `Collected` olayına abone ol; `OnDisable`: aboneliği bırak.
+- [ ] Toplanan parçaları `HashSet<Collectible>`'da tut → aynı parça iki kez sayılmasın.
+- [ ] Her toplamada `ProgressChanged?.Invoke(CollectedCount, RequiredCount)`; sayı tamamlanınca **bir kez** `Completed?.Invoke(HintText)`.
+- [ ] `HintText => hintData != null ? hintData.hintText : ""` — `hintData` yoksa hata loglayıp boş metin dön, **çökmesin**.
+- [ ] `collectibles` boşsa veya null eleman varsa `Debug.LogWarning` (NullReferenceException yok).
+
+### 2B.5 HUD — `Assets/Scripts/UI/GameHUD.cs` (senin dosyan)
+- [ ] Yeni alanlar: `[SerializeField] MonoBehaviour questBehaviour;` (→ `InterfaceResolver.Resolve<ICollectionQuest>`), `TMP_Text questCounterText`, `GameObject hintPanel`, `TMP_Text hintText`.
+- [ ] Sayaç: sağ üstte, LLM durumunun altında **"Yankı Taşı: 0/5"**; tamamlanınca yeşil "Yankı Taşı: 5/5 ✓".
+- [ ] `Completed` gelince ipucu paneli açılır (ekran ortası, yarı saydam, italik metin), **8 sn** sonra kapanır (`WaitForSecondsRealtime`).
+- [ ] Oyuncu ipucunu tekrar görebilsin: **[H]** tuşu paneli 8 sn yeniden açar (sadece görev tamamlandıysa, girdi kilitli değilse).
+- [ ] Erdem'e yaz: "Canvas'a şu objeler lazım: `QuestCounterText`, `HintPanel/HintText`; GameHUD alanlarına ve `questBehaviour`'a `CollectionQuest`'i bağlar mısın?" (veya bu objeleri bir **prefab** olarak ver: `Assets/Art/Prefabs/QuestHUD.prefab`).
+
+### 2B.6 Kendi testin
+- [ ] `Main.unity`'yi aç → `EchoShard` prefab'ından 2–3 tane koy + boş obje üzerine `CollectionQuest` → bağla → Play → topla → sayaç, efekt, ses, ipucu paneli, [H] çalışıyor mu → **sahneyi KAYDETMEDEN kapat**.
+- [ ] Yoldaşla dene: bir parçayı `allowPlayer = false` yap, yoldaşın göreceği yere koy, [F] → yoldaş gidip alıyor mu?
+- [ ] Console'da kırmızı hata yok.
+
+### 2B.7 Teslim
+- [ ] PR: `omer/toplama-gorevi` → `main`. Açıklamaya: dosya listesi + "sahneye yerleştirme Erdem'de" + Canvas'a gereken objeler.
+- [ ] Erdem bu PR'dan sonra parçaları sahneye yerleştirip kapıya bağlayacak ve test yazacak.
+
+### Kabul ölçütleri
+- [ ] Parça [E] ile toplanıyor, kayboluyor, efekt + ses çalıyor, sayaç artıyor.
+- [ ] Aynı parça iki kez sayılmıyor; 5/5 olunca ipucu **bir kez** çıkıyor; [H] ile tekrar görülebiliyor.
+- [ ] Yoldaş, kendisine ayrılmış parçayı [F] ile alabiliyor.
+- [ ] `hintData` / parça eksik olsa bile oyun çökmüyor.
 
 ---
 
-## Adım 3 — Duraklatma Menüsü (4.–5. gün)
+## Adım 3 — Duraklatma Menüsü (4. gün)
 
-Dal: `omer/duraklatma`. **Önkoşul:** Erdem'in `GameManager.SetPaused` / `IsPaused` / `PausedChanged` API'si main'de olmalı.
+Dal: `omer/duraklatma`. **Önkoşul:** Erdem'in `erdem/duraklatma-api` PR'ı main'de olmalı (kod hazır, test aşamasında). Hazır olan API:
+- `GameManager.Instance.SetPaused(bool)` — zamanı durdurur, girdiyi kilitler, imleci serbest bırakır
+- `GameManager.Instance.IsPaused`, `GameManager.Instance.PausedChanged` (`Action<bool>`)
+- `PlayerController.SetMouseSensitivity(float)` — ayarı anında uygular; `PlayerController.MouseSensitivityKey == "MouseSensitivity"` (senin `GameSettings.SensitivityKey` ile aynı)
 
 ### 3.1 Prefab
 - [ ] `Main.unity`'yi aç → Canvas'ın altına `PauseMenu` paneli kur: yarı saydam siyah arka plan + "Duraklatıldı" + **Devam Et / Ayarlar / Ana Menü / Çıkış**. Ayarlar paneli ana menüdekiyle aynı slider'lar.
-- [ ] Paneli `Assets/Art/Prefabs/PauseMenu.prefab` olarak sürükleyip prefab yap → sahneden **sil** → **sahneyi kaydetme** (gerekirse `git checkout -- Assets/Scenes/Main.unity`).
+- [ ] Paneli `Assets/Art/Prefabs/PauseMenu.prefab` olarak sürükleyip prefab yap → sahneden **sil** → **sahneyi kaydetme**.
 - [ ] Erdem'e: "PauseMenu prefab hazır, Canvas altına koyar mısın?"
 
-### 3.2 Script — `Assets/Scripts/UI/Menu/PauseMenuUI.cs` (prefab'ın kök objesinde)
+### 3.2 Script — `Assets/Scripts/UI/Menu/PauseMenuUI.cs`
 - [ ] **Esc** ile aç/kapat → `GameManager.Instance.SetPaused(true/false)`.
-- [ ] `GameManager.Instance.PausedChanged`'e abone ol → paneli göster/gizle (oyun başka yerden de duraklatılırsa UI tutarlı kalsın). `OnDestroy`'da aboneliği bırak.
-- [ ] **ÇOK ÖNEMLİ — Esc çakışması:** Esc tuşu diyalog penceresini de kapatıyor (`DialogueUI`). Diyalog kapanırken aynı karede duraklatma menüsü **açılmamalı**:
+- [ ] `PausedChanged`'e abone ol → paneli göster/gizle. `OnDestroy`'da aboneliği bırak.
+- [ ] **ÇOK ÖNEMLİ — Esc çakışması:** Esc diyalog penceresini de kapatıyor. Diyalog kapanırken aynı karede duraklatma menüsü **açılmamalı**:
 ```csharp
 private bool _wasLockedLastFrame;
 
@@ -223,21 +200,16 @@ private void Update()
 
 private void LateUpdate() => _wasLockedLastFrame = GameManager.Instance != null && GameManager.Instance.IsInputLocked && !GameManager.Instance.IsPaused;
 ```
-- [ ] `Time.timeScale = 0` iken çalışacak her animasyon/bekleme **unscaled** olmalı (`WaitForSecondsRealtime`, `Time.unscaledDeltaTime`).
-- [ ] **Ana Menü** butonu: `gm.SetPaused(false); Time.timeScale = 1f; SceneManager.LoadScene("MainMenu");`
-- [ ] Ayarlar: `MainMenuUI.SensitivityKey` / `VolumeKey` sabitlerini kullan (anahtar adlarını tekrar yazma). Hassasiyet oyun içinde **anında** uygulanacaksa Erdem'den `PlayerController`'a `public void SetMouseSensitivity(float v)` iste.
-- [ ] Test için prefab'ı geçici olarak sahneye koyup Play'e bas; bitince sahneyi **kaydetmeden** kapat.
+- [ ] Duraklatılmışken çalışacak her animasyon **unscaled** olmalı (`WaitForSecondsRealtime`, `Time.unscaledDeltaTime`).
+- [ ] **Ana Menü** butonu: `gm.SetPaused(false); Time.timeScale = 1f; SceneManager.LoadScene(MainMenuUI.MenuSceneName);`
+- [ ] Ayarlar: `GameSettings` sınıfını kullan; hassasiyet değişince `FindAnyObjectByType<PlayerController>()?.SetMouseSensitivity(v)`.
+- [ ] İpucu paneli ([H]) duraklatılmışken açılmasın.
 
-### 3.3 Zafer paneline "Ana Menü" butonu — `Assets/Scripts/UI/GameHUD.cs`
-- [ ] `GameHUD`'a alan ekle: `[SerializeField] private Button mainMenuButton;` → `Awake`'te `onClick` → `Time.timeScale = 1f; SceneManager.LoadScene("MainMenu");`
-- [ ] Buton objesi sahnede (VictoryPanel altında) olacağı için: **Erdem'e** "VictoryPanel'e `MainMenuButton` ekleyip GameHUD'daki `mainMenuButton` alanına bağlar mısın, SceneBuilder'a da ekle" diye yaz.
-
-### 3.4 Kabul ölçütleri
-- [ ] Oyunda Esc → menü açılır, oyun durur (yoldaş, köprü, kapı animasyonu durmuş), fare serbest.
-- [ ] Devam Et → oyun kaldığı yerden devam, fare kilitli.
+### 3.3 Kabul ölçütleri
+- [ ] Esc → menü açılır, oyun durur (yoldaş, köprü, parça dönmesi durmuş), fare serbest.
+- [ ] Devam Et → kaldığı yerden devam, fare kilitli.
 - [ ] Muhafızla konuşurken Esc → **sadece diyalog kapanır**, duraklatma menüsü açılmaz.
-- [ ] Ana Menü → menü sahnesi açılır, sonra Başla → oyun normal hızda başlar.
-- [ ] Zafer ekranında Ana Menü butonu çalışır.
+- [ ] Ana Menü → menü açılır; Başla → oyun normal hızda başlar.
 
 - [ ] **PR aç:** `omer/duraklatma` → `main`.
 
@@ -247,37 +219,38 @@ private void LateUpdate() => _wasLockedLastFrame = GameManager.Instance != null 
 
 Dal: `omer/readme`
 
-### 4.1 Ekran görüntüleri
-- [ ] Game penceresini **1920×1080** yap, oyunu oynayıp şu anları yakala (Windows: `Win + Shift + S`):
+### 4.1 Ekran görüntüleri (`Docs/Images/`, PNG — otomatik LFS)
+- [ ] 1920×1080 Game penceresi; `Win + Shift + S`:
   1. Ana menü
-  2. Bölüm 1: uçurum + kalkık köprü
-  3. Yoldaş platforma zıplarken / şalteri çekerken (Scene görünümünde yeşil Raycast çizgileri de güzel durur)
-  4. Muhafızla sohbet + "düşünüyor..." göstergesi
-  5. Kapı açılırken
-  6. Zafer ekranı
-  7. Ollama kapalıyken hata mesajı (çökmediğini gösterir)
-  8. Test Runner — tüm testler yeşil (Erdem'den iste)
-- [ ] `Docs/Images/01_menu.png` ... şeklinde kaydet (PNG'ler otomatik LFS'e gider).
+  2. Bölüm 1: duvarlarla çevrili alan, korkuluklu uçurum kenarı, kalkık köprü
+  3. Yoldaş platforma zıplarken / şalteri veya parçayı alırken
+  4. Parça toplama anı + "Yankı Taşı: 3/5" sayacı
+  5. 5/5 → ipucu paneli
+  6. Muhafızla sohbet + "düşünüyor..." göstergesi
+  7. Kapı açılırken
+  8. Zafer ekranı
+  9. Ollama kapalıyken hata mesajı (çökmediğini gösterir)
+  10. Test Runner — tüm testler yeşil (Erdem'den iste)
 
 ### 4.2 `README.md`'yi son hâline getir
-Şu anki README teknik kurulum rehberi. Teslim için şu sırayla yeniden düzenle:
-- [ ] **Başlık + kapak görseli** (ana menü veya oyun içi)
-- [ ] **Oyun hakkında:** hikâye (Yankı Tapınağı, muhafız Kaan, yoldaş Robo), amaç
-- [ ] **Nasıl oynanır:** kontroller tablosu, bölümlerin anlatımı (çözümü verme, ipucu ver)
+- [ ] **Başlık + kapak görseli**
+- [ ] **Oyun hakkında:** hikâye (Yankı Tapınağı, muhafız Kaan, yoldaş Robo, Yankı Taşı), amaç
+- [ ] **Nasıl oynanır:** kontroller (WASD, Shift, Space, E, F, **H**, Esc), bölümler (çözümü verme, ipucu ver)
 - [ ] **Kurulum:** kısa özet + "ayrıntılar için [KURULUM.md](KURULUM.md)"
-- [ ] **Teknik özellikler:** NavMesh yoldaş, sensörler, Ollama JSON şeması, hata yönetimi (mevcut README'den kısalt)
+- [ ] **Teknik özellikler:** NavMesh yoldaş, sensörler, Ollama JSON şeması, hata yönetimi, **toplama görevi (ICollectionQuest, olay tabanlı)**
 - [ ] **Zorluk mekanikleri / Mimari / LLM güvenliği:** Erdem'in gönderdiği metinler
 - [ ] **Ekran görüntüleri** galerisi
 - [ ] **Görev dağılımı:** kim ne yaptı (YAPILACAKLAR'daki tablo)
 - [ ] **Kullanılan asset'ler ve lisanslar:** `Assets/Art/LISANSLAR.txt`'den
-- [ ] Mevcut README'deki ayrıntılı sahne kurulum adımları (koordinatlar vb.) → `Docs/SAHNE_KURULUMU.md`'ye taşı, README'den link ver.
+- [ ] Mevcut README'deki ayrıntılı sahne kurulum adımlarını → `Docs/SAHNE_KURULUMU.md`'ye taşı, link ver.
 
-### 4.3 Rapor için (ders dökümanının şablonuna göre)
-- [ ] Kullanılan asset'ler, lisansları ve kaynak linkleri
-- [ ] Görsel tasarım kararları (tema, renk paleti)
+### 4.3 Rapor için
+- [ ] Asset'ler, lisanslar, kaynak linkleri
+- [ ] Görsel tasarım kararları (tema, renk paleti, parça parıltısı)
 - [ ] Menü akış diyagramı: MainMenu → Main → Pause/Victory → MainMenu
-- [ ] Karşılaşılan sorunlar ve çözümleri (ör. Esc çakışması, timeScale, Türkçe karakter)
-- [ ] (İsteğe bağlı) 1–2 dk oynanış videosu: *Window → General → Recorder* (paket gerekir, Erdem'e sor) veya Xbox Game Bar (`Win + G`). Videoyu **repoya koyma**, YouTube/Drive linki ver.
+- [ ] Toplama görevi akış diyagramı: Parça [E]/[F] → CollectionQuest → HUD sayacı → 5/5 → ipucu → GameManager kapı kuralı
+- [ ] Karşılaşılan sorunlar ve çözümleri (Esc çakışması, timeScale, Türkçe karakter, trigger collider + raycast)
+- [ ] (İsteğe bağlı) 1–2 dk oynanış videosu (Xbox Game Bar `Win + G`) — **repoya koyma**, link ver.
 
 - [ ] **PR aç:** `omer/readme` → `main`.
 
@@ -287,18 +260,22 @@ Dal: `omer/readme`
 
 | Ne | Kimden → Kime | Ne zaman |
 |---|---|---|
-| `SetPaused` API, `MouseSensitivity` okuma satırı | Erdem → Ömer | 1. gün |
-| Skybox materyali | Ömer → Erdem (sahneye atar) | 2.–3. gün |
-| Yeni materyal atamaları (varsa) | Ömer → Erdem | 3. gün |
-| Karakter model prefab'ları (isteğe bağlı) | Ömer → Erdem | 3.–4. gün |
-| PauseMenu prefab'ı | Ömer → Erdem (Canvas altına koyar) | 5. gün |
-| Zafer paneline Ana Menü butonu (sahne kısmı) | Ömer kodu yazar → Erdem butonu ekler | 5. gün |
+| `SetPaused` API, `MouseSensitivity`, `SetMouseSensitivity` | Erdem → Ömer | 1. gün (kod hazır, test/PR aşamasında) |
+| **`ICollectionQuest` arayüzü** | Erdem → Ömer | **1. gün** |
+| Skybox materyali `TempleSky.mat` | Ömer → Erdem | ✅ main'de, sahneye Erdem atayacak |
+| **`Wall.mat`** | Ömer → Erdem | 1. gün |
+| **`StoneRailing` / `BridgeRailing` prefab'ları** | Ömer → Erdem | 2. gün |
+| Ana menü sahnesi + Build Settings | Ömer | 1. gün |
+| **`EchoShard` prefab + `Collectible` + `CollectionQuest` + `QuestHintData` + HUD sayaç/ipucu** | Ömer → Erdem | 3. gün |
+| Parçaları sahneye yerleştirme, kapıya bağlama, testler | Erdem | 4. gün |
+| PauseMenu prefab'ı, (modeller) | Ömer → Erdem | 4.–5. gün |
+| Zafer paneli butonu objesi (kod sende hazır) | Erdem sahneye ekler | 5. gün |
 | Zorluk / Mimari / Güvenlik metinleri, test ekran görüntüsü | Erdem → Ömer | 6. gün |
 | Birleştirme, tam oyun testi, teslim | Birlikte | 7. gün |
 
 ## Son Kontrol Listesi (teslimden önce)
 - [ ] Temiz klasöre clone → texture'lar görünüyor (LFS çalışıyor).
-- [ ] MainMenu → Başla → oyun → Esc → Ana Menü → Başla → oyun normal hızda.
+- [ ] MainMenu → Başla → 5 parça → ipucu → muhafız → zafer → Ana Menü → Başla → oyun normal hızda.
 - [ ] Türkçe karakterler tüm ekranlarda düzgün.
-- [ ] `Assets/Art/LISANSLAR.txt` eksiksiz, README'de lisans bölümü var.
+- [ ] `Assets/Art/LISANSLAR.txt` eksiksiz (texture + ses + model), README'de lisans bölümü var.
 - [ ] README'deki tüm linkler ve resimler GitHub sayfasında açılıyor.
