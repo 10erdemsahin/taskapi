@@ -35,6 +35,8 @@ namespace AdventureGame
         [SerializeField] private GameObject victoryPanel;
         [SerializeField] private Button restartButton;
         [SerializeField] private Button quitButton;
+        [Tooltip("Ana menü sahnesine döner (opsiyonel)")]
+        [SerializeField] private Button mainMenuButton;
 
         private ILLMService _llm;
         private GameManager _gameManager;
@@ -57,6 +59,7 @@ namespace AdventureGame
 
             if (restartButton != null) restartButton.onClick.AddListener(RestartScene);
             if (quitButton != null) quitButton.onClick.AddListener(QuitGame);
+            if (mainMenuButton != null) mainMenuButton.onClick.AddListener(GoToMainMenu);
         }
 
         private void Start()
@@ -250,7 +253,14 @@ namespace AdventureGame
 
         private static void RestartScene()
         {
+            Time.timeScale = 1f;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        private static void GoToMainMenu()
+        {
+            Time.timeScale = 1f;
+            SceneManager.LoadScene(MainMenuUI.MenuSceneName);
         }
 
         private static void QuitGame()
