@@ -32,7 +32,8 @@ namespace AdventureGame
                 GameManager manager = GameManager.Instance;
                 if (manager != null)
                 {
-                    manager.PostNotification("Uçuruma düştün! Tek başına bu boşluğu aşamazsın.");
+                    // Bariyerler varken buraya normalde düşülmez; bu yalnızca güvenlik ağıdır.
+                    manager.PostNotification("Bir şekilde düştün, başa dönüyorsun.");
                 }
 
                 return;

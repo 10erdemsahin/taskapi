@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Unity.AI.Navigation;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace AdventureGame
 {
@@ -9,7 +10,13 @@ namespace AdventureGame
     /// Asma köprü. Başta dikey (kalkık) durur; Activate ile iner ve ardından NavMesh
     /// çalışma anında (runtime) ASENKRON olarak yeniden hesaplanır, böylece yoldaş da
     /// köprüden geçebilir. Oyuncu fiziksel collider üzerinde yürür.
+    ///
+    /// Not: Güncelleme bake edilmiş asset'in KOPYASI üzerinde yapılır. Asset'in kendisi
+    /// güncellenseydi bellekte köprü inik hâliyle kalır, sahne yeniden yüklenince
+    /// (ana menüden tekrar başlama, testler) köprü kalkıkken de karşıya yol olurdu.
+    /// Erken çalışma sırası: kopya, NavMeshSurface.OnEnable veriyi eklemeden önce atanır.
     /// </summary>
+    [DefaultExecutionOrder(-200)]
     public sealed class DrawBridge : MonoBehaviour, IActivatable
     {
         [Header("Dönüş")]
@@ -40,6 +47,28 @@ namespace AdventureGame
             if (applyRaisedOnAwake)
             {
                 pivot.localRotation = Quaternion.Euler(raisedLocalEuler);
+            }
+
+            UseRuntimeNavMeshCopy();
+        }
+
+        /// <summary>Surface'in verisini bake edilmiş asset'in çalışma anı kopyasıyla değiştirir.</summary>
+        private void UseRuntimeNavMeshCopy()
+        {
+            if (navMeshSurface == null || navMeshSurface.navMeshData == null)
+            {
+                return;
+            }
+
+            NavMeshData runtimeCopy = Instantiate(navMeshSurface.navMeshData);
+            runtimeCopy.name = navMeshSurface.navMeshData.name + " (Runtime)";
+
+            // Surface daha önce etkinleştiyse eski veriyi çıkar; değilse RemoveData/AddData zararsızdır.
+            navMeshSurface.RemoveData();
+            navMeshSurface.navMeshData = runtimeCopy;
+            if (navMeshSurface.isActiveAndEnabled)
+            {
+                navMeshSurface.AddData();
             }
         }
 
