@@ -111,6 +111,7 @@ namespace AdventureGame
 - [x] Texture pack + materyaller + skybox materyali
 - [ ] `Wall.mat` (duvarlar için)
 - [ ] Korkuluk prefab'ları: `StoneRailing`, `BridgeRailing` (düşme engeli görseli)
+- [ ] **Texture kalitesi:** 2K zemin/taş, Aniso 8, materyal ayarları (sahnedeki uzama sorunu Erdem tarafında `WorldSpaceUV` ile çözüldü)
 - [ ] Ana menü: `MainMenu.unity` + Build Settings commit'i + PR
 - [ ] **Toplama görevi sistemi:** `Collectible`, `CollectionQuest`, ipucu verisi, parça prefab'ı, HUD sayacı + ipucu paneli
 - [ ] Duraklatma menüsü (Erdem'in `SetPaused`'u main'e girince)

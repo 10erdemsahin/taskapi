@@ -30,8 +30,15 @@ namespace AdventureGame
         [SerializeField, Min(0.1f)] private float arrivalTolerance = 0.5f;
         [SerializeField, Min(0.5f)] private float interactDistance = 2f;
         [SerializeField, Min(0.5f)] private float navSampleRadius = 2f;
-        [Tooltip("Ajan bu süre boyunca hiç hareket etmezse görev iptal edilir.")]
-        [SerializeField, Min(1f)] private float stuckTimeout = 5f;
+        [Tooltip("Ajan bu süre boyunca hiç hareket etmezse görev iptal edilir. Hareketli bloğun (SlidingBlock) bekleme süresinden uzun olmalı.")]
+        [SerializeField, Min(1f)] private float stuckTimeout = 10f;
+
+        [Header("Otonomi")]
+        [Tooltip("Takip ederken çevreyi kendiliğinden tarar; kullanabileceği bir mekanizma görürse [F] beklemeden gider.")]
+        [SerializeField] private bool autoSolveWhenSeen = true;
+        [SerializeField, Min(0.25f)] private float autoScanInterval = 1.5f;
+        [Tooltip("Bir görev başarısız olunca otomatik taramaya ara verme süresi (rapor spam'ini önler).")]
+        [SerializeField, Min(1f)] private float autoScanCooldownAfterFail = 8f;
 
         [Header("NavMeshLink Geçişi (Zıplama)")]
         [SerializeField, Min(0f)] private float jumpArcHeight = 1.25f;
@@ -52,6 +59,7 @@ namespace AdventureGame
         private float _lastMovingTime;
         private bool _isTraversingLink;
         private Coroutine _interactRoutine;
+        private float _nextAutoScanTime;
 
         private int _speedHash;
         private bool _hasSpeedParameter;
@@ -118,7 +126,11 @@ namespace AdventureGame
                 switch (State)
                 {
                     case CompanionState.Following:
-                        TickFollow();
+                        TickAutonomousScan();
+                        if (State == CompanionState.Following)
+                        {
+                            TickFollow();
+                        }
                         break;
                     case CompanionState.MovingToTarget:
                         TickMoveToTarget();
@@ -174,6 +186,33 @@ namespace AdventureGame
                 return false;
             }
 
+            return StartTask(target, destination, $"{GetTargetName(target)} görüyorum! Oraya gidiyorum.");
+        }
+
+        /// <summary>
+        /// Otonom davranış: takip sırasında sessizce tarar. Görüş hattında ve NavMesh ile
+        /// ulaşılabilir bir mekanizma bulursa oyuncuya haber verip kendiliğinden göreve başlar.
+        /// </summary>
+        private void TickAutonomousScan()
+        {
+            if (!autoSolveWhenSeen || IsBusy || _isTraversingLink || Time.time < _nextAutoScanTime)
+            {
+                return;
+            }
+
+            _nextAutoScanTime = Time.time + autoScanInterval;
+
+            if (!TrySelectReachableTarget(out IInteractable target, out Vector3 destination))
+            {
+                return;
+            }
+
+            SetState(CompanionState.Scanning);
+            StartTask(target, destination, $"{GetTargetName(target)} fark ettim! Ben hallederim, sen bekle.");
+        }
+
+        private bool StartTask(IInteractable target, Vector3 destination, string announcement)
+        {
             _currentTarget = target;
             _taskDestination = destination;
             _agent.stoppingDistance = taskStoppingDistance;
@@ -186,7 +225,7 @@ namespace AdventureGame
 
             _lastMovingTime = Time.time;
             SetState(CompanionState.MovingToTarget);
-            Report($"{GetTargetName(target)} görüyorum! Oraya gidiyorum.");
+            Report(announcement);
             return true;
         }
 
@@ -418,6 +457,7 @@ namespace AdventureGame
         private void FailTask(string reason)
         {
             Report(reason);
+            _nextAutoScanTime = Time.time + autoScanCooldownAfterFail;
             BeginFollow();
         }
 

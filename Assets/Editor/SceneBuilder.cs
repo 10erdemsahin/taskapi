@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -11,6 +12,7 @@ using UnityEngine.AI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 namespace AdventureGame.EditorTools
 {
@@ -26,6 +28,31 @@ namespace AdventureGame.EditorTools
         private const string PersonaPath = "Assets/Data/GuardPersona.asset";
         private const int IgnoreRaycastLayer = 2;
         private const int UiLayer = 5;
+
+        // Ömer'in dosyaları: VARSA sahneye eklenir, yoksa sessizce atlanır.
+        private const string WallMaterialPath = "Assets/Materials/Wall.mat";
+        private const string SkyboxPath = "Assets/Art/Skybox/TempleSky.mat";
+        private const string StoneRailingPrefabPath = "Assets/Art/Prefabs/StoneRailing.prefab";
+        private const string BridgeRailingPrefabPath = "Assets/Art/Prefabs/BridgeRailing.prefab";
+        private const string EchoShardPrefabPath = "Assets/Art/Prefabs/EchoShard.prefab";
+        private const string PauseMenuPrefabPath = "Assets/Art/Prefabs/PauseMenu.prefab";
+        private const string QuestHintAssetPath = "Assets/Data/Quest/EchoStoneHint.asset";
+
+        // Texture yoğunluğu: bir desen tekrarının kapladığı metre (WorldSpaceUV).
+        private const float GroundMetersPerTile = 2.5f;
+        private const float StoneMetersPerTile = 1.5f;
+        private const float WoodMetersPerTile = 1.2f;
+        private const float DoorMetersPerTile = 3f;
+
+        /// <summary>Yankı Taşı parçalarının konumları ve kimin alabileceği.</summary>
+        private static readonly (string name, Vector3 position, bool companionOnly)[] ShardSpots =
+        {
+            ("EchoShard_1", new Vector3(-9.3f, 0.5f, 8.5f), false),  // Alan A, platformun arkası, uçurum kenarı (bariyerin önünde)
+            ("EchoShard_2", new Vector3(8.5f, 0.5f, -8.5f), false),  // Alan A, sağ arka köşe, kutunun arkası
+            ("EchoShard_3", new Vector3(-8f, 3.5f, 6f), true),       // Yüksek platformun üstü — sadece yoldaş
+            ("EchoShard_4", new Vector3(6f, 0.5f, 29f), false),      // Alan B, muhafızın arkası
+            ("EchoShard_5", new Vector3(-9f, 1.4f, 24f), false)      // Alan B, 0.9 m'lik kayanın üstü
+        };
 
         [MenuItem("Tools/AdventureGame/2) Sahneyi Oluştur")]
         public static void Build()
@@ -55,9 +82,11 @@ namespace AdventureGame.EditorTools
             Material doorMat = Mat("Door", new Color(0.30f, 0.28f, 0.26f));
 
             // ---------- Geometri ----------
-            Cube("Ground_A", new Vector3(0, -0.5f, 0), new Vector3(20, 1, 20), groundMat);
-            Cube("Ground_B", new Vector3(0, -0.5f, 27), new Vector3(20, 1, 20), groundMat);
-            Cube("HighPlatform", new Vector3(-7, 1.5f, 5), new Vector3(4, 3, 4), stoneMat);
+            ConfigureLighting();
+
+            Tile(Cube("Ground_A", new Vector3(0, -0.5f, 0), new Vector3(20, 1, 20), groundMat), GroundMetersPerTile);
+            Tile(Cube("Ground_B", new Vector3(0, -0.5f, 27), new Vector3(20, 1, 20), groundMat), GroundMetersPerTile);
+            Tile(Cube("HighPlatform", new Vector3(-7, 1.5f, 5), new Vector3(4, 3, 4), stoneMat), StoneMetersPerTile);
 
             // ---------- Köprü ----------
             var bridgePivot = new GameObject("BridgePivot");
@@ -65,6 +94,7 @@ namespace AdventureGame.EditorTools
             bridgePivot.transform.rotation = Quaternion.Euler(90, 0, 0); // KALKIK
             GameObject deck = Cube("Deck", Vector3.zero, new Vector3(3, 0.3f, 7.4f), woodMat, bridgePivot.transform);
             deck.transform.localPosition = new Vector3(0, -0.15f, -3.6f);
+            Tile(deck, WoodMetersPerTile);
             DrawBridge bridge = bridgePivot.AddComponent<DrawBridge>();
 
             // ---------- Şalter ----------
@@ -94,13 +124,14 @@ namespace AdventureGame.EditorTools
             link.bidirectional = true;
 
             // ---------- Duvar, kapı ----------
-            Cube("Wall_L", new Vector3(-6, 2, 30), new Vector3(8, 4, 1), stoneMat);
-            Cube("Wall_R", new Vector3(6, 2, 30), new Vector3(8, 4, 1), stoneMat);
-            Cube("Lintel", new Vector3(0, 3.5f, 30), new Vector3(4, 1, 1), stoneMat);
+            Tile(Cube("Wall_L", new Vector3(-6, 2, 30), new Vector3(8, 4, 1), stoneMat), StoneMetersPerTile);
+            Tile(Cube("Wall_R", new Vector3(6, 2, 30), new Vector3(8, 4, 1), stoneMat), StoneMetersPerTile);
+            Tile(Cube("Lintel", new Vector3(0, 3.5f, 30), new Vector3(4, 1, 1), stoneMat), StoneMetersPerTile);
             var doorHinge = new GameObject("DoorHinge");
             doorHinge.transform.position = new Vector3(-2, 0, 30);
             GameObject doorPanel = Cube("DoorPanel", Vector3.zero, new Vector3(4, 3, 0.3f), doorMat, doorHinge.transform);
             doorPanel.transform.localPosition = new Vector3(2, 1.5f, 0);
+            Tile(doorPanel, DoorMetersPerTile);
             NavMeshObstacle doorObstacle = doorPanel.AddComponent<NavMeshObstacle>();
             doorObstacle.carving = true;
             doorHinge.AddComponent<NavMeshModifier>().ignoreFromBuild = true;
@@ -113,6 +144,75 @@ namespace AdventureGame.EditorTools
             guard.transform.SetPositionAndRotation(new Vector3(3.5f, 1f, 28.5f), Quaternion.Euler(0, 180, 0));
             guard.GetComponent<Renderer>().sharedMaterial = guardMat;
             GuardNPC guardNpc = guard.AddComponent<GuardNPC>();
+
+            // ---------- Harita duvarları (uçurum tarafı AÇIK) ----------
+            Material wallMat = AssetDatabase.LoadAssetAtPath<Material>(WallMaterialPath) ?? stoneMat; // Ömer'in Wall.mat'ı, yoksa taş
+            var walls = new GameObject("Walls");
+            Tile(Cube("Wall_A_Left", new Vector3(-10.5f, 1.5f, 0), new Vector3(1, 3, 21), wallMat, walls.transform), StoneMetersPerTile);
+            Tile(Cube("Wall_A_Right", new Vector3(10.5f, 1.5f, 0), new Vector3(1, 3, 21), wallMat, walls.transform), StoneMetersPerTile);
+            Tile(Cube("Wall_A_Back", new Vector3(0, 1.5f, -10.5f), new Vector3(22, 3, 1), wallMat, walls.transform), StoneMetersPerTile);
+            Tile(Cube("Wall_B_Left", new Vector3(-10.5f, 1.5f, 27), new Vector3(1, 3, 21), wallMat, walls.transform), StoneMetersPerTile);
+            Tile(Cube("Wall_B_Right", new Vector3(10.5f, 1.5f, 27), new Vector3(1, 3, 21), wallMat, walls.transform), StoneMetersPerTile);
+            Tile(Cube("Wall_B_Back", new Vector3(0, 1.5f, 37.5f), new Vector3(22, 3, 1), wallMat, walls.transform), StoneMetersPerTile);
+
+            // ---------- Düşme engelleri (görünmez, Ignore Raycast → NavMesh'e ve yoldaşın görüşüne karışmaz) ----------
+            var barriers = new GameObject("FallBarriers");
+            InvisibleWall("ChasmBarrier_A_Left", new Vector3(-5.75f, 1.5f, 9.8f), new Vector3(8.5f, 3, 0.3f), barriers.transform);
+            InvisibleWall("ChasmBarrier_A_Right", new Vector3(5.75f, 1.5f, 9.8f), new Vector3(8.5f, 3, 0.3f), barriers.transform);
+            InvisibleWall("ChasmBarrier_B_Left", new Vector3(-5.75f, 1.5f, 17.2f), new Vector3(8.5f, 3, 0.3f), barriers.transform);
+            InvisibleWall("ChasmBarrier_B_Right", new Vector3(5.75f, 1.5f, 17.2f), new Vector3(8.5f, 3, 0.3f), barriers.transform);
+            GameObject bridgeGate = InvisibleWall("BridgeGate_A", new Vector3(0, 1.5f, 9.8f), new Vector3(3, 3, 0.3f), barriers.transform);
+            DisableOnActivated gateOpener = bridgeGate.AddComponent<DisableOnActivated>();
+
+            // Köprü korkulukları: köprüyle birlikte döner (BridgePivot'un çocuğu).
+            GameObject railLeft = InvisibleWall("BridgeRail_Left", Vector3.zero, new Vector3(0.2f, 2.6f, 7.4f), bridgePivot.transform);
+            railLeft.transform.localPosition = new Vector3(-1.6f, 1.3f, -3.6f);
+            railLeft.transform.localRotation = Quaternion.identity;
+            GameObject railRight = InvisibleWall("BridgeRail_Right", Vector3.zero, new Vector3(0.2f, 2.6f, 7.4f), bridgePivot.transform);
+            railRight.transform.localPosition = new Vector3(1.6f, 1.3f, -3.6f);
+            railRight.transform.localRotation = Quaternion.identity;
+
+            // Görsel korkuluklar (Ömer'in prefab'ları varsa).
+            PlaceRailingVisuals(bridgePivot.transform);
+
+            // ---------- Bölüm 1 zorlukları ----------
+            // a) Çift kilit: şalter + basınç plakası → köprü.
+            var plate = new GameObject("PressurePlate") { layer = IgnoreRaycastLayer };
+            plate.transform.position = new Vector3(6f, 0f, 8f);
+            BoxCollider plateTrigger = plate.AddComponent<BoxCollider>();
+            plateTrigger.isTrigger = true;
+            plateTrigger.center = new Vector3(0, 0.5f, 0);
+            plateTrigger.size = new Vector3(2f, 1f, 2f);
+            GameObject plateVisual = Cube("PlateVisual", Vector3.zero, new Vector3(1.8f, 0.1f, 1.8f), leverMat, plate.transform, false);
+            plateVisual.transform.localPosition = new Vector3(0, 0.05f, 0);
+            PressurePlate pressurePlate = plate.AddComponent<PressurePlate>();
+            var bridgeLock = new GameObject("BridgeLock");
+            AndGate andGate = bridgeLock.AddComponent<AndGate>();
+
+            // b) Hareketli engel: yoldaşın platform yolunu kesen taş blok.
+            var slideA = new GameObject("SlideA");
+            slideA.transform.position = new Vector3(-2.3f, 0.6f, 6.8f);
+            var slideB = new GameObject("SlideB");
+            slideB.transform.position = new Vector3(-2.3f, 0.6f, 3.6f);
+            GameObject slidingBlock = Cube("SlidingBlock", slideA.transform.position, new Vector3(1.2f, 1.2f, 1.2f), stoneMat);
+            Tile(slidingBlock, StoneMetersPerTile);
+            Rigidbody blockBody = slidingBlock.AddComponent<Rigidbody>();
+            blockBody.isKinematic = true;
+            NavMeshObstacle blockObstacle = slidingBlock.AddComponent<NavMeshObstacle>();
+            blockObstacle.carving = true;
+            blockObstacle.carveOnlyStationary = false;
+            slidingBlock.AddComponent<NavMeshModifier>().ignoreFromBuild = true;
+            SlidingBlock slider = slidingBlock.AddComponent<SlidingBlock>();
+
+            // c) Gizli şalter: başlangıç noktasından şaltere görüşü kapatan tapınak sütunu (kaide + gövde + başlık).
+            var pillar = new GameObject("SightPillar");
+            pillar.transform.position = new Vector3(-3.5f, 0f, 2.2f);
+            GameObject pillarBase = Cube("Base", new Vector3(0, 0.15f, 0), new Vector3(1.6f, 0.3f, 1.6f), stoneMat, pillar.transform);
+            GameObject pillarShaft = Cube("Shaft", new Vector3(0, 2f, 0), new Vector3(1.2f, 3.4f, 1.2f), stoneMat, pillar.transform);
+            GameObject pillarCap = Cube("Capital", new Vector3(0, 3.85f, 0), new Vector3(1.6f, 0.3f, 1.6f), stoneMat, pillar.transform);
+            Tile(pillarBase, StoneMetersPerTile);
+            Tile(pillarShaft, StoneMetersPerTile);
+            Tile(pillarCap, StoneMetersPerTile);
 
             // ---------- Oyuncu ----------
             GameObject player = GameObject.CreatePrimitive(PrimitiveType.Capsule);
@@ -175,6 +275,15 @@ namespace AdventureGame.EditorTools
                 persona = ScriptableObject.CreateInstance<NpcPersona>();
                 AssetDatabase.CreateAsset(persona, PersonaPath);
             }
+            else if (persona.Version < NpcPersona.CurrentVersion)
+            {
+                // Eski persona (tek bilmeceli) → yeni varsayılanlarla güncelle (iki bilmece, deneme hakkı).
+                NpcPersona fresh = ScriptableObject.CreateInstance<NpcPersona>();
+                EditorUtility.CopySerialized(fresh, persona);
+                Object.DestroyImmediate(fresh);
+                EditorUtility.SetDirty(persona);
+                Debug.Log("[SceneBuilder] GuardPersona yeni sürüme güncellendi.");
+            }
 
             // ---------- GameManager ----------
             var managerGo = new GameObject("GameManager");
@@ -191,7 +300,7 @@ namespace AdventureGame.EditorTools
             BuildUi(out DialogueUI dialogueUi, out GameHUD hud);
 
             // ---------- Bağlantılar (Inspector alanları) ----------
-            Set(leverSwitch, "targetBehaviour", bridge);
+            Set(leverSwitch, "targetBehaviour", andGate); // şalter → çift kilit → köprü
             Set(leverSwitch, "handlePivot", handlePivot.transform);
             Set(leverSwitch, "interactionAnchor", leverAnchor.transform);
             SetBool(leverSwitch, "allowPlayer", false);
@@ -202,6 +311,17 @@ namespace AdventureGame.EditorTools
             Set(bridge, "navMeshSurface", surface);
             Set(door, "hinge", doorHinge.transform);
 
+            Set(andGate, "signalBehaviour", pressurePlate);
+            Set(andGate, "targetBehaviour", bridge);
+            Set(pressurePlate, "visual", plateVisual.transform);
+
+            Set(gateOpener, "activatableBehaviour", bridge);
+            SetObjectArray(gateOpener, "collidersToDisable", bridgeGate.GetComponent<Collider>());
+
+            Set(slider, "pointA", slideA.transform);
+            Set(slider, "pointB", slideB.transform);
+
+            Set(guardNpc, "contextProviderBehaviour", manager);
             Set(guardNpc, "persona", persona);
             Set(guardNpc, "llmServiceBehaviour", ollama);
             Set(guardNpc, "dialogueViewBehaviour", dialogueUi);
@@ -229,6 +349,16 @@ namespace AdventureGame.EditorTools
 
             AddListener(obstacleTrigger, manager.NotifyObstacleReached);
             AddListener(goalTrigger, manager.CompleteGame);
+
+            // ---------- Ömer'den gelenler (dosyalar varsa) ----------
+            Material skybox = AssetDatabase.LoadAssetAtPath<Material>(SkyboxPath);
+            if (skybox != null)
+            {
+                RenderSettings.skybox = skybox;
+            }
+
+            PlaceEchoShards(interactableLayer, manager, hud);
+            PlacePauseMenu();
 
             // ---------- Bake & Kaydet ----------
             Physics.SyncTransforms();
@@ -354,9 +484,24 @@ namespace AdventureGame.EditorTools
             TextMeshProUGUI victoryTitle = Text(victory, "Title", "Tebrikler!\n<size=60%>Yankı Tapınağı'nın kapısından geçtin.</size>", 80, TextAlignmentOptions.Center);
             Place(victoryTitle.rectTransform, Center, Center, Center, new Vector2(0, 120), new Vector2(1400, 300));
             Button restart = MakeButton(victory, "RestartButton", "Yeniden Başla");
-            Place((RectTransform)restart.transform, Center, Center, Center, new Vector2(-150, -100), new Vector2(260, 70));
+            Place((RectTransform)restart.transform, Center, Center, Center, new Vector2(-290, -100), new Vector2(260, 70));
+            Button mainMenu = MakeButton(victory, "MainMenuButton", "Ana Menü");
+            Place((RectTransform)mainMenu.transform, Center, Center, Center, new Vector2(0, -100), new Vector2(260, 70));
             Button quit = MakeButton(victory, "QuitButton", "Çıkış");
-            Place((RectTransform)quit.transform, Center, Center, Center, new Vector2(150, -100), new Vector2(260, 70));
+            Place((RectTransform)quit.transform, Center, Center, Center, new Vector2(290, -100), new Vector2(260, 70));
+
+            // Yankı Taşı sayacı ve ipucu paneli (Ömer'in GameHUD alanları gelince bağlanır)
+            TextMeshProUGUI questCounter = Text(hudRoot, "QuestCounterText", "", 26, TextAlignmentOptions.TopRight);
+            Place(questCounter.rectTransform, new Vector2(1, 1), new Vector2(1, 1), new Vector2(1, 1), new Vector2(-30, -80), new Vector2(500, 50));
+            questCounter.color = new Color(0.55f, 0.9f, 1f);
+            RectTransform hintPanel = Rect("HintPanel", hudRoot);
+            Place(hintPanel, Center, Center, Center, new Vector2(0, 160), new Vector2(1100, 180));
+            hintPanel.gameObject.AddComponent<Image>().color = new Color(0.03f, 0.08f, 0.12f, 0.85f);
+            TextMeshProUGUI hintText = Text(hintPanel, "HintText", "", 30, TextAlignmentOptions.Center);
+            hintText.fontStyle = FontStyles.Italic;
+            hintText.color = new Color(0.65f, 0.95f, 1f);
+            Place(hintText.rectTransform, Vector2.zero, Vector2.one, Center, Vector2.zero, new Vector2(-60, -30));
+            hintPanel.gameObject.SetActive(false);
 
             dialogueUi = canvasGo.AddComponent<DialogueUI>();
             Set(dialogueUi, "panelRoot", panel.gameObject);
@@ -379,6 +524,10 @@ namespace AdventureGame.EditorTools
             Set(hud, "victoryPanel", victory.gameObject);
             Set(hud, "restartButton", restart);
             Set(hud, "quitButton", quit);
+            SetIfExists(hud, "mainMenuButton", mainMenu);
+            SetIfExists(hud, "questCounterText", questCounter);
+            SetIfExists(hud, "hintPanel", hintPanel.gameObject);
+            SetIfExists(hud, "hintText", hintText);
 
             panel.gameObject.SetActive(false);
             victory.gameObject.SetActive(false);
@@ -435,7 +584,175 @@ namespace AdventureGame.EditorTools
 
         #endregion
 
+        #region Ömer'in Asset'leri (varsa)
+
+        private static void PlaceRailingVisuals(Transform bridgePivot)
+        {
+            GameObject stoneRailing = AssetDatabase.LoadAssetAtPath<GameObject>(StoneRailingPrefabPath);
+            if (stoneRailing != null)
+            {
+                var root = new GameObject("RailingVisuals");
+                float[] xs = { -9f, -7f, -5f, -3f, 3f, 5f, 7f, 9f };
+                foreach (float z in new[] { 9.8f, 17.2f })
+                {
+                    foreach (float x in xs)
+                    {
+                        var instance = (GameObject)PrefabUtility.InstantiatePrefab(stoneRailing);
+                        instance.transform.SetParent(root.transform, false);
+                        instance.transform.SetPositionAndRotation(new Vector3(x, 0f, z), Quaternion.identity);
+                    }
+                }
+            }
+            else
+            {
+                Debug.Log("[SceneBuilder] StoneRailing prefab'ı yok; uçurum kenarında sadece görünmez bariyer var.");
+            }
+
+            GameObject bridgeRailing = AssetDatabase.LoadAssetAtPath<GameObject>(BridgeRailingPrefabPath);
+            if (bridgeRailing != null)
+            {
+                foreach (float side in new[] { -1.6f, 1.6f })
+                {
+                    for (int i = 0; i < 7; i++)
+                    {
+                        var instance = (GameObject)PrefabUtility.InstantiatePrefab(bridgeRailing);
+                        instance.transform.SetParent(bridgePivot, false);
+                        instance.transform.localPosition = new Vector3(side, 0f, -6.8f + i);
+                        instance.transform.localRotation = Quaternion.Euler(0f, 90f, 0f);
+                    }
+                }
+            }
+        }
+
+        private static void PlaceEchoShards(int interactableLayer, GameManager manager, GameHUD hud)
+        {
+            GameObject shardPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(EchoShardPrefabPath);
+            if (shardPrefab == null)
+            {
+                Debug.Log("[SceneBuilder] EchoShard prefab'ı yok; Yankı Taşı parçaları atlandı (kapı kuralı devre dışı).");
+                return;
+            }
+
+            // Parçaların saklandığı ortam objeleri — sadece parçalar varken anlamlı.
+            Material crateMat = AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Wood.mat");
+            Material rockMat = AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Stone.mat");
+            Tile(Cube("ShardCrate", new Vector3(8.5f, 0.5f, -7f), new Vector3(1f, 1f, 1f), crateMat), WoodMetersPerTile);
+            Tile(Cube("ShardRock", new Vector3(-9f, 0.45f, 24f), new Vector3(1.5f, 0.9f, 1.5f), rockMat), StoneMetersPerTile);
+
+            Type collectibleType = FindRuntimeType("AdventureGame.Collectible");
+            Type questType = FindRuntimeType("AdventureGame.CollectionQuest");
+
+            var root = new GameObject("EchoShards");
+            var collectibles = new List<Object>();
+
+            foreach (var spot in ShardSpots)
+            {
+                var instance = (GameObject)PrefabUtility.InstantiatePrefab(shardPrefab);
+                instance.name = spot.name;
+                instance.layer = interactableLayer;
+                instance.transform.SetParent(root.transform, false);
+                instance.transform.position = spot.position;
+
+                Component collectible = collectibleType != null ? instance.GetComponent(collectibleType) : null;
+                if (collectible == null)
+                {
+                    Debug.LogWarning($"[SceneBuilder] {spot.name}: Collectible bileşeni bulunamadı.");
+                    continue;
+                }
+
+                if (spot.companionOnly)
+                {
+                    SetBool(collectible, "allowPlayer", false);
+                    SetBool(collectible, "allowAICompanion", true);
+                }
+
+                collectibles.Add(collectible);
+            }
+
+            if (questType == null)
+            {
+                Debug.LogWarning("[SceneBuilder] CollectionQuest sınıfı yok; parçalar yerleşti ama görev bağlanmadı.");
+                return;
+            }
+
+            var questGo = new GameObject("EchoStoneQuest");
+            Component quest = questGo.AddComponent(questType);
+            SetObjectArray(quest, "collectibles", collectibles.ToArray());
+            SetIfExists(quest, "hintData", AssetDatabase.LoadAssetAtPath<ScriptableObject>(QuestHintAssetPath));
+            Set(manager, "collectionQuestBehaviour", quest);
+            SetIfExists(hud, "questBehaviour", quest);
+        }
+
+        private static void PlacePauseMenu()
+        {
+            GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(PauseMenuPrefabPath);
+            GameObject canvas = GameObject.Find("Canvas");
+            if (prefab == null || canvas == null)
+            {
+                return;
+            }
+
+            var instance = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
+            instance.transform.SetParent(canvas.transform, false);
+        }
+
+        private static Type FindRuntimeType(string fullName)
+        {
+            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                Type type = assembly.GetType(fullName, false);
+                if (type != null) return type;
+            }
+
+            return null;
+        }
+
+        #endregion
+
         #region Yardımcılar
+
+        /// <summary>Texture'ı objenin gerçek boyutuna göre döşer (uzamayı önler).</summary>
+        private static GameObject Tile(GameObject go, float metersPerTile)
+        {
+            if (!go.TryGetComponent(out WorldSpaceUV tiler))
+            {
+                tiler = go.AddComponent<WorldSpaceUV>();
+            }
+            tiler.MetersPerTile = metersPerTile;
+            return go;
+        }
+
+        /// <summary>Gölgeli güneş ışığı, gökyüzünden ortam ışığı ve hafif sis → daha derinlikli görüntü.</summary>
+        private static void ConfigureLighting()
+        {
+            Light sun = Object.FindAnyObjectByType<Light>();
+            if (sun != null && sun.type == LightType.Directional)
+            {
+                sun.transform.rotation = Quaternion.Euler(48f, -35f, 0f);
+                sun.color = new Color(1f, 0.94f, 0.84f);
+                sun.intensity = 1.15f;
+                sun.shadows = LightShadows.Soft;
+                sun.shadowStrength = 0.85f;
+            }
+
+            RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Skybox;
+            RenderSettings.ambientIntensity = 1f;
+            RenderSettings.fog = true;
+            RenderSettings.fogMode = FogMode.ExponentialSquared;
+            RenderSettings.fogDensity = 0.012f;
+            RenderSettings.fogColor = new Color(0.62f, 0.66f, 0.70f);
+        }
+
+        /// <summary>Görünmez, trigger olmayan çarpışma duvarı (Ignore Raycast katmanı).</summary>
+        private static GameObject InvisibleWall(string name, Vector3 position, Vector3 scale, Transform parent)
+        {
+            var go = new GameObject(name) { layer = IgnoreRaycastLayer };
+            go.transform.SetParent(parent, false);
+            go.transform.localPosition = position;
+            go.transform.localScale = scale;
+            go.AddComponent<BoxCollider>();
+            return go;
+        }
 
         /// <summary>
         /// Build Settings sahne listesini KORUR (Ömer'in MainMenu'sü 0. sırada kalır);
@@ -519,6 +836,31 @@ namespace AdventureGame.EditorTools
             SerializedProperty p = Prop(target, field, out SerializedObject so);
             if (p == null) return;
             p.objectReferenceValue = value;
+            so.ApplyModifiedPropertiesWithoutUndo();
+        }
+
+        /// <summary>Alan varsa bağlar, yoksa sessizce geçer (Ömer'in henüz eklemediği alanlar için).</summary>
+        private static bool SetIfExists(Object target, string field, Object value)
+        {
+            var so = new SerializedObject(target);
+            SerializedProperty p = so.FindProperty(field);
+            if (p == null || p.propertyType != SerializedPropertyType.ObjectReference) return false;
+            p.objectReferenceValue = value;
+            so.ApplyModifiedPropertiesWithoutUndo();
+            return true;
+        }
+
+        private static void SetObjectArray(Object target, string field, params Object[] values)
+        {
+            SerializedProperty p = Prop(target, field, out SerializedObject so);
+            if (p == null || !p.isArray) return;
+
+            p.arraySize = values.Length;
+            for (int i = 0; i < values.Length; i++)
+            {
+                p.GetArrayElementAtIndex(i).objectReferenceValue = values[i];
+            }
+
             so.ApplyModifiedPropertiesWithoutUndo();
         }
 

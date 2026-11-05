@@ -25,7 +25,8 @@ namespace AdventureGame
         [Header("Model")]
         [Tooltip("Önce terminalde: ollama pull <model>")]
         [SerializeField] private string model = "qwen2.5:7b";
-        [SerializeField, Range(0f, 2f)] private float temperature = 0.6f;
+        [Tooltip("Düşük değer = daha tutarlı yanıt ve daha az cevap sızıntısı (0.6'da sızıntı gözlendi).")]
+        [SerializeField, Range(0f, 2f)] private float temperature = 0.4f;
         [SerializeField, Range(32, 2048)] private int maxTokens = 300;
         [SerializeField] private string keepAlive = "10m";
 

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 
 namespace AdventureGame
@@ -12,7 +13,9 @@ namespace AdventureGame
     ///   1) Boş/null kontrolü
     ///   2) ```json ... ``` kod bloklarını ve JSON dışı ön/son metni temizleme
     ///   3) try-catch ile JSON ayrıştırma (bozuk JSON oyunu çökertmez)
-    ///   4) "action" değerini BEYAZ LİSTEYE göre eşleme; bilinmeyen değer → None (güvenli varsayılan)
+    ///   4) Her alan TÜRÜNE göre okunur: "response" metin olmalı; boolean alanlar yanlış türdeyse false
+    ///   5) "action" BEYAZ LİSTEYE göre eşlenir; bilinmeyen değer → None (güvenli varsayılan)
+    ///   6) "tone" beyaz listeye göre eşlenir; eksik/bilinmeyen → Neutral
     /// </summary>
     public static class NpcDecisionParser
     {
@@ -46,10 +49,10 @@ namespace AdventureGame
                 return false;
             }
 
-            NpcLLMResponseDto dto;
+            JObject root;
             try
             {
-                dto = JsonConvert.DeserializeObject<NpcLLMResponseDto>(json);
+                root = JToken.Parse(json) as JObject;
             }
             catch (JsonException exception)
             {
@@ -62,19 +65,27 @@ namespace AdventureGame
                 return false;
             }
 
-            if (dto == null)
+            if (root == null)
             {
-                error = "JSON 'null' olarak çözüldü.";
+                error = "JSON bir nesne değil.";
                 return false;
             }
 
-            NpcAction action = MapAction(dto.Action, out bool isKnownAction);
-            if (!isKnownAction)
+            JToken responseToken = root["response"];
+            if (responseToken != null && responseToken.Type != JTokenType.String && responseToken.Type != JTokenType.Null)
             {
-                Debug.LogWarning($"[NpcDecisionParser] Bilinmeyen aksiyon '{dto.Action}' → güvenli varsayılan 'none' uygulandı.");
+                error = "'response' alanı metin değil.";
+                return false;
             }
 
-            string dialogue = dto.Response?.Trim();
+            string rawAction = root["action"]?.Type == JTokenType.String ? (string)root["action"] : null;
+            NpcAction action = MapAction(rawAction, out bool isKnownAction);
+            if (!isKnownAction)
+            {
+                Debug.LogWarning($"[NpcDecisionParser] Bilinmeyen aksiyon '{rawAction}' → güvenli varsayılan 'none' uygulandı.");
+            }
+
+            string dialogue = (responseToken?.Type == JTokenType.String ? (string)responseToken : null)?.Trim();
             if (string.IsNullOrEmpty(dialogue))
             {
                 if (action == NpcAction.None)
@@ -86,8 +97,40 @@ namespace AdventureGame
                 dialogue = EmptyDialogueFallback;
             }
 
-            decision = new NpcDecision(dialogue, action);
+            bool riddleSolved = ReadBool(root["riddle_solved"]);
+            bool isAnswerAttempt = ReadBool(root["is_answer_attempt"]);
+
+            PlayerTone tone = ReadTone(root["tone"]);
+
+            decision = new NpcDecision(dialogue, action, riddleSolved, isAnswerAttempt, tone);
             return true;
+        }
+
+        /// <summary>true/false boolean'ı veya "true"/"false" metnini okur; başka her şey → false.</summary>
+        private static bool ReadBool(JToken token)
+        {
+            if (token == null) return false;
+
+            switch (token.Type)
+            {
+                case JTokenType.Boolean:
+                    return (bool)token;
+                case JTokenType.String:
+                    return bool.TryParse((string)token, out bool parsed) && parsed;
+                default:
+                    return false;
+            }
+        }
+
+        /// <summary>"polite"/"rude"/"neutral" metnini okur (büyük/küçük harf önemsiz); başka her şey → Neutral.</summary>
+        private static PlayerTone ReadTone(JToken token)
+        {
+            if (token == null || token.Type != JTokenType.String) return PlayerTone.Neutral;
+
+            string raw = ((string)token).Trim();
+            if (string.Equals(raw, NpcResponseSchema.TonePolite, StringComparison.OrdinalIgnoreCase)) return PlayerTone.Polite;
+            if (string.Equals(raw, NpcResponseSchema.ToneRude, StringComparison.OrdinalIgnoreCase)) return PlayerTone.Rude;
+            return PlayerTone.Neutral;
         }
 
         /// <summary>Metindeki ilk '{' ile son '}' arasını alır; kod bloğu işaretlerini temizler.</summary>

@@ -62,6 +62,21 @@ Erdem uçurum kenarına ve köprünün iki yanına **görünmez 3 m'lik çarpı�
 - [ ] Kontrol: `Main.unity`'ye geçici olarak birkaç tane koyup bak → **kaydetmeden kapat**.
 - [ ] PR → Erdem'e: "Korkuluk prefab'ları hazır: `StoneRailing`, `BridgeRailing`."
 
+### 1.8 Texture kalitesi (YENİ — oyun içinde "kötü görünüyor" geri bildirimi)
+**Erdem'in yaptığı (bilgin olsun):** Sahnedeki zemin, duvar, platform, köprü, kapı ve sütunlara `WorldSpaceUV` bileşeni eklendi. Texture artık objenin **gerçek boyutuna göre metre başına** döşeniyor (21 m duvarda taş deseni 10 m'ye uzamıyor). Bu objelerde **materyaldeki Tiling değeri yok sayılır**; yoğunluk sahnede ayarlanıyor (zemin 2.5 m, taş 1.5 m, ahşap 1.2 m, kapı 3 m başına bir desen). Ayrıca gölgeli ışık, gökyüzünden ortam ışığı ve hafif sis eklendi.
+
+**Senin yapacakların** (dal: `omer/texture-kalite`):
+- [ ] **Çözünürlük:** zemin ve taş/duvar için **2K** sürümlerini indir (şu an 1K → yakından bulanık). Ahşap/metal 1K kalabilir. Boyut sınırı yine 2K (LFS kotası).
+- [ ] **Import ayarları** (her `_Color` texture'ı seç → Inspector):
+  - **Aniso Level: 8** (zemine eğik bakınca bulanıklığı en çok düzelten ayar; şu an 4)
+  - Max Size: 2048, Compression: **High Quality**
+  - `_NormalGL` dosyaları: Texture Type **Normal map**
+- [ ] **Materyal ayarları:** Normal Map şiddeti 1–1.5; Smoothness taş 0.15–0.25, ahşap 0.25; Occlusion bağlı olsun.
+- [ ] **Uyum:** zemin, taş ve ahşap aynı ışık/renk tonunda olsun (biri çok parlak biri çok koyu olmasın). Gerekirse Albedo rengini hafif gri/sıcak ton yap.
+- [ ] **`Wall.mat`** (1.6): ayrı, biraz daha koyu/yosunlu taş — duvarlar platformdan ayırt edilsin. Tiling'i 1,1 bırak (yoğunluğu `WorldSpaceUV` belirliyor).
+- [ ] Desen boyutu sana göre büyük/küçükse Erdem'e "taş 1.2 m olsun" gibi **metre değerini** söyle; sahnede o değiştirir.
+- [ ] Oyunda bakıp karşılaştırmalı iki ekran görüntüsü al (önce/sonra) → rapor için.
+
 ---
 
 ## Adım 2 — Ana Menü 🟡 (kod hazır, eksikler var)
@@ -265,6 +280,7 @@ Dal: `omer/readme`
 | Skybox materyali `TempleSky.mat` | Ömer → Erdem | ✅ main'de, sahneye Erdem atayacak |
 | **`Wall.mat`** | Ömer → Erdem | 1. gün |
 | **`StoneRailing` / `BridgeRailing` prefab'ları** | Ömer → Erdem | 2. gün |
+| **2K texture + import/materyal kalite ayarları** | Ömer | 2. gün |
 | Ana menü sahnesi + Build Settings | Ömer | 1. gün |
 | **`EchoShard` prefab + `Collectible` + `CollectionQuest` + `QuestHintData` + HUD sayaç/ipucu** | Ömer → Erdem | 3. gün |
 | Parçaları sahneye yerleştirme, kapıya bağlama, testler | Erdem | 4. gün |
