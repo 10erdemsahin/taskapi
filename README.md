@@ -10,7 +10,7 @@ Unity 6 (C#) · NavMesh tabanlı otonom yoldaş · Yerel LLM (Ollama) destekli N
 | **Unity** | 6000.6.7f1 (Built-in Render Pipeline) |
 | **Yerel model** | `qwen2.5:7b` (Ollama) |
 
-<!-- TODO (teslimden önce): kapak görseli → Docs/Images/01_menu.png -->
+![Yankı Tapınağı — ana menü](Docs/Images/01_menu.png)
 
 ## İçindekiler
 1. [Giriş](#1-giriş)
@@ -483,17 +483,27 @@ Betik: [Docs/Tests/llm_diyalog_testleri.ps1](Docs/Tests/llm_diyalog_testleri.ps1
 
 ## 10. Ekran Görüntüleri
 
-<!-- TODO (teslimden önce): Görselleri Docs/Images/ altına ekleyip aşağıdaki listeyi resim galerisine çevirin, ör. ![Ana menü](Docs/Images/01_menu.png) -->
-| # | Görüntü | Dosya |
-|---|---|---|
-| 1 | Ana menü | `Docs/Images/01_menu.png` *(eklenecek)* |
-| 2 | Bölüm 1: uçurum ve kalkık köprü | `Docs/Images/02_ucurum.png` *(eklenecek)* |
-| 3 | Robo platforma zıplarken (Scene görünümünde Raycast çizgileri) | `Docs/Images/03_robo.png` *(eklenecek)* |
-| 4 | Muhafızla sohbet + "düşünüyor..." göstergesi | `Docs/Images/04_sohbet.png` *(eklenecek)* |
-| 5 | Kapı açılırken | `Docs/Images/05_kapi.png` *(eklenecek)* |
-| 6 | Zafer ekranı | `Docs/Images/06_zafer.png` *(eklenecek)* |
-| 7 | Ollama kapalıyken hata mesajı | `Docs/Images/07_ollama_kapali.png` *(eklenecek)* |
-| 8 | Test Runner, tüm testler yeşil | `Docs/Images/08_testler.png` *(eklenecek)* |
+### Ana menü
+Canlı arka plan: tapınağın etrafında yavaşça dönen kamera, ambientCG texture'ları ve TempleSky gökyüzü.
+
+![Ana menü](Docs/Images/01_menu.png)
+
+### Bölüm 2: Muhafız Kaan ile sohbet
+Oyuncu bilmecenin cevabını yazdı. Model `{"action": "open_door"}` döndürdü, `GameManager` kuralı doğruladı ve kapı açıldı. Sağ üstte LLM bağlantı durumu yeşil: "Bağlı (qwen2.5:7b)".
+
+![Muhafızla sohbet ve kapının açılması](Docs/Images/04_sohbet_kapi.png)
+
+### Zafer ekranı
+
+![Zafer ekranı](Docs/Images/06_zafer.png)
+
+| Henüz eklenmeyen | Dosya |
+|---|---|
+| Bölüm 1: uçurum ve kalkık köprü | `Docs/Images/02_ucurum.png` |
+| Robo platforma zıplarken / şalteri çekerken | `Docs/Images/03_robo.png` |
+| "Muhafız Kaan düşünüyor..." göstergesi | `Docs/Images/05_dusunuyor.png` |
+| Ollama kapalıyken hata mesajı | `Docs/Images/07_ollama_kapali.png` |
+| Test Runner, tüm testler yeşil (Erdem) | `Docs/Images/08_testler.png` |
 
 ---
 
