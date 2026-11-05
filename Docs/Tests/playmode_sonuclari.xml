@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="22" result="Skipped:Ignored" total="22" passed="21" failed="0" inconclusive="0" skipped="1" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-05 17:47:29Z" end-time="2026-11-05 17:47:54Z" duration="24,5364059">
+  <test-suite type="TestSuite" id="1031" name="UnityProject" fullname="UnityProject" runstate="Runnable" testcasecount="22" result="Skipped" label="Ignored" start-time="2026-11-05 17:47:29Z" end-time="2026-11-05 17:47:54Z" duration="24.536406" total="22" passed="21" failed="0" inconclusive="0" skipped="1" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <reason>
+      <message><![CDATA[One or more child tests were ignored]]></message>
+    </reason>
+    <test-suite type="Assembly" id="1027" name="AdventureGame.Tests.dll" fullname="C:/Projeler/taskapi/Library/ScriptAssemblies/AdventureGame.Tests.dll" runstate="Runnable" testcasecount="22" result="Skipped" label="Ignored" start-time="2026-11-05 17:47:29Z" end-time="2026-11-05 17:47:54Z" duration="24.526833" total="22" passed="21" failed="0" inconclusive="0" skipped="1" asserts="0">
+      <properties>
+        <property name="_PID" value="28308" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <reason>
+        <message><![CDATA[One or more child tests were ignored]]></message>
+      </reason>
+      <test-suite type="TestSuite" id="1028" name="AdventureGame" fullname="AdventureGame" runstate="Runnable" testcasecount="22" result="Skipped" label="Ignored" start-time="2026-11-05 17:47:29Z" end-time="2026-11-05 17:47:54Z" duration="24.525869" total="22" passed="21" failed="0" inconclusive="0" skipped="1" asserts="0">
+        <properties />
+        <reason>
+          <message><![CDATA[One or more child tests were ignored]]></message>
+        </reason>
+        <test-suite type="TestSuite" id="1029" name="Tests" fullname="AdventureGame.Tests" runstate="Runnable" testcasecount="22" result="Skipped" label="Ignored" start-time="2026-11-05 17:47:29Z" end-time="2026-11-05 17:47:54Z" duration="24.525355" total="22" passed="21" failed="0" inconclusive="0" skipped="1" asserts="0">
+          <properties />
+          <reason>
+            <message><![CDATA[One or more child tests were ignored]]></message>
+          </reason>
+          <test-suite type="TestFixture" id="1001" name="GameFlowTests" fullname="AdventureGame.Tests.GameFlowTests" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" testcasecount="7" result="Skipped" label="Ignored" start-time="2026-11-05 17:47:29Z" end-time="2026-11-05 17:47:54Z" duration="24.513290" total="7" passed="6" failed="0" inconclusive="0" skipped="1" asserts="0">
+            <properties />
+            <reason>
+              <message><![CDATA[One or more child tests were ignored]]></message>
+            </reason>
+            <test-case id="1002" name="Bolum1_KopruKalkikken_KarsiyaNavMeshYoluYok_AmaPlatformaLinkVar" fullname="AdventureGame.Tests.GameFlowTests.Bolum1_KopruKalkikken_KarsiyaNavMeshYoluYok_AmaPlatformaLinkVar" methodname="Bolum1_KopruKalkikken_KarsiyaNavMeshYoluYok_AmaPlatformaLinkVar" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="1543436830" result="Passed" start-time="2026-11-05 17:47:29Z" end-time="2026-11-05 17:47:29Z" duration="0.444913" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1004" name="Bolum1_UcurumaDusenOyuncu_BaslangicaIsinlanir" fullname="AdventureGame.Tests.GameFlowTests.Bolum1_UcurumaDusenOyuncu_BaslangicaIsinlanir" methodname="Bolum1_UcurumaDusenOyuncu_BaslangicaIsinlanir" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="590197362" result="Passed" start-time="2026-11-05 17:47:29Z" end-time="2026-11-05 17:47:30Z" duration="0.949778" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1003" name="Bolum1_Yoldas_SensorleSalteriBulur_NavMeshIleTirmanir_KopruyuIndirir" fullname="AdventureGame.Tests.GameFlowTests.Bolum1_Yoldas_SensorleSalteriBulur_NavMeshIleTirmanir_KopruyuIndirir" methodname="Bolum1_Yoldas_SensorleSalteriBulur_NavMeshIleTirmanir_KopruyuIndirir" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="251067800" result="Passed" start-time="2026-11-05 17:47:30Z" end-time="2026-11-05 17:47:38Z" duration="7.763195" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[[Robo] Çevreyi tarıyorum...
+[Robo] Lever görüyorum! Oraya gidiyorum.
+[Robo] Platforma zıplıyorum!
+[Robo] Lever çalıştırıldı! Yol açılıyor.
+[TEST] Yoldaş raporları: Çevreyi tarıyorum... | Lever görüyorum! Oraya gidiyorum. | Platforma zıplıyorum! | Lever çalıştırıldı! Yol açılıyor.
+[TEST] Yoldaşın ulaştığı en yüksek nokta: 4,27
+]]></output>
+            </test-case>
+            <test-case id="1008" name="Bolum2_GercekOllamaServisi_SunucuYokken_GuvenliHataDoner_FrameBloklanmaz" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_GercekOllamaServisi_SunucuYokken_GuvenliHataDoner_FrameBloklanmaz" methodname="Bolum2_GercekOllamaServisi_SunucuYokken_GuvenliHataDoner_FrameBloklanmaz" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="952549575" result="Skipped" label="Ignored" start-time="2026-11-05 17:47:38Z" end-time="2026-11-05 17:47:38Z" duration="0.247756" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <reason>
+                <message><![CDATA[Ollama çalışıyor; bu test yalnızca sunucu kapalıyken anlamlı.]]></message>
+              </reason>
+            </test-case>
+            <test-case id="1006" name="Bolum2_MockLLM_DogruCevap_KapiyiAcar_OyunTamamlanir" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_MockLLM_DogruCevap_KapiyiAcar_OyunTamamlanir" methodname="Bolum2_MockLLM_DogruCevap_KapiyiAcar_OyunTamamlanir" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="322955104" result="Passed" start-time="2026-11-05 17:47:38Z" end-time="2026-11-05 17:47:44Z" duration="5.281335" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1005" name="Bolum2_MockLLM_TumHataModlarinda_OyunCokmez_KapiKapaliKalir" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_MockLLM_TumHataModlarinda_OyunCokmez_KapiKapaliKalir" methodname="Bolum2_MockLLM_TumHataModlarinda_OyunCokmez_KapiKapaliKalir" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="1555911380" result="Passed" start-time="2026-11-05 17:47:44Z" end-time="2026-11-05 17:47:51Z" duration="7.176408" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[[GuardNPC] LLM hatası (ConnectionFailed): Mock: sunucu kapalı.
+[TEST] Offline: OK
+[GuardNPC] LLM hatası (Timeout): Mock: zaman aşımı.
+[TEST] Timeout: OK
+[GuardNPC] LLM hatası (InvalidResponse): Yanıtta bir JSON nesnesi bulunamadı.
+[TEST] InvalidJson: OK
+[GuardNPC] LLM hatası (InvalidResponse): LLM boş içerik döndürdü.
+[TEST] EmptyResponse: OK
+[NpcDecisionParser] Bilinmeyen aksiyon 'explode_door' → güvenli varsayılan 'none' uygulandı.
+[TEST] UnknownAction: OK
+[TEST] AlwaysRefuse: OK
+InvalidOperationException: Mock: beklenmeyen istisna.
+AdventureGame.MockLLMService.GenerateAsync (AdventureGame.LLMRequest request, System.Threading.CancellationToken cancellationToken) (at Assets/Scripts/LLM/MockLLMService.cs:66)
+AdventureGame.GuardNPC.HandlePlayerMessageAsync (System.String rawMessage) (at Assets/Scripts/NPC/GuardNPC.cs:234)
+UnityEngine.Debug:LogException(Exception, Object)
+AdventureGame.<HandlePlayerMessageAsync>d__38:MoveNext() (at Assets/Scripts/NPC/GuardNPC.cs:268)
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1:SetException(Exception)
+AdventureGame.<GenerateAsync>d__8:MoveNext() (at Assets/Scripts/LLM/MockLLMService.cs:72)
+UnityEngine.UnitySynchronizationContext:ExecuteTasks()
+
+[GuardNPC] LLM hatası (Unknown): Mock: beklenmeyen istisna.
+[TEST] ThrowException: OK
+]]></output>
+            </test-case>
+            <test-case id="1007" name="Bolum2_YanlisAsamadaOpenDoor_GameManagerTarafindanReddedilir" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_YanlisAsamadaOpenDoor_GameManagerTarafindanReddedilir" methodname="Bolum2_YanlisAsamadaOpenDoor_GameManagerTarafindanReddedilir" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="33715154" result="Passed" start-time="2026-11-05 17:47:51Z" end-time="2026-11-05 17:47:54Z" duration="2.634217" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA['OpenDoor' aksiyonu PhysicalObstacle aşamasında geçersiz; reddedildi.
+]]></output>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1009" name="ParserTests" fullname="AdventureGame.Tests.ParserTests" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-11-05 17:47:54Z" end-time="2026-11-05 17:47:54Z" duration="0.010563" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="ParameterizedMethod" id="1026" name="BozukJson_IstisnaFirlatmaz_FalseDoner" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-11-05 17:47:54Z" end-time="2026-11-05 17:47:54Z" duration="0.006148" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1018" name="BozukJson_IstisnaFirlatmaz_FalseDoner(null)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(null)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="285538687" result="Passed" start-time="2026-11-05 17:47:54Z" end-time="2026-11-05 17:47:54Z" duration="0.002400" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1019" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;&quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;&quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="227335067" result="Passed" start-time="2026-11-05 17:47:54Z" end-time="2026-11-05 17:47:54Z" duration="0.000081" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1020" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;   &quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;   &quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1983521372" result="Passed" start-time="2026-11-05 17:47:54Z" end-time="2026-11-05 17:47:54Z" duration="0.000048" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1021" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;JSON yok, sadece düz metin&quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;JSON yok, sadece düz metin&quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="756441260" result="Passed" start-time="2026-11-05 17:47:54Z" end-time="2026-11-05 17:47:54Z" duration="0.000054" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1022" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;{\&quot;response\&quot;: \&quot;Bozuk json, \&quot;action\&quot;: &quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;{\&quot;response\&quot;: \&quot;Bozuk json, \&quot;action\&quot;: &quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1351075781" result="Passed" start-time="2026-11-05 17:47:54Z" end-time="2026-11-05 17:47:54Z" duration="0.000049" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1023" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;{\&quot;response\&quot;: {\&quot;ic\&quot;: 1}, \&quot;action\&quot;: \&quot;none\&quot;}&quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;{\&quot;response\&quot;: {\&quot;ic\&quot;: 1}, \&quot;action\&quot;: \&quot;none\&quot;}&quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1402748520" result="Passed" start-time="2026-11-05 17:47:54Z" end-time="2026-11-05 17:47:54Z" duration="0.001934" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1024" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;{\&quot;response\&quot;:\&quot;\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}&quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;{\&quot;response\&quot;:\&quot;\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}&quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="2095181280" result="Passed" start-time="2026-11-05 17:47:54Z" end-time="2026-11-05 17:47:54Z" duration="0.000074" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1025" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;null&quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;null&quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="46402562" result="Passed" start-time="2026-11-05 17:47:54Z" end-time="2026-11-05 17:47:54Z" duration="0.000048" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1017" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-05 17:47:54Z" end-time="2026-11-05 17:47:54Z" duration="0.003463" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1010" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Geç.\&quot;,\&quot;action\&quot;:\&quot;open_door\&quot;}&quot;,OpenDoor,&quot;Geç.&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Geç.\&quot;,\&quot;action\&quot;:\&quot;open_door\&quot;}&quot;,OpenDoor,&quot;Geç.&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="2092271027" result="Passed" start-time="2026-11-05 17:47:54Z" end-time="2026-11-05 17:47:54Z" duration="0.000437" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1011" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Hayır.\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}&quot;,None,&quot;Hayır.&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Hayır.\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}&quot;,None,&quot;Hayır.&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1318175339" result="Passed" start-time="2026-11-05 17:47:54Z" end-time="2026-11-05 17:47:54Z" duration="0.000093" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1012" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;```json\n{\&quot;response\&quot;:\&quot;Kod bloğu\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}\n```&quot;,None,&quot;Kod bloğu&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;```json\n{\&quot;response\&quot;:\&quot;Kod bloğu\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}\n```&quot;,None,&quot;Kod bloğu&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="732187557" result="Passed" start-time="2026-11-05 17:47:54Z" end-time="2026-11-05 17:47:54Z" duration="0.000381" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1013" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;Tabii! İşte: {\&quot;response\&quot;:\&quot;Ön metin\&quot;,\&quot;action\&quot;:\&quot;OPEN-DOOR\&quot;} umarım yardımcı olur&quot;,OpenDoor,&quot;Ön metin&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;Tabii! İşte: {\&quot;response\&quot;:\&quot;Ön metin\&quot;,\&quot;action\&quot;:\&quot;OPEN-DOOR\&quot;} umarım yardımcı olur&quot;,OpenDoor,&quot;Ön metin&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1056403620" result="Passed" start-time="2026-11-05 17:47:54Z" end-time="2026-11-05 17:47:54Z" duration="0.000104" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1014" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Patlat\&quot;,\&quot;action\&quot;:\&quot;explode_door\&quot;}&quot;,None,&quot;Patlat&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Patlat\&quot;,\&quot;action\&quot;:\&quot;explode_door\&quot;}&quot;,None,&quot;Patlat&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="2097487065" result="Passed" start-time="2026-11-05 17:47:54Z" end-time="2026-11-05 17:47:54Z" duration="0.000526" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[[NpcDecisionParser] Bilinmeyen aksiyon 'explode_door' → güvenli varsayılan 'none' uygulandı.
+]]></output>
+              </test-case>
+              <test-case id="1015" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Eksik aksiyon\&quot;}&quot;,None,&quot;Eksik aksiyon&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Eksik aksiyon\&quot;}&quot;,None,&quot;Eksik aksiyon&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="407439603" result="Passed" start-time="2026-11-05 17:47:54Z" end-time="2026-11-05 17:47:54Z" duration="0.000417" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[[NpcDecisionParser] Bilinmeyen aksiyon '' → güvenli varsayılan 'none' uygulandı.
+]]></output>
+              </test-case>
+              <test-case id="1016" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;\&quot;,\&quot;action\&quot;:\&quot;open_door\&quot;}&quot;,OpenDoor,&quot;...&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;\&quot;,\&quot;action\&quot;:\&quot;open_door\&quot;}&quot;,OpenDoor,&quot;...&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1620297862" result="Passed" start-time="2026-11-05 17:47:54Z" end-time="2026-11-05 17:47:54Z" duration="0.000093" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:\Users\Asus\AppData\Local\Temp\claude\64244ede8aced731\cad4f385-ee1c-442b-ba70-7d358c33a0a3\scratchpad\playmode_results.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
