@@ -55,10 +55,12 @@ namespace AdventureGame
 
         public GamePhase Phase { get; private set; } = GamePhase.PhysicalObstacle;
         public bool IsInputLocked { get; private set; }
+        public bool IsPaused { get; private set; }
         public string CurrentObjective { get; private set; } = string.Empty;
 
         public event Action<GamePhase> PhaseChanged;
         public event Action<bool> InputLockChanged;
+        public event Action<bool> PausedChanged;
         public event Action<string> ObjectiveChanged;
         public event Action<string> NotificationPosted;
 
@@ -121,6 +123,8 @@ namespace AdventureGame
         {
             if (Instance == this)
             {
+                // Duraklatılmışken sahne değişirse yeni sahne donuk başlamasın.
+                Time.timeScale = 1f;
                 Instance = null;
             }
         }
@@ -186,9 +190,32 @@ namespace AdventureGame
                 return;
             }
 
+            if (IsPaused)
+            {
+                SetPaused(false);
+            }
+
             SetPhase(GamePhase.Completed);
             SetObjective("Tebrikler! Macerayı tamamladın.");
             SetInputLocked(true);
+        }
+
+        /// <summary>
+        /// Duraklatma menüsü (PauseMenuUI) tarafından çağrılır. Oyun zamanını durdurur,
+        /// oyuncu girdisini kilitler ve imleci serbest bırakır. Oyun bittiyse duraklatılamaz.
+        /// UI'de çalışacak animasyonlar Time.unscaledDeltaTime / WaitForSecondsRealtime kullanmalıdır.
+        /// </summary>
+        public void SetPaused(bool paused)
+        {
+            if (paused == IsPaused || (paused && Phase == GamePhase.Completed))
+            {
+                return;
+            }
+
+            IsPaused = paused;
+            Time.timeScale = paused ? 0f : 1f;
+            SetInputLocked(IsPaused || _inDialogue || Phase == GamePhase.Completed);
+            PausedChanged?.Invoke(paused);
         }
 
         public void PostNotification(string message)
@@ -227,7 +254,7 @@ namespace AdventureGame
         private void HandleConversationStateChanged(bool isActive)
         {
             _inDialogue = isActive;
-            SetInputLocked(_inDialogue || Phase == GamePhase.Completed);
+            SetInputLocked(_inDialogue || IsPaused || Phase == GamePhase.Completed);
         }
 
         /// <summary>

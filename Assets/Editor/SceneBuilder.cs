@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using TMPro;
@@ -247,7 +248,7 @@ namespace AdventureGame.EditorTools
 
             EditorSceneManager.MarkSceneDirty(scene);
             EditorSceneManager.SaveScene(scene, ScenePath);
-            EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene(ScenePath, true) };
+            AddSceneToBuildSettings(ScenePath);
             AssetDatabase.SaveAssets();
             Debug.Log("[SceneBuilder] Sahne oluşturuldu: " + ScenePath);
         }
@@ -436,19 +437,44 @@ namespace AdventureGame.EditorTools
 
         #region Yardımcılar
 
+        /// <summary>
+        /// Build Settings sahne listesini KORUR (Ömer'in MainMenu'sü 0. sırada kalır);
+        /// sahne listede yoksa sona ekler, devre dışıysa etkinleştirir.
+        /// </summary>
+        private static void AddSceneToBuildSettings(string scenePath)
+        {
+            var scenes = new List<EditorBuildSettingsScene>(EditorBuildSettings.scenes);
+            int index = scenes.FindIndex(s => s.path == scenePath);
+
+            if (index < 0)
+            {
+                scenes.Add(new EditorBuildSettingsScene(scenePath, true));
+            }
+            else if (!scenes[index].enabled)
+            {
+                scenes[index] = new EditorBuildSettingsScene(scenePath, true);
+            }
+            else
+            {
+                return;
+            }
+
+            EditorBuildSettings.scenes = scenes.ToArray();
+        }
+
         private static Material Mat(string name, Color color)
         {
             string path = $"Assets/Materials/{name}.mat";
             Material material = AssetDatabase.LoadAssetAtPath<Material>(path);
-            if (material == null)
+            if (material != null)
             {
-                Shader shader = Shader.Find("Standard") ?? Shader.Find("Universal Render Pipeline/Lit");
-                material = new Material(shader);
-                AssetDatabase.CreateAsset(material, path);
+                // Materyaller Ömer'in alanında (texture atanmış olabilir): mevcut olana DOKUNMA.
+                return material;
             }
 
-            material.color = color;
-            EditorUtility.SetDirty(material);
+            Shader shader = Shader.Find("Standard") ?? Shader.Find("Universal Render Pipeline/Lit");
+            material = new Material(shader) { color = color };
+            AssetDatabase.CreateAsset(material, path);
             return material;
         }
 

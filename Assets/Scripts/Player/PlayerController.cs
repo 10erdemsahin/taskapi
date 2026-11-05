@@ -39,6 +39,17 @@ namespace AdventureGame
             {
                 cameraPivot = Camera.main.transform;
             }
+
+            // Ana menü / duraklatma menüsündeki ayar (GameSettings.SensitivityKey ile aynı anahtar).
+            mouseSensitivity = PlayerPrefs.GetFloat(MouseSensitivityKey, mouseSensitivity);
+        }
+
+        public const string MouseSensitivityKey = "MouseSensitivity";
+
+        /// <summary>Duraklatma menüsünden hassasiyeti oyun sırasında anında değiştirmek için.</summary>
+        public void SetMouseSensitivity(float value)
+        {
+            mouseSensitivity = Mathf.Max(0.01f, value);
         }
 
         private void Start()
