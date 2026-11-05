@@ -13,7 +13,11 @@ Textures/Stone/           | Bricks113A  | https://ambientcg.com/view?id=Bricks11
 Textures/Wood/            | Planks037A  | https://ambientcg.com/view?id=Planks037A     | Materials/Wood.mat    (köprü, tiling 1x3)
 Textures/Door/            | Rock063     | https://ambientcg.com/view?id=Rock063        | Materials/Door.mat    (taş kapı)
 Textures/Metal/           | Metal021    | https://ambientcg.com/view?id=Metal021       | Materials/Lever.mat   (paslı şalter kolu)
+Textures/Characters/Player/    | Fabric061       | https://ambientcg.com/view?id=Fabric061       | Materials/Player.mat    (kaba kumaş, hafif mavi ton, tiling 2x2)
+Textures/Characters/Companion/ | PaintedMetal006 | https://ambientcg.com/view?id=PaintedMetal006 | Materials/Companion.mat (yeşil boyalı paslı metal — Robo)
+Textures/Characters/Guard/     | Leather034C     | https://ambientcg.com/view?id=Leather034C     | Materials/Guard.mat     (dikişli koyu deri, hafif kırmızı ton, tiling 2x2)
+Textures/Ceiling/              | WoodSiding008   | https://ambientcg.com/view?id=WoodSiding008   | Materials/Ceiling.mat   (yosunlu çivili tahta — tapınak tavanı, tiling 4x4)
 
 Skybox/TempleSky.mat — Unity'nin yerleşik Skybox/Procedural shader'ı ile hazırlandı (harici asset yok).
 
-İndirme tarihi: 2026-11-05 — Ömer
+İndirme tarihi: 2026-11-05 (ortam), 2026-11-06 (karakterler, tavan) — Ömer
