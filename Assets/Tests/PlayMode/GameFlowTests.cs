@@ -325,6 +325,18 @@ namespace AdventureGame.Tests
             Assert.IsFalse(_door.IsOpen);
         }
 
+        [Test]
+        public void Bolum2_SahnedekiPersona_GuncelKurallarlaUyumlu()
+        {
+            // Mock testleri prompt'u okumaz; eski bir persona asset'i gerçek Ollama'ya tek bilmeceli kural gönderirdi.
+            var persona = TestUtil.GetField<NpcPersona>(_guard, "persona");
+            Assert.NotNull(persona);
+            Assert.AreEqual(2, persona.RiddleCount);
+            StringAssert.Contains("iki bilmecemi", persona.Greeting.ToLowerInvariant(), "Selamlama iki bilmeceden söz etmeli");
+            StringAssert.Contains("riddle_solved", persona.SystemPrompt);
+            StringAssert.Contains("tone", persona.SystemPrompt);
+        }
+
         [UnityTest]
         public IEnumerator Bolum2_GuvenDusukken_BilmecelerCozulseBileKapiAcilmaz_KonustukcaAcilir()
         {
