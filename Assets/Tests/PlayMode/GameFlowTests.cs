@@ -91,6 +91,9 @@ namespace AdventureGame.Tests
         [UnityTest]
         public IEnumerator Bolum1_Yoldas_SalteriCeker_OyuncuPlakada_KopruIner()
         {
+            // Bu test [F] akışını ölçer: otonom tarama, yoldaş oyuncuya yetişirken görevi önceden başlatmasın.
+            TestUtil.SetField(_companion, "autoSolveWhenSeen", false);
+
             var states = new List<CompanionState>();
             var reports = new List<string>();
             _companion.StateChanged += states.Add;
@@ -145,6 +148,8 @@ namespace AdventureGame.Tests
         [UnityTest]
         public IEnumerator Bolum1_KopruIndiktenSonra_YoldasYineCagrilabilir()
         {
+            // Otonom tarama kapalı: yoldaş köprü inerken kendiliğinden göreve başlayıp [F]'yi "meşgul" ile reddetmesin.
+            TestUtil.SetField(_companion, "autoSolveWhenSeen", false);
             yield return LowerBridge();
 
             var states = new List<CompanionState>();
