@@ -709,9 +709,10 @@ Ollama kapatıldıktan sonra muhafızla konuşuldu. Oyun **çökmedi** ve donmad
 
 ![Muhafızla sohbet ve kapının açılması (editör)](Docs/Images/04_sohbet_kapi.png)
 
-| Henüz eklenmeyen | Dosya |
-|---|---|
-| Test Runner, tüm testler yeşil | `Docs/Images/08_testler.png` |
+### Test Runner: PlayMode testleri
+Unity Test Runner, PlayMode sekmesi: 79 test, **78 geçti, 0 başarısız, 1 atlandı** (gerçek Ollama testi, Ollama açıkken bilerek atlanır). Ayrıntılar için bkz. 9. bölüm.
+
+![Test Runner: 78 test geçti](Docs/Images/08_testler.png)
 
 ---
 
