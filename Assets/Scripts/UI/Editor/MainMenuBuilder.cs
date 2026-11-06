@@ -24,13 +24,13 @@ namespace AdventureGame.EditorTools
         public const string ScenePath = "Assets/Scenes/MainMenu.unity";
         private const string GameScenePath = "Assets/Scenes/Main.unity";
         private const string SkyboxPath = "Assets/Art/Skybox/TempleSky.mat";
-        private const int UiLayer = 5;
+        internal const int UiLayer = 5;
 
-        private static readonly Vector2 Center = new Vector2(0.5f, 0.5f);
-        private static readonly Color ButtonColor = new Color(0.36f, 0.27f, 0.16f, 0.92f);
-        private static readonly Color ButtonHighlight = new Color(0.55f, 0.42f, 0.24f, 1f);
-        private static readonly Color PanelColor = new Color(0.06f, 0.05f, 0.04f, 0.82f);
-        private static readonly Color Gold = new Color(0.96f, 0.84f, 0.55f);
+        internal static readonly Vector2 Center = new Vector2(0.5f, 0.5f);
+        internal static readonly Color ButtonColor = new Color(0.36f, 0.27f, 0.16f, 0.92f);
+        internal static readonly Color ButtonHighlight = new Color(0.55f, 0.42f, 0.24f, 1f);
+        internal static readonly Color PanelColor = new Color(0.06f, 0.05f, 0.04f, 0.82f);
+        internal static readonly Color Gold = new Color(0.96f, 0.84f, 0.55f);
 
         private const string HowToText =
             "<b>Hikâye</b>\n" +
@@ -78,7 +78,7 @@ namespace AdventureGame.EditorTools
 
         #region Arka plan (3B tapınak + dönen kamera)
 
-        private static void BuildBackdrop()
+        internal static void BuildBackdrop()
         {
             Material ground = AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Ground.mat");
             Material stone = AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Stone.mat");
@@ -136,7 +136,7 @@ namespace AdventureGame.EditorTools
             RenderSettings.fogEndDistance = 60f;
         }
 
-        private static GameObject Cube(string name, Transform parent, Vector3 position, Vector3 scale, Material material)
+        internal static GameObject Cube(string name, Transform parent, Vector3 position, Vector3 scale, Material material)
         {
             GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
             cube.name = name;
@@ -153,7 +153,7 @@ namespace AdventureGame.EditorTools
 
         #region UI
 
-        private static void BuildUi()
+        internal static void BuildUi()
         {
             var canvasGo = new GameObject("Canvas") { layer = UiLayer };
             Canvas canvas = canvasGo.AddComponent<Canvas>();
@@ -256,7 +256,7 @@ namespace AdventureGame.EditorTools
             settingsPanel.gameObject.SetActive(false);
         }
 
-        private static RectTransform MakePanel(Transform parent, string name, Vector2 size, string heading)
+        internal static RectTransform MakePanel(Transform parent, string name, Vector2 size, string heading)
         {
             RectTransform panel = Rect(name, parent);
             Place(panel, Center, Center, Center, new Vector2(0, -60), size);
@@ -269,7 +269,7 @@ namespace AdventureGame.EditorTools
             return panel;
         }
 
-        private static void SliderRow(RectTransform parent, string name, string label, Vector2 position,
+        internal static void SliderRow(RectTransform parent, string name, string label, Vector2 position,
             float min, float max, float value, out Slider slider, out TextMeshProUGUI valueText)
         {
             RectTransform row = Rect(name + "Row", parent);
@@ -294,7 +294,7 @@ namespace AdventureGame.EditorTools
             valueText.color = Gold;
         }
 
-        private static void TintSlider(GameObject sliderGo)
+        internal static void TintSlider(GameObject sliderGo)
         {
             foreach (Image image in sliderGo.GetComponentsInChildren<Image>(true))
             {
@@ -307,7 +307,7 @@ namespace AdventureGame.EditorTools
             }
         }
 
-        private static Button MakeButton(Transform parent, string name, string label)
+        internal static Button MakeButton(Transform parent, string name, string label)
         {
             RectTransform rt = Rect(name, parent);
             Image image = rt.gameObject.AddComponent<Image>();
@@ -326,14 +326,14 @@ namespace AdventureGame.EditorTools
             return button;
         }
 
-        private static RectTransform Rect(string name, Transform parent)
+        internal static RectTransform Rect(string name, Transform parent)
         {
             var go = new GameObject(name, typeof(RectTransform)) { layer = UiLayer };
             go.transform.SetParent(parent, false);
             return (RectTransform)go.transform;
         }
 
-        private static void Stretch(RectTransform rt)
+        internal static void Stretch(RectTransform rt)
         {
             rt.anchorMin = Vector2.zero;
             rt.anchorMax = Vector2.one;
@@ -341,7 +341,7 @@ namespace AdventureGame.EditorTools
             rt.offsetMax = Vector2.zero;
         }
 
-        private static void Place(RectTransform rt, Vector2 anchorMin, Vector2 anchorMax, Vector2 pivot, Vector2 position, Vector2 size)
+        internal static void Place(RectTransform rt, Vector2 anchorMin, Vector2 anchorMax, Vector2 pivot, Vector2 position, Vector2 size)
         {
             rt.anchorMin = anchorMin;
             rt.anchorMax = anchorMax;
@@ -350,7 +350,7 @@ namespace AdventureGame.EditorTools
             rt.sizeDelta = size;
         }
 
-        private static TextMeshProUGUI Text(Transform parent, string name, string text, float size, TextAlignmentOptions alignment)
+        internal static TextMeshProUGUI Text(Transform parent, string name, string text, float size, TextAlignmentOptions alignment)
         {
             RectTransform rt = Rect(name, parent);
             TextMeshProUGUI tmp = rt.gameObject.AddComponent<TextMeshProUGUI>();
@@ -363,13 +363,13 @@ namespace AdventureGame.EditorTools
             return tmp;
         }
 
-        private static void SetLayerRecursive(GameObject go, int layer)
+        internal static void SetLayerRecursive(GameObject go, int layer)
         {
             go.layer = layer;
             foreach (Transform child in go.transform) SetLayerRecursive(child.gameObject, layer);
         }
 
-        private static void Set(Object target, string field, Object value)
+        internal static void Set(Object target, string field, Object value)
         {
             var so = new SerializedObject(target);
             SerializedProperty p = so.FindProperty(field);
@@ -388,7 +388,7 @@ namespace AdventureGame.EditorTools
         #region Build Settings
 
         /// <summary>MainMenu 0., Main 1. sırada; listedeki diğer sahneler korunur.</summary>
-        private static void UpdateBuildSettings()
+        internal static void UpdateBuildSettings()
         {
             var scenes = new List<EditorBuildSettingsScene>
             {
