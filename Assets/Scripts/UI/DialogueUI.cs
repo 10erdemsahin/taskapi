@@ -53,12 +53,18 @@ namespace AdventureGame
 
         public bool IsOpen => panelRoot != null && panelRoot.activeSelf;
 
+        /// <summary>Açılıp kapanan panel (güven çubuğu gibi ek göstergeler buraya eklenir).</summary>
+        public GameObject PanelRoot => panelRoot;
+
         #region Unity Yaşam Döngüsü
 
         private void Awake()
         {
             if (panelRoot != null) panelRoot.SetActive(false);
             if (thinkingIndicator != null) thinkingIndicator.SetActive(false);
+
+            // Güven çubuğu: sahnede ayrıca obje kurmaya gerek kalmasın diye kendini ekler.
+            if (GetComponent<TrustMeterUI>() == null) gameObject.AddComponent<TrustMeterUI>();
 
             if (sendButton != null) sendButton.onClick.AddListener(Submit);
             if (closeButton != null) closeButton.onClick.AddListener(RaiseCloseRequested);
