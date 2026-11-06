@@ -633,24 +633,80 @@ Canlı arka plan: tapınağın etrafında yavaşça dönen kamera, ambientCG tex
 
 ![Ana menü](Docs/Images/01_menu.png)
 
-### Bölüm 2: Muhafız Kaan ile sohbet
-Oyuncu bilmecenin cevabını yazdı. Model `{"action": "open_door"}` döndürdü, `GameManager` kuralı doğruladı ve kapı açıldı. Sağ üstte LLM bağlantı durumu yeşil: "Bağlı (qwen2.5:7b)".
+Aşağıdaki görüntüler build edilmiş oyundan (`Build/YankiTapinagi.exe`, 1920×1080) baştan sona tek bir oynanışta alındı. Muhafız gerçek Ollama modeline bağlı (sağ üstte yeşil "LLM: Bağlı (qwen2.5:7b)").
 
-![Muhafızla sohbet ve kapının açılması](Docs/Images/04_sohbet_kapi.png)
+### Bölüm 1: Fiziksel engel ve otonom yoldaş (Robo)
+
+**1. Uçurum ve kalkık köprü.** Oyuncu karşıya tek başına geçemez. Görev metni yoldaştan [F] ile yardım istemeyi ve basınç plakasında durmayı söylüyor.
+
+![Uçurum ve kalkık köprü](Docs/Images/02_ucurum.png)
+
+**2. Robo şalteri sensörüyle fark ediyor.** [F] komutundan sonra Robo raycast sensörüyle yüksek platformdaki şalteri görüyor ve kendi kararıyla yola çıkıyor ("Lever fark ettim! Ben hallederim, sen bekle.").
+
+![Robo şalteri fark ediyor](Docs/Images/03_robo_salteri_fark_etti.png)
+
+**3. Robo NavMesh off-mesh link üzerinden platforma zıplıyor.** Oyuncu bu platforma çıkamaz; yolu yalnızca ajanın NavMesh'i biliyor.
+
+![Robo platforma zıplıyor](Docs/Images/03b_robo_platforma_zipliyor.png)
+
+**4. Çift kilit.** Şalter çekildi ama köprü, oyuncu basınç plakasında (önde mavi) durana kadar inmiyor. Ajan ve oyuncu birlikte çalışmak zorunda.
+
+![Şalter çekildi, basınç plakası bekleniyor](Docs/Images/03c_cift_kilit_plaka.png)
+
+**5–6. Köprü iniyor ve yol açılıyor.** Görev metni Bölüm 2'ye geçiyor: "Köprü indi! Karşıya geç ve kapıyı koruyan muhafızla konuş [E]."
+
+![Köprü iniyor](Docs/Images/03d_kopru_iniyor.png)
+
+![Köprü indi, karşıda muhafız ve kapı](Docs/Images/03e_kopru_indi.png)
+
+### Bölüm 2: Muhafız Kaan (yerel LLM)
+
+**7. Karşılama ve güven çubuğu.** Muhafız ilk bilmeceyi soruyor. Sağ üstte güven puanı 40/100 (kapı için en az 60 gerekli).
+
+![Muhafız karşılama](Docs/Images/04a_muhafiz_karsilama.png)
+
+**8. 1. bilmece çözüldü.** Model `riddle_solved: true` döndürdü; Unity, oyuncunun mesajında kabul edilen cevabın geçtiğini doğruladıktan sonra "Bilmece çözüldü (1/2)" yazdı. Kibar mesajlar güveni artırıyor (40 → 45 → 48).
+
+![1. bilmece çözüldü](Docs/Images/04b_bilmece1_cozuldu.png)
+
+**9. 2. bilmece soruluyor.** Model soruyu kendi cümleleriyle tekrar ediyor (cevabı söylemeden).
+
+![2. bilmece](Docs/Images/04c_bilmece2_soruldu.png)
+
+**10. "Muhafız Kaan düşünüyor..." göstergesi.** İstek asenkron gidiyor; bekleme sırasında giriş kilitli ve gösterge animasyonlu, oyun akmaya devam ediyor.
+
+![Düşünüyor göstergesi](Docs/Images/05_dusunuyor.png)
+
+**11. Güven yetersiz → kapı açılmıyor.** İki bilmece de çözüldü ve model `open_door` döndürdü, ama güven 53/60 olduğu için Unity isteği reddetti ve sistem mesajı gösterdi. Bu, LLM'in kararının oyun kurallarından geçtiğini gösteriyor (bkz. 5.5, 5.6).
+
+![Güven yetersiz](Docs/Images/09_guven_yetersiz.png)
+
+**12. Güven yeterli → kapı açıldı.** Oyuncu kibarca konuşmaya devam etti, güven 63/100'e çıktı (çubuk yeşil, "yeterli"). Bir sonraki `open_door` kabul edildi: "Taş kapı gıcırdayarak açıldı!"
+
+![Kapı açıldı](Docs/Images/09b_guven_yeterli_kapi_acildi.png)
 
 ### Zafer ekranı
 
-![Zafer ekranı](Docs/Images/06_zafer.png)
+![Zafer ekranı](Docs/Images/06b_zafer_build.png)
+
+### Hata yönetimi: Ollama sunucusu kapalıyken
+
+Ollama kapatıldıktan sonra muhafızla konuşuldu. Oyun **çökmedi** ve donmadı:
+- Sağ üstteki LLM durumu kırmızıya döndü: "LLM: Kapalı ('ollama serve' çalıştırın)".
+- Her mesajda muhafız, persona'daki yedek cümlelerden biriyle karakterini bozmadan cevap verdi ("Hımm... Ne dediğini anlayamadım yolcu.").
+- Altında oyuncuya ne yapması gerektiğini söyleyen sistem mesajı çıktı: "Ollama sunucusuna ulaşılamadı. Terminalde 'ollama serve' çalıştırıp tekrar dene."
+- Bilmece sayacı, deneme hakkı ve güven puanı değişmedi (40/100). Kapı kapalı kaldı. Her mesaj ayrı bir istek olduğu için Ollama yeniden açılınca bir sonraki mesaj normal şekilde cevaplanır.
+
+![Ollama kapalıyken hata mesajı](Docs/Images/07_ollama_kapali.png)
+
+### Ana menü ve geliştirme sırasında alınan görüntüler
+
+![Muhafızla sohbet ve kapının açılması (editör)](Docs/Images/04_sohbet_kapi.png)
 
 | Henüz eklenmeyen | Dosya |
 |---|---|
-| Bölüm 1: uçurum ve kalkık köprü | `Docs/Images/02_ucurum.png` |
-| Robo platforma zıplarken / şalteri çekerken | `Docs/Images/03_robo.png` |
-| "Muhafız Kaan düşünüyor..." göstergesi | `Docs/Images/05_dusunuyor.png` |
-| Ollama kapalıyken hata mesajı | `Docs/Images/07_ollama_kapali.png` |
-| Sohbette güven çubuğu (düşük → yeterli) | `Docs/Images/09_guven.png` |
 | Duraklatma menüsü | `Docs/Images/10_duraklatma.png` |
-| Test Runner, tüm testler yeşil (Erdem) | `Docs/Images/08_testler.png` |
+| Test Runner, tüm testler yeşil | `Docs/Images/08_testler.png` |
 
 ---
 
@@ -702,6 +758,7 @@ Tüm texture'lar **[ambientCG](https://ambientcg.com)**'den alındı. Lisans: **
 ### Sınırlılıklar
 - 7B model bile kurallara her zaman uymuyor: cevabı sızdırabiliyor ve nadiren yanlış `open_door` üretebiliyor (bkz. 9.3). Bu yüzden son kararı oyun veriyor: `open_door`, oyuncunun mesajında cevap yoksa ya da güven 60'ın altındaysa reddediliyor; sızan yanıtlar gösterilmiyor (bkz. 5.5).
 - Ton sınıflandırmasını da LLM yapıyor; model kibar bir mesajı nadiren "neutral" sayabiliyor. Bu yalnızca güvenin artış hızını etkiliyor, kapı kararını etkilemiyor.
+- `is_answer_attempt` alanını da LLM dolduruyor; model bazen bir soruyu cevap denemesi sayıyor. Oynanış testinde "ikinci bilmece ne" mesajı yanlış cevap olarak sayıldı ("Kalan hak: 2", bkz. 10. bölüm, görüntü 9). Bu, oyuncunun hakkını haksız yere azaltabilir ama kapıyı yanlışlıkla açmaz.
 - İlk LLM isteği model belleğe yüklenirken ~10–30 sn sürebiliyor.
 - `qwen2.5:7b` ~5 GB bellek istiyor. 8 GB RAM altındaki bilgisayarlarda `llama3.2:3b` gerekiyor ve Türkçe kalitesi düşüyor.
 - Karakterler henüz kapsül; animasyon yok.

@@ -59,3 +59,14 @@ crashlytics-build.properties
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# IDE / Unity ek dosyaları
+*.slnx
+
+# Build klasörü (teslim zip'ine konur, repoya değil)
+/[Bb]uild/
+/[Bb]uilds/
+
+# Unity çökme kurtarma sahneleri
+/[Aa]ssets/_Recovery/
+/[Aa]ssets/_Recovery.meta
