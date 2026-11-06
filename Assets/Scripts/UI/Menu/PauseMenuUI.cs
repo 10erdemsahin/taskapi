@@ -9,7 +9,7 @@ namespace AdventureGame
     /// <summary>
     /// Oyun içi duraklatma menüsü (Esc): Devam Et / Ayarlar / Ana Menü / Çıkış.
     /// Duraklatmanın kendisi GameManager'dadır (SetPaused / IsPaused / PausedChanged);
-    /// bu sınıf yalnızca girdiyi iletir ve paneli gösterir. Prefab: Assets/Art/Prefabs/PauseMenu.prefab
+    /// bu sınıf yalnızca girdiyi iletir ve paneli gösterir. Prefab: Assets/Art/Resources/PauseMenu.prefab
     /// (Canvas altına konur). Kök obje hep aktif kalır, görünen kısım panelRoot'tur.
     /// </summary>
     public sealed class PauseMenuUI : MonoBehaviour
