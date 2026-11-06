@@ -35,8 +35,9 @@ namespace AdventureGame.EditorTools
         private const string StoneRailingPrefabPath = "Assets/Art/Prefabs/StoneRailing.prefab";
         private const string BridgeRailingPrefabPath = "Assets/Art/Prefabs/BridgeRailing.prefab";
         private const string EchoShardPrefabPath = "Assets/Art/Prefabs/EchoShard.prefab";
-        private const string PauseMenuPrefabPath = "Assets/Art/Prefabs/PauseMenu.prefab";
+        private const string PauseMenuPrefabPath = "Assets/Art/Resources/PauseMenu.prefab"; // Ömer Resources'a taşıdı (GameHUD yedek olarak buradan yükler)
         private const string QuestHintAssetPath = "Assets/Data/Quest/EchoStoneHint.asset";
+        private const bool PlaceEchoShardsInScene = false;
 
         // Texture yoğunluğu: bir desen tekrarının kapladığı metre (WorldSpaceUV).
         private const float GroundMetersPerTile = 2.5f;
@@ -357,7 +358,13 @@ namespace AdventureGame.EditorTools
                 RenderSettings.skybox = skybox;
             }
 
-            PlaceEchoShards(interactableLayer, manager, hud);
+            // Yankı Taşı parçaları teslim sürümünde KAPALI: platformdaki parça Robo'nun şalter görevini
+            // bozuyor (AgentSuccessTests 12/15 başarısız) ve kapı kuralı parçaları bekliyor. Kod/prefab hazır;
+            // açmak için true yap ve testleri yeniden çalıştır.
+            if (PlaceEchoShardsInScene)
+            {
+                PlaceEchoShards(interactableLayer, manager, hud);
+            }
             PlacePauseMenu();
 
             // ---------- Bake & Kaydet ----------
