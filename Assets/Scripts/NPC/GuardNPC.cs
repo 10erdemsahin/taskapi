@@ -72,6 +72,7 @@ namespace AdventureGame
         private int _wrongAttempts;
         private float _cooldownUntil = -1f;
         private int _trust = -1; // -1: henüz persona'dan okunmadı (Awake'te ayarlanır)
+        private bool _doorRequestPending; // LLM open_door dedi ama güven yetersizdi; güven yetince uygulanır
 
         public string DisplayName => persona != null ? persona.NpcName : name;
         public override string InteractionPrompt => $"{DisplayName} ile konuş [E]";
@@ -392,13 +393,18 @@ namespace AdventureGame
             {
                 if (AllRiddlesSolved && !HasEnoughTrust)
                 {
-                    Debug.LogWarning($"[GuardNPC] Güven yetersiz ({_trust}/{RequiredTrust}); open_door yok sayıldı.", this);
+                    // LLM kapıyı açmaya karar verdi ama güven kuralı henüz sağlanmıyor: istek BEKLETİLİR,
+                    // güven yeterli olunca uygulanır (model sonraki turlarda open_door'u tekrar etmeyebiliyor).
+                    _doorRequestPending = true;
+                    Debug.LogWarning($"[GuardNPC] Güven yetersiz ({_trust}/{RequiredTrust}); open_door bekletiliyor.", this);
                     AppendToView(DialogueSpeaker.System, "Sistem",
                         $"Muhafız sana henüz yeterince güvenmiyor (güven {_trust}/{RequiredTrust}). Onunla biraz daha konuş.");
                 }
                 else if (AllRiddlesSolved)
                 {
+                    _doorRequestPending = false;
                     ActionRequested?.Invoke(NpcAction.OpenDoor);
+                    return;
                 }
                 else
                 {
@@ -408,6 +414,14 @@ namespace AdventureGame
             else if (decision.Action != NpcAction.None)
             {
                 ActionRequested?.Invoke(decision.Action);
+            }
+
+            // Daha önce LLM'in verdiği ve güven yüzünden bekletilen open_door kararı artık uygulanabilir mi?
+            if (_doorRequestPending && AllRiddlesSolved && HasEnoughTrust)
+            {
+                _doorRequestPending = false;
+                AppendToView(DialogueSpeaker.System, "Sistem", $"Muhafız artık sana güveniyor (güven {_trust}/{RequiredTrust}). Kapıyı açıyor.");
+                ActionRequested?.Invoke(NpcAction.OpenDoor);
             }
         }
 
@@ -482,6 +496,11 @@ namespace AdventureGame
             builder.AppendLine();
             builder.Append("[Oyun durumu] Yolcuya güvenin: ").Append(_trust).Append("/100 (kapı için en az ")
                    .Append(RequiredTrust).Append(HasEnoughTrust ? ", yeterli)" : ", YETERSİZ)").AppendLine();
+            if (AllRiddlesSolved && HasEnoughTrust)
+            {
+                builder.AppendLine("[Oyun durumu] Yolcu iki bilmeceyi de çözdü ve güvenin artık YETERLİ. Önceki sözlerine takılma: " +
+                                   "yolcuya kapıyı açtığını söyle ve action = \"open_door\" döndür.");
+            }
 
             string context = _contextProvider?.GetNpcContext();
             if (!string.IsNullOrWhiteSpace(context))

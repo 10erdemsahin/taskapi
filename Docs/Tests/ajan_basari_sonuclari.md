@@ -1,6 +1,6 @@
 # Otonom Yoldaş Başarı Testi (ders dokümanı 4.4)
 
-Otomatik üretildi: `AgentSuccessTests` (PlayMode), 6 Kasım 2026 14:01.
+Otomatik üretildi: `AgentSuccessTests` (PlayMode), 6 Kasım 2026 14:10.
 Oyuncu basınç plakasında bekler, [F] ile yardım istenir. Başarı: yoldaş şalteri sensörle bulur,
 NavMesh ve platform zıplamasıyla gider, çeker ve köprü iner. Süre [F]'den köprünün inmesine kadardır
 (2,5 sn iniş animasyonu dahil). Başarısız olması beklenen konumda yoldaş şalteri sütun yüzünden göremez.

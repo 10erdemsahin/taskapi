@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<test-run id="2" testcasecount="79" result="Skipped:Ignored" total="79" passed="78" failed="0" inconclusive="0" skipped="1" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-06 11:00:33Z" end-time="2026-11-06 11:03:32Z" duration="178,9544972">
-  <test-suite type="TestSuite" id="1095" name="UnityProject" fullname="UnityProject" runstate="Runnable" testcasecount="79" result="Skipped" label="Ignored" start-time="2026-11-06 11:00:33Z" end-time="2026-11-06 11:03:32Z" duration="178.954497" total="79" passed="78" failed="0" inconclusive="0" skipped="1" asserts="0">
+<test-run id="2" testcasecount="79" result="Skipped:Ignored" total="79" passed="78" failed="0" inconclusive="0" skipped="1" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-06 11:08:50Z" end-time="2026-11-06 11:11:53Z" duration="182,6211262">
+  <test-suite type="TestSuite" id="1095" name="UnityProject" fullname="UnityProject" runstate="Runnable" testcasecount="79" result="Skipped" label="Ignored" start-time="2026-11-06 11:08:50Z" end-time="2026-11-06 11:11:53Z" duration="182.621126" total="79" passed="78" failed="0" inconclusive="0" skipped="1" asserts="0">
     <properties>
       <property name="platform" value="PlayMode" />
     </properties>
     <reason>
       <message><![CDATA[One or more child tests were ignored]]></message>
     </reason>
-    <test-suite type="Assembly" id="1091" name="AdventureGame.Tests.dll" fullname="C:/Users/pc/Desktop/YankiTapinagi/Library/ScriptAssemblies/AdventureGame.Tests.dll" runstate="Runnable" testcasecount="79" result="Skipped" label="Ignored" start-time="2026-11-06 11:00:33Z" end-time="2026-11-06 11:03:32Z" duration="178.942234" total="79" passed="78" failed="0" inconclusive="0" skipped="1" asserts="0">
+    <test-suite type="Assembly" id="1091" name="AdventureGame.Tests.dll" fullname="C:/Users/pc/Desktop/YankiTapinagi/Library/ScriptAssemblies/AdventureGame.Tests.dll" runstate="Runnable" testcasecount="79" result="Skipped" label="Ignored" start-time="2026-11-06 11:08:50Z" end-time="2026-11-06 11:11:53Z" duration="182.593580" total="79" passed="78" failed="0" inconclusive="0" skipped="1" asserts="0">
       <properties>
-        <property name="_PID" value="26932" />
+        <property name="_PID" value="32672" />
         <property name="_APPDOMAIN" value="Unity Child Domain" />
         <property name="platform" value="PlayMode" />
         <property name="EditorOnly" value="False" />
@@ -17,23 +17,23 @@
       <reason>
         <message><![CDATA[One or more child tests were ignored]]></message>
       </reason>
-      <test-suite type="TestSuite" id="1092" name="AdventureGame" fullname="AdventureGame" runstate="Runnable" testcasecount="79" result="Skipped" label="Ignored" start-time="2026-11-06 11:00:33Z" end-time="2026-11-06 11:03:32Z" duration="178.940509" total="79" passed="78" failed="0" inconclusive="0" skipped="1" asserts="0">
+      <test-suite type="TestSuite" id="1092" name="AdventureGame" fullname="AdventureGame" runstate="Runnable" testcasecount="79" result="Skipped" label="Ignored" start-time="2026-11-06 11:08:50Z" end-time="2026-11-06 11:11:53Z" duration="182.589620" total="79" passed="78" failed="0" inconclusive="0" skipped="1" asserts="0">
         <properties />
         <reason>
           <message><![CDATA[One or more child tests were ignored]]></message>
         </reason>
-        <test-suite type="TestSuite" id="1093" name="Tests" fullname="AdventureGame.Tests" runstate="Runnable" testcasecount="79" result="Skipped" label="Ignored" start-time="2026-11-06 11:00:33Z" end-time="2026-11-06 11:03:32Z" duration="178.938762" total="79" passed="78" failed="0" inconclusive="0" skipped="1" asserts="0">
+        <test-suite type="TestSuite" id="1093" name="Tests" fullname="AdventureGame.Tests" runstate="Runnable" testcasecount="79" result="Skipped" label="Ignored" start-time="2026-11-06 11:08:50Z" end-time="2026-11-06 11:11:53Z" duration="182.586706" total="79" passed="78" failed="0" inconclusive="0" skipped="1" asserts="0">
           <properties />
           <reason>
             <message><![CDATA[One or more child tests were ignored]]></message>
           </reason>
-          <test-suite type="TestFixture" id="1001" name="AgentSuccessTests" fullname="AdventureGame.Tests.AgentSuccessTests" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-11-06 11:00:33Z" end-time="2026-11-06 11:01:57Z" duration="83.793230" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <test-suite type="TestFixture" id="1001" name="AgentSuccessTests" fullname="AdventureGame.Tests.AgentSuccessTests" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-11-06 11:08:50Z" end-time="2026-11-06 11:10:16Z" duration="85.644446" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
             <properties />
-            <test-suite type="ParameterizedMethod" id="1017" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-11-06 11:00:33Z" end-time="2026-11-06 11:01:57Z" duration="83.771802" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="ParameterizedMethod" id="1017" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-11-06 11:08:50Z" end-time="2026-11-06 11:10:16Z" duration="85.595075" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
               </properties>
-              <test-case id="1002" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Basınç plakası yanı (5, 0, 7),1)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Basınç plakası yanı (5, 0, 7),1)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="1719085957" result="Passed" start-time="2026-11-06 11:00:33Z" end-time="2026-11-06 11:00:41Z" duration="8.158050" asserts="0">
+              <test-case id="1002" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Basınç plakası yanı (5, 0, 7),1)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Basınç plakası yanı (5, 0, 7),1)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="825170393" result="Passed" start-time="2026-11-06 11:08:50Z" end-time="2026-11-06 11:08:59Z" duration="9.037863" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -45,7 +45,7 @@
 [AJAN] Basınç plakası yanı (5, 0, 7) #1: BAŞARILI 7,49 sn | Raporlar: Çevreyi tarıyorum... | Lever görüyorum! Oraya gidiyorum. | Platforma zıplıyorum! | Lever çalıştırıldı! Yol açılıyor.
 ]]></output>
               </test-case>
-              <test-case id="1003" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Basınç plakası yanı (5, 0, 7),2)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Basınç plakası yanı (5, 0, 7),2)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="22432056" result="Passed" start-time="2026-11-06 11:00:41Z" end-time="2026-11-06 11:00:49Z" duration="7.513132" asserts="0">
+              <test-case id="1003" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Basınç plakası yanı (5, 0, 7),2)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Basınç plakası yanı (5, 0, 7),2)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="2039895472" result="Passed" start-time="2026-11-06 11:08:59Z" end-time="2026-11-06 11:09:07Z" duration="7.598971" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -54,10 +54,10 @@
 [Robo] Lever görüyorum! Oraya gidiyorum.
 [Robo] Platforma zıplıyorum!
 [Robo] Lever çalıştırıldı! Yol açılıyor.
-[AJAN] Basınç plakası yanı (5, 0, 7) #2: BAŞARILI 7,45 sn | Raporlar: Çevreyi tarıyorum... | Lever görüyorum! Oraya gidiyorum. | Platforma zıplıyorum! | Lever çalıştırıldı! Yol açılıyor.
+[AJAN] Basınç plakası yanı (5, 0, 7) #2: BAŞARILI 7,46 sn | Raporlar: Çevreyi tarıyorum... | Lever görüyorum! Oraya gidiyorum. | Platforma zıplıyorum! | Lever çalıştırıldı! Yol açılıyor.
 ]]></output>
               </test-case>
-              <test-case id="1004" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Basınç plakası yanı (5, 0, 7),3)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Basınç plakası yanı (5, 0, 7),3)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="10992588" result="Passed" start-time="2026-11-06 11:00:49Z" end-time="2026-11-06 11:00:56Z" duration="7.493604" asserts="0">
+              <test-case id="1004" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Basınç plakası yanı (5, 0, 7),3)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Basınç plakası yanı (5, 0, 7),3)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="767224674" result="Passed" start-time="2026-11-06 11:09:07Z" end-time="2026-11-06 11:09:14Z" duration="7.559719" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -66,10 +66,10 @@
 [Robo] Lever görüyorum! Oraya gidiyorum.
 [Robo] Platforma zıplıyorum!
 [Robo] Lever çalıştırıldı! Yol açılıyor.
-[AJAN] Basınç plakası yanı (5, 0, 7) #3: BAŞARILI 7,45 sn | Raporlar: Çevreyi tarıyorum... | Lever görüyorum! Oraya gidiyorum. | Platforma zıplıyorum! | Lever çalıştırıldı! Yol açılıyor.
+[AJAN] Basınç plakası yanı (5, 0, 7) #3: BAŞARILI 7,46 sn | Raporlar: Çevreyi tarıyorum... | Lever görüyorum! Oraya gidiyorum. | Platforma zıplıyorum! | Lever çalıştırıldı! Yol açılıyor.
 ]]></output>
               </test-case>
-              <test-case id="1005" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Alan ortası (0, 0, 4),1)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Alan ortası (0, 0, 4),1)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="518472953" result="Passed" start-time="2026-11-06 11:00:56Z" end-time="2026-11-06 11:01:02Z" duration="6.396218" asserts="0">
+              <test-case id="1005" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Alan ortası (0, 0, 4),1)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Alan ortası (0, 0, 4),1)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="2115624704" result="Passed" start-time="2026-11-06 11:09:14Z" end-time="2026-11-06 11:09:21Z" duration="6.462886" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -78,10 +78,10 @@
 [Robo] Lever görüyorum! Oraya gidiyorum.
 [Robo] Platforma zıplıyorum!
 [Robo] Lever çalıştırıldı! Yol açılıyor.
-[AJAN] Alan ortası (0, 0, 4) #1: BAŞARILI 6,35 sn | Raporlar: Çevreyi tarıyorum... | Lever görüyorum! Oraya gidiyorum. | Platforma zıplıyorum! | Lever çalıştırıldı! Yol açılıyor.
+[AJAN] Alan ortası (0, 0, 4) #1: BAŞARILI 6,36 sn | Raporlar: Çevreyi tarıyorum... | Lever görüyorum! Oraya gidiyorum. | Platforma zıplıyorum! | Lever çalıştırıldı! Yol açılıyor.
 ]]></output>
               </test-case>
-              <test-case id="1006" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Alan ortası (0, 0, 4),2)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Alan ortası (0, 0, 4),2)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="1011648854" result="Passed" start-time="2026-11-06 11:01:02Z" end-time="2026-11-06 11:01:09Z" duration="6.397495" asserts="0">
+              <test-case id="1006" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Alan ortası (0, 0, 4),2)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Alan ortası (0, 0, 4),2)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="72522917" result="Passed" start-time="2026-11-06 11:09:21Z" end-time="2026-11-06 11:09:27Z" duration="6.471973" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -90,10 +90,10 @@
 [Robo] Lever görüyorum! Oraya gidiyorum.
 [Robo] Platforma zıplıyorum!
 [Robo] Lever çalıştırıldı! Yol açılıyor.
-[AJAN] Alan ortası (0, 0, 4) #2: BAŞARILI 6,35 sn | Raporlar: Çevreyi tarıyorum... | Lever görüyorum! Oraya gidiyorum. | Platforma zıplıyorum! | Lever çalıştırıldı! Yol açılıyor.
+[AJAN] Alan ortası (0, 0, 4) #2: BAŞARILI 6,36 sn | Raporlar: Çevreyi tarıyorum... | Lever görüyorum! Oraya gidiyorum. | Platforma zıplıyorum! | Lever çalıştırıldı! Yol açılıyor.
 ]]></output>
               </test-case>
-              <test-case id="1007" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Alan ortası (0, 0, 4),3)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Alan ortası (0, 0, 4),3)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="1183068543" result="Passed" start-time="2026-11-06 11:01:09Z" end-time="2026-11-06 11:01:15Z" duration="6.389216" asserts="0">
+              <test-case id="1007" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Alan ortası (0, 0, 4),3)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Alan ortası (0, 0, 4),3)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="657010507" result="Passed" start-time="2026-11-06 11:09:27Z" end-time="2026-11-06 11:09:34Z" duration="6.475064" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -102,10 +102,10 @@
 [Robo] Lever görüyorum! Oraya gidiyorum.
 [Robo] Platforma zıplıyorum!
 [Robo] Lever çalıştırıldı! Yol açılıyor.
-[AJAN] Alan ortası (0, 0, 4) #3: BAŞARILI 6,35 sn | Raporlar: Çevreyi tarıyorum... | Lever görüyorum! Oraya gidiyorum. | Platforma zıplıyorum! | Lever çalıştırıldı! Yol açılıyor.
+[AJAN] Alan ortası (0, 0, 4) #3: BAŞARILI 6,36 sn | Raporlar: Çevreyi tarıyorum... | Lever görüyorum! Oraya gidiyorum. | Platforma zıplıyorum! | Lever çalıştırıldı! Yol açılıyor.
 ]]></output>
               </test-case>
-              <test-case id="1008" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Sağ kenar (8, 0, 2),1)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Sağ kenar (8, 0, 2),1)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="2021735229" result="Passed" start-time="2026-11-06 11:01:15Z" end-time="2026-11-06 11:01:24Z" duration="8.326574" asserts="0">
+              <test-case id="1008" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Sağ kenar (8, 0, 2),1)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Sağ kenar (8, 0, 2),1)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="916848835" result="Passed" start-time="2026-11-06 11:09:34Z" end-time="2026-11-06 11:09:42Z" duration="8.386787" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -117,7 +117,7 @@
 [AJAN] Sağ kenar (8, 0, 2) #1: BAŞARILI 8,28 sn | Raporlar: Çevreyi tarıyorum... | Lever görüyorum! Oraya gidiyorum. | Platforma zıplıyorum! | Lever çalıştırıldı! Yol açılıyor.
 ]]></output>
               </test-case>
-              <test-case id="1009" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Sağ kenar (8, 0, 2),2)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Sağ kenar (8, 0, 2),2)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="1638794548" result="Passed" start-time="2026-11-06 11:01:24Z" end-time="2026-11-06 11:01:32Z" duration="8.321500" asserts="0">
+              <test-case id="1009" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Sağ kenar (8, 0, 2),2)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Sağ kenar (8, 0, 2),2)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="614694832" result="Passed" start-time="2026-11-06 11:09:42Z" end-time="2026-11-06 11:09:50Z" duration="8.379265" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -129,7 +129,7 @@
 [AJAN] Sağ kenar (8, 0, 2) #2: BAŞARILI 8,28 sn | Raporlar: Çevreyi tarıyorum... | Lever görüyorum! Oraya gidiyorum. | Platforma zıplıyorum! | Lever çalıştırıldı! Yol açılıyor.
 ]]></output>
               </test-case>
-              <test-case id="1010" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Sağ kenar (8, 0, 2),3)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Sağ kenar (8, 0, 2),3)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="1407857689" result="Passed" start-time="2026-11-06 11:01:32Z" end-time="2026-11-06 11:01:40Z" duration="8.328498" asserts="0">
+              <test-case id="1010" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Sağ kenar (8, 0, 2),3)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Sağ kenar (8, 0, 2),3)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="2027586374" result="Passed" start-time="2026-11-06 11:09:50Z" end-time="2026-11-06 11:09:59Z" duration="8.385004" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -141,7 +141,7 @@
 [AJAN] Sağ kenar (8, 0, 2) #3: BAŞARILI 8,28 sn | Raporlar: Çevreyi tarıyorum... | Lever görüyorum! Oraya gidiyorum. | Platforma zıplıyorum! | Lever çalıştırıldı! Yol açılıyor.
 ]]></output>
               </test-case>
-              <test-case id="1011" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Platform önü (-3, 0, 8),1)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Platform önü (-3, 0, 8),1)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="405491091" result="Passed" start-time="2026-11-06 11:01:40Z" end-time="2026-11-06 11:01:46Z" duration="5.423350" asserts="0">
+              <test-case id="1011" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Platform önü (-3, 0, 8),1)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Platform önü (-3, 0, 8),1)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="41429798" result="Passed" start-time="2026-11-06 11:09:59Z" end-time="2026-11-06 11:10:04Z" duration="5.490976" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -150,10 +150,10 @@
 [Robo] Lever görüyorum! Oraya gidiyorum.
 [Robo] Platforma zıplıyorum!
 [Robo] Lever çalıştırıldı! Yol açılıyor.
-[AJAN] Platform önü (-3, 0, 8) #1: BAŞARILI 5,38 sn | Raporlar: Çevreyi tarıyorum... | Lever görüyorum! Oraya gidiyorum. | Platforma zıplıyorum! | Lever çalıştırıldı! Yol açılıyor.
+[AJAN] Platform önü (-3, 0, 8) #1: BAŞARILI 5,39 sn | Raporlar: Çevreyi tarıyorum... | Lever görüyorum! Oraya gidiyorum. | Platforma zıplıyorum! | Lever çalıştırıldı! Yol açılıyor.
 ]]></output>
               </test-case>
-              <test-case id="1012" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Platform önü (-3, 0, 8),2)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Platform önü (-3, 0, 8),2)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="860871138" result="Passed" start-time="2026-11-06 11:01:46Z" end-time="2026-11-06 11:01:51Z" duration="5.436770" asserts="0">
+              <test-case id="1012" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Platform önü (-3, 0, 8),2)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Platform önü (-3, 0, 8),2)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="1643184641" result="Passed" start-time="2026-11-06 11:10:04Z" end-time="2026-11-06 11:10:10Z" duration="5.487604" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -165,7 +165,7 @@
 [AJAN] Platform önü (-3, 0, 8) #2: BAŞARILI 5,39 sn | Raporlar: Çevreyi tarıyorum... | Lever görüyorum! Oraya gidiyorum. | Platforma zıplıyorum! | Lever çalıştırıldı! Yol açılıyor.
 ]]></output>
               </test-case>
-              <test-case id="1013" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Platform önü (-3, 0, 8),3)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Platform önü (-3, 0, 8),3)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="800294494" result="Passed" start-time="2026-11-06 11:01:51Z" end-time="2026-11-06 11:01:57Z" duration="5.429182" asserts="0">
+              <test-case id="1013" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Platform önü (-3, 0, 8),3)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Platform önü (-3, 0, 8),3)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="645610838" result="Passed" start-time="2026-11-06 11:10:10Z" end-time="2026-11-06 11:10:15Z" duration="5.491983" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -174,10 +174,10 @@
 [Robo] Lever görüyorum! Oraya gidiyorum.
 [Robo] Platforma zıplıyorum!
 [Robo] Lever çalıştırıldı! Yol açılıyor.
-[AJAN] Platform önü (-3, 0, 8) #3: BAŞARILI 5,38 sn | Raporlar: Çevreyi tarıyorum... | Lever görüyorum! Oraya gidiyorum. | Platforma zıplıyorum! | Lever çalıştırıldı! Yol açılıyor.
+[AJAN] Platform önü (-3, 0, 8) #3: BAŞARILI 5,39 sn | Raporlar: Çevreyi tarıyorum... | Lever görüyorum! Oraya gidiyorum. | Platforma zıplıyorum! | Lever çalıştırıldı! Yol açılıyor.
 ]]></output>
               </test-case>
-              <test-case id="1014" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Oyun başlangıcı, sütun arkası (2, 0, -5),1)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Oyun başlangıcı, sütun arkası (2, 0, -5),1)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="399068195" result="Passed" start-time="2026-11-06 11:01:57Z" end-time="2026-11-06 11:01:57Z" duration="0.045695" asserts="0">
+              <test-case id="1014" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Oyun başlangıcı, sütun arkası (2, 0, -5),1)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Oyun başlangıcı, sütun arkası (2, 0, -5),1)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="1784687981" result="Passed" start-time="2026-11-06 11:10:15Z" end-time="2026-11-06 11:10:15Z" duration="0.111411" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -187,7 +187,7 @@
 [AJAN] Oyun başlangıcı, sütun arkası (2, 0, -5) #1: BAŞARISIZ 0,00 sn | Raporlar: Çevreyi tarıyorum... | Görebildiğim ve ulaşabildiğim bir mekanizma yok. Beni başka bir noktaya götür.
 ]]></output>
               </test-case>
-              <test-case id="1015" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Oyun başlangıcı, sütun arkası (2, 0, -5),2)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Oyun başlangıcı, sütun arkası (2, 0, -5),2)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="954193728" result="Passed" start-time="2026-11-06 11:01:57Z" end-time="2026-11-06 11:01:57Z" duration="0.050559" asserts="0">
+              <test-case id="1015" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Oyun başlangıcı, sütun arkası (2, 0, -5),2)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Oyun başlangıcı, sütun arkası (2, 0, -5),2)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="501398536" result="Passed" start-time="2026-11-06 11:10:15Z" end-time="2026-11-06 11:10:15Z" duration="0.114815" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -197,7 +197,7 @@
 [AJAN] Oyun başlangıcı, sütun arkası (2, 0, -5) #2: BAŞARISIZ 0,00 sn | Raporlar: Çevreyi tarıyorum... | Görebildiğim ve ulaşabildiğim bir mekanizma yok. Beni başka bir noktaya götür.
 ]]></output>
               </test-case>
-              <test-case id="1016" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Oyun başlangıcı, sütun arkası (2, 0, -5),3)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Oyun başlangıcı, sütun arkası (2, 0, -5),3)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="1716368469" result="Passed" start-time="2026-11-06 11:01:57Z" end-time="2026-11-06 11:01:57Z" duration="0.045822" asserts="0">
+              <test-case id="1016" name="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Oyun başlangıcı, sütun arkası (2, 0, -5),3)" fullname="AdventureGame.Tests.AgentSuccessTests.Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir(Oyun başlangıcı, sütun arkası (2, 0, -5),3)" methodname="Yoldas_FarkliBaslangicKonumlarinda_SalteriBulupKopruyuIndirir" classname="AdventureGame.Tests.AgentSuccessTests" runstate="Runnable" seed="1539285593" result="Passed" start-time="2026-11-06 11:10:15Z" end-time="2026-11-06 11:10:16Z" duration="0.101826" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -209,12 +209,12 @@
               </test-case>
             </test-suite>
           </test-suite>
-          <test-suite type="TestFixture" id="1018" name="GameFlowTests" fullname="AdventureGame.Tests.GameFlowTests" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" testcasecount="17" result="Skipped" label="Ignored" start-time="2026-11-06 11:01:57Z" end-time="2026-11-06 11:03:03Z" duration="66.456317" total="17" passed="16" failed="0" inconclusive="0" skipped="1" asserts="0">
+          <test-suite type="TestFixture" id="1018" name="GameFlowTests" fullname="AdventureGame.Tests.GameFlowTests" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" testcasecount="17" result="Skipped" label="Ignored" start-time="2026-11-06 11:10:16Z" end-time="2026-11-06 11:11:23Z" duration="67.403369" total="17" passed="16" failed="0" inconclusive="0" skipped="1" asserts="0">
             <properties />
             <reason>
               <message><![CDATA[One or more child tests were ignored]]></message>
             </reason>
-            <test-case id="1020" name="Bolum1_GizliSalter_YoldasBaslangictanGoremez" fullname="AdventureGame.Tests.GameFlowTests.Bolum1_GizliSalter_YoldasBaslangictanGoremez" methodname="Bolum1_GizliSalter_YoldasBaslangictanGoremez" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="2026828691" result="Passed" start-time="2026-11-06 11:01:57Z" end-time="2026-11-06 11:01:57Z" duration="0.049252" asserts="0">
+            <test-case id="1020" name="Bolum1_GizliSalter_YoldasBaslangictanGoremez" fullname="AdventureGame.Tests.GameFlowTests.Bolum1_GizliSalter_YoldasBaslangictanGoremez" methodname="Bolum1_GizliSalter_YoldasBaslangictanGoremez" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="388288747" result="Passed" start-time="2026-11-06 11:10:16Z" end-time="2026-11-06 11:10:16Z" duration="0.101274" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -224,14 +224,14 @@
 [Robo] Görebildiğim ve ulaşabildiğim bir mekanizma yok. Beni başka bir noktaya götür.
 ]]></output>
             </test-case>
-            <test-case id="1022" name="Bolum1_GuvenlikAgi_BariyerUstundenDusenOyuncuBasaDoner" fullname="AdventureGame.Tests.GameFlowTests.Bolum1_GuvenlikAgi_BariyerUstundenDusenOyuncuBasaDoner" methodname="Bolum1_GuvenlikAgi_BariyerUstundenDusenOyuncuBasaDoner" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="1876070409" result="Passed" start-time="2026-11-06 11:01:57Z" end-time="2026-11-06 11:01:58Z" duration="0.989226" asserts="0">
+            <test-case id="1022" name="Bolum1_GuvenlikAgi_BariyerUstundenDusenOyuncuBasaDoner" fullname="AdventureGame.Tests.GameFlowTests.Bolum1_GuvenlikAgi_BariyerUstundenDusenOyuncuBasaDoner" methodname="Bolum1_GuvenlikAgi_BariyerUstundenDusenOyuncuBasaDoner" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="275662078" result="Passed" start-time="2026-11-06 11:10:16Z" end-time="2026-11-06 11:10:17Z" duration="1.039886" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1023" name="Bolum1_KopruIndiktenSonra_YoldasYineCagrilabilir" fullname="AdventureGame.Tests.GameFlowTests.Bolum1_KopruIndiktenSonra_YoldasYineCagrilabilir" methodname="Bolum1_KopruIndiktenSonra_YoldasYineCagrilabilir" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="957729038" result="Passed" start-time="2026-11-06 11:01:58Z" end-time="2026-11-06 11:02:00Z" duration="2.552628" asserts="0">
+            <test-case id="1023" name="Bolum1_KopruIndiktenSonra_YoldasYineCagrilabilir" fullname="AdventureGame.Tests.GameFlowTests.Bolum1_KopruIndiktenSonra_YoldasYineCagrilabilir" methodname="Bolum1_KopruIndiktenSonra_YoldasYineCagrilabilir" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="1246708687" result="Passed" start-time="2026-11-06 11:10:17Z" end-time="2026-11-06 11:10:19Z" duration="2.635345" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -241,14 +241,14 @@
 [Robo] Lever görüyorum! Oraya gidiyorum.
 ]]></output>
             </test-case>
-            <test-case id="1019" name="Bolum1_KopruKalkikken_KarsiyaNavMeshYoluYok_AmaPlatformaLinkVar" fullname="AdventureGame.Tests.GameFlowTests.Bolum1_KopruKalkikken_KarsiyaNavMeshYoluYok_AmaPlatformaLinkVar" methodname="Bolum1_KopruKalkikken_KarsiyaNavMeshYoluYok_AmaPlatformaLinkVar" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="30138204" result="Passed" start-time="2026-11-06 11:02:00Z" end-time="2026-11-06 11:02:00Z" duration="0.041828" asserts="0">
+            <test-case id="1019" name="Bolum1_KopruKalkikken_KarsiyaNavMeshYoluYok_AmaPlatformaLinkVar" fullname="AdventureGame.Tests.GameFlowTests.Bolum1_KopruKalkikken_KarsiyaNavMeshYoluYok_AmaPlatformaLinkVar" methodname="Bolum1_KopruKalkikken_KarsiyaNavMeshYoluYok_AmaPlatformaLinkVar" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="700579292" result="Passed" start-time="2026-11-06 11:10:19Z" end-time="2026-11-06 11:10:19Z" duration="0.096559" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1021" name="Bolum1_Yoldas_SalteriCeker_OyuncuPlakada_KopruIner" fullname="AdventureGame.Tests.GameFlowTests.Bolum1_Yoldas_SalteriCeker_OyuncuPlakada_KopruIner" methodname="Bolum1_Yoldas_SalteriCeker_OyuncuPlakada_KopruIner" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="1369990588" result="Passed" start-time="2026-11-06 11:02:00Z" end-time="2026-11-06 11:02:10Z" duration="9.890682" asserts="0">
+            <test-case id="1021" name="Bolum1_Yoldas_SalteriCeker_OyuncuPlakada_KopruIner" fullname="AdventureGame.Tests.GameFlowTests.Bolum1_Yoldas_SalteriCeker_OyuncuPlakada_KopruIner" methodname="Bolum1_Yoldas_SalteriCeker_OyuncuPlakada_KopruIner" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="703308009" result="Passed" start-time="2026-11-06 11:10:19Z" end-time="2026-11-06 11:10:29Z" duration="9.958368" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -262,7 +262,7 @@
 [TEST] Yoldaşın ulaştığı en yüksek nokta: 4,27
 ]]></output>
             </test-case>
-            <test-case id="1029" name="Bolum2_CevapSizintisi_OyuncuyaGosterilmez" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_CevapSizintisi_OyuncuyaGosterilmez" methodname="Bolum2_CevapSizintisi_OyuncuyaGosterilmez" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="162847195" result="Passed" start-time="2026-11-06 11:02:10Z" end-time="2026-11-06 11:02:14Z" duration="3.836593" asserts="0">
+            <test-case id="1029" name="Bolum2_CevapSizintisi_OyuncuyaGosterilmez" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_CevapSizintisi_OyuncuyaGosterilmez" methodname="Bolum2_CevapSizintisi_OyuncuyaGosterilmez" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="1048353828" result="Passed" start-time="2026-11-06 11:10:29Z" end-time="2026-11-06 11:10:33Z" duration="3.998774" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -274,7 +274,7 @@
 [GuardNPC] Cevap sızıntısı tespit edildi (deneme 2): Psst... cevap sessizlik, kimseye söyleme.
 ]]></output>
             </test-case>
-            <test-case id="1035" name="Bolum2_GercekOllamaServisi_SunucuYokken_GuvenliHataDoner_FrameBloklanmaz" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_GercekOllamaServisi_SunucuYokken_GuvenliHataDoner_FrameBloklanmaz" methodname="Bolum2_GercekOllamaServisi_SunucuYokken_GuvenliHataDoner_FrameBloklanmaz" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="1548802183" result="Skipped" label="Ignored" start-time="2026-11-06 11:02:14Z" end-time="2026-11-06 11:02:14Z" duration="0.081988" asserts="0">
+            <test-case id="1035" name="Bolum2_GercekOllamaServisi_SunucuYokken_GuvenliHataDoner_FrameBloklanmaz" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_GercekOllamaServisi_SunucuYokken_GuvenliHataDoner_FrameBloklanmaz" methodname="Bolum2_GercekOllamaServisi_SunucuYokken_GuvenliHataDoner_FrameBloklanmaz" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="1181157220" result="Skipped" label="Ignored" start-time="2026-11-06 11:10:33Z" end-time="2026-11-06 11:10:34Z" duration="0.369763" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -284,7 +284,7 @@
                 <message><![CDATA[Ollama çalışıyor; bu test yalnızca sunucu kapalıyken anlamlı.]]></message>
               </reason>
             </test-case>
-            <test-case id="1033" name="Bolum2_GuvenDusukken_BilmecelerCozulseBileKapiAcilmaz_KonustukcaAcilir" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_GuvenDusukken_BilmecelerCozulseBileKapiAcilmaz_KonustukcaAcilir" methodname="Bolum2_GuvenDusukken_BilmecelerCozulseBileKapiAcilmaz_KonustukcaAcilir" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="690613932" result="Passed" start-time="2026-11-06 11:02:14Z" end-time="2026-11-06 11:02:23Z" duration="8.695329" asserts="0">
+            <test-case id="1033" name="Bolum2_GuvenDusukken_BilmecelerCozulseBileKapiAcilmaz_KonustukcaAcilir" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_GuvenDusukken_BilmecelerCozulseBileKapiAcilmaz_KonustukcaAcilir" methodname="Bolum2_GuvenDusukken_BilmecelerCozulseBileKapiAcilmaz_KonustukcaAcilir" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="661829496" result="Passed" start-time="2026-11-06 11:10:34Z" end-time="2026-11-06 11:10:42Z" duration="8.176983" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -292,11 +292,11 @@
               </properties>
               <output><![CDATA[[Robo] Lever fark ettim! Ben hallederim, sen bekle.
 [Robo] Platforma zıplıyorum!
-[GuardNPC] Güven yetersiz (46/60); open_door yok sayıldı.
+[GuardNPC] Güven yetersiz (46/60); open_door bekletiliyor.
 [Robo] Lever çalıştırıldı! Yol açılıyor.
 ]]></output>
             </test-case>
-            <test-case id="1025" name="Bolum2_IkiBilmeceSirayla_KapiyiAcar_OyunTamamlanir" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_IkiBilmeceSirayla_KapiyiAcar_OyunTamamlanir" methodname="Bolum2_IkiBilmeceSirayla_KapiyiAcar_OyunTamamlanir" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="545173805" result="Passed" start-time="2026-11-06 11:02:23Z" end-time="2026-11-06 11:02:29Z" duration="5.866678" asserts="0">
+            <test-case id="1025" name="Bolum2_IkiBilmeceSirayla_KapiyiAcar_OyunTamamlanir" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_IkiBilmeceSirayla_KapiyiAcar_OyunTamamlanir" methodname="Bolum2_IkiBilmeceSirayla_KapiyiAcar_OyunTamamlanir" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="619966771" result="Passed" start-time="2026-11-06 11:10:42Z" end-time="2026-11-06 11:10:48Z" duration="5.943263" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -306,7 +306,7 @@
 [Robo] Platforma zıplıyorum!
 ]]></output>
             </test-case>
-            <test-case id="1027" name="Bolum2_IkinciCevapOnceVerilirse_SayilmazKapiAcilmaz" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_IkinciCevapOnceVerilirse_SayilmazKapiAcilmaz" methodname="Bolum2_IkinciCevapOnceVerilirse_SayilmazKapiAcilmaz" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="543778619" result="Passed" start-time="2026-11-06 11:02:29Z" end-time="2026-11-06 11:02:32Z" duration="3.656354" asserts="0">
+            <test-case id="1027" name="Bolum2_IkinciCevapOnceVerilirse_SayilmazKapiAcilmaz" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_IkinciCevapOnceVerilirse_SayilmazKapiAcilmaz" methodname="Bolum2_IkinciCevapOnceVerilirse_SayilmazKapiAcilmaz" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="517377964" result="Passed" start-time="2026-11-06 11:10:48Z" end-time="2026-11-06 11:10:52Z" duration="3.723629" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -318,7 +318,7 @@
 [Robo] Platforma zıplıyorum!
 ]]></output>
             </test-case>
-            <test-case id="1034" name="Bolum2_KabaMesaj_GuveniDusurur_PromptaYansir" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_KabaMesaj_GuveniDusurur_PromptaYansir" methodname="Bolum2_KabaMesaj_GuveniDusurur_PromptaYansir" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="1499626769" result="Passed" start-time="2026-11-06 11:02:32Z" end-time="2026-11-06 11:02:36Z" duration="3.768833" asserts="0">
+            <test-case id="1034" name="Bolum2_KabaMesaj_GuveniDusurur_PromptaYansir" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_KabaMesaj_GuveniDusurur_PromptaYansir" methodname="Bolum2_KabaMesaj_GuveniDusurur_PromptaYansir" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="509182514" result="Passed" start-time="2026-11-06 11:10:52Z" end-time="2026-11-06 11:10:55Z" duration="3.826650" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -328,7 +328,7 @@
 [Robo] Platforma zıplıyorum!
 ]]></output>
             </test-case>
-            <test-case id="1026" name="Bolum2_LLMBayragiFalseDese_DogruCevapSayilir_AmaKapiyiLLMAcar" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_LLMBayragiFalseDese_DogruCevapSayilir_AmaKapiyiLLMAcar" methodname="Bolum2_LLMBayragiFalseDese_DogruCevapSayilir_AmaKapiyiLLMAcar" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="1678900767" result="Passed" start-time="2026-11-06 11:02:36Z" end-time="2026-11-06 11:02:40Z" duration="4.269168" asserts="0">
+            <test-case id="1026" name="Bolum2_LLMBayragiFalseDese_DogruCevapSayilir_AmaKapiyiLLMAcar" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_LLMBayragiFalseDese_DogruCevapSayilir_AmaKapiyiLLMAcar" methodname="Bolum2_LLMBayragiFalseDese_DogruCevapSayilir_AmaKapiyiLLMAcar" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="730042967" result="Passed" start-time="2026-11-06 11:10:55Z" end-time="2026-11-06 11:11:00Z" duration="4.352188" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -340,7 +340,7 @@
 [GuardNPC] LLM riddle_solved=False, Unity kararı=True (oyuncu mesajındaki cevaba göre).
 ]]></output>
             </test-case>
-            <test-case id="1024" name="Bolum2_MockLLM_TumHataModlarinda_OyunCokmez_KapiKapaliKalir" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_MockLLM_TumHataModlarinda_OyunCokmez_KapiKapaliKalir" methodname="Bolum2_MockLLM_TumHataModlarinda_OyunCokmez_KapiKapaliKalir" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="999387456" result="Passed" start-time="2026-11-06 11:02:40Z" end-time="2026-11-06 11:02:48Z" duration="7.215958" asserts="0">
+            <test-case id="1024" name="Bolum2_MockLLM_TumHataModlarinda_OyunCokmez_KapiKapaliKalir" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_MockLLM_TumHataModlarinda_OyunCokmez_KapiKapaliKalir" methodname="Bolum2_MockLLM_TumHataModlarinda_OyunCokmez_KapiKapaliKalir" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="1392508037" result="Passed" start-time="2026-11-06 11:11:00Z" end-time="2026-11-06 11:11:07Z" duration="7.321425" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -362,9 +362,9 @@
 [TEST] AlwaysRefuse: OK
 InvalidOperationException: Mock: beklenmeyen istisna.
 AdventureGame.MockLLMService.GenerateAsync (AdventureGame.LLMRequest request, System.Threading.CancellationToken cancellationToken) (at Assets/Scripts/LLM/MockLLMService.cs:91)
-AdventureGame.GuardNPC.HandlePlayerMessageAsync (System.String rawMessage) (at Assets/Scripts/NPC/GuardNPC.cs:296)
+AdventureGame.GuardNPC.HandlePlayerMessageAsync (System.String rawMessage) (at Assets/Scripts/NPC/GuardNPC.cs:297)
 UnityEngine.Debug:LogException(Exception, Object)
-AdventureGame.<HandlePlayerMessageAsync>d__66:MoveNext() (at Assets/Scripts/NPC/GuardNPC.cs:333)
+AdventureGame.<HandlePlayerMessageAsync>d__67:MoveNext() (at Assets/Scripts/NPC/GuardNPC.cs:334)
 System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1:SetException(Exception)
 AdventureGame.<GenerateAsync>d__19:MoveNext() (at Assets/Scripts/LLM/MockLLMService.cs:106)
 UnityEngine.UnitySynchronizationContext:ExecuteTasks()
@@ -373,13 +373,13 @@ UnityEngine.UnitySynchronizationContext:ExecuteTasks()
 [TEST] ThrowException: OK
 ]]></output>
             </test-case>
-            <test-case id="1032" name="Bolum2_SahnedekiPersona_GuncelKurallarlaUyumlu" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_SahnedekiPersona_GuncelKurallarlaUyumlu" methodname="Bolum2_SahnedekiPersona_GuncelKurallarlaUyumlu" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="1707631641" result="Passed" start-time="2026-11-06 11:02:48Z" end-time="2026-11-06 11:02:48Z" duration="0.042346" asserts="0">
+            <test-case id="1032" name="Bolum2_SahnedekiPersona_GuncelKurallarlaUyumlu" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_SahnedekiPersona_GuncelKurallarlaUyumlu" methodname="Bolum2_SahnedekiPersona_GuncelKurallarlaUyumlu" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="2107259080" result="Passed" start-time="2026-11-06 11:11:07Z" end-time="2026-11-06 11:11:07Z" duration="0.119545" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1028" name="Bolum2_UcYanlisCevap_BeklemeSuresi_MesajLLMeGitmez" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_UcYanlisCevap_BeklemeSuresi_MesajLLMeGitmez" methodname="Bolum2_UcYanlisCevap_BeklemeSuresi_MesajLLMeGitmez" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="5034613" result="Passed" start-time="2026-11-06 11:02:48Z" end-time="2026-11-06 11:02:52Z" duration="4.373605" asserts="0">
+            <test-case id="1028" name="Bolum2_UcYanlisCevap_BeklemeSuresi_MesajLLMeGitmez" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_UcYanlisCevap_BeklemeSuresi_MesajLLMeGitmez" methodname="Bolum2_UcYanlisCevap_BeklemeSuresi_MesajLLMeGitmez" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="20490914" result="Passed" start-time="2026-11-06 11:11:07Z" end-time="2026-11-06 11:11:12Z" duration="4.463860" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -389,7 +389,7 @@ UnityEngine.UnitySynchronizationContext:ExecuteTasks()
 [Robo] Platforma zıplıyorum!
 ]]></output>
             </test-case>
-            <test-case id="1030" name="Bolum2_YankiTasiEksikken_KapiAcilmaz_TamamlanincaAcilir" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_YankiTasiEksikken_KapiAcilmaz_TamamlanincaAcilir" methodname="Bolum2_YankiTasiEksikken_KapiAcilmaz_TamamlanincaAcilir" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="1521206481" result="Passed" start-time="2026-11-06 11:02:52Z" end-time="2026-11-06 11:03:00Z" duration="7.863505" asserts="0">
+            <test-case id="1030" name="Bolum2_YankiTasiEksikken_KapiAcilmaz_TamamlanincaAcilir" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_YankiTasiEksikken_KapiAcilmaz_TamamlanincaAcilir" methodname="Bolum2_YankiTasiEksikken_KapiAcilmaz_TamamlanincaAcilir" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="453812608" result="Passed" start-time="2026-11-06 11:11:12Z" end-time="2026-11-06 11:11:20Z" duration="7.945987" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -401,7 +401,7 @@ Yankı Taşı parçaları eksik; open_door reddedildi.
 [Robo] Lever çalıştırıldı! Yol açılıyor.
 ]]></output>
             </test-case>
-            <test-case id="1031" name="Bolum2_YanlisAsamadaOpenDoor_GameManagerTarafindanReddedilir" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_YanlisAsamadaOpenDoor_GameManagerTarafindanReddedilir" methodname="Bolum2_YanlisAsamadaOpenDoor_GameManagerTarafindanReddedilir" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="821985648" result="Passed" start-time="2026-11-06 11:03:00Z" end-time="2026-11-06 11:03:03Z" duration="3.253973" asserts="0">
+            <test-case id="1031" name="Bolum2_YanlisAsamadaOpenDoor_GameManagerTarafindanReddedilir" fullname="AdventureGame.Tests.GameFlowTests.Bolum2_YanlisAsamadaOpenDoor_GameManagerTarafindanReddedilir" methodname="Bolum2_YanlisAsamadaOpenDoor_GameManagerTarafindanReddedilir" classname="AdventureGame.Tests.GameFlowTests" runstate="Runnable" seed="1309520693" result="Passed" start-time="2026-11-06 11:11:20Z" end-time="2026-11-06 11:11:23Z" duration="3.311423" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -411,125 +411,125 @@ Yankı Taşı parçaları eksik; open_door reddedildi.
 ]]></output>
             </test-case>
           </test-suite>
-          <test-suite type="TestFixture" id="1036" name="ParserTests" fullname="AdventureGame.Tests.ParserTests" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" testcasecount="35" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.020376" total="35" passed="35" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <test-suite type="TestFixture" id="1036" name="ParserTests" fullname="AdventureGame.Tests.ParserTests" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" testcasecount="35" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.043170" total="35" passed="35" failed="0" inconclusive="0" skipped="0" asserts="0">
             <properties />
-            <test-suite type="ParameterizedMethod" id="1060" name="BilmeceAlanlari_TureGoreGuvenleOkunur" fullname="AdventureGame.Tests.ParserTests.BilmeceAlanlari_TureGoreGuvenleOkunur" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.003296" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="ParameterizedMethod" id="1060" name="BilmeceAlanlari_TureGoreGuvenleOkunur" fullname="AdventureGame.Tests.ParserTests.BilmeceAlanlari_TureGoreGuvenleOkunur" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.007694" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1054" name="BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Doğru\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;riddle_solved\&quot;:true,\&quot;is_answer_attempt\&quot;:true}&quot;,True,True)" fullname="AdventureGame.Tests.ParserTests.BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Doğru\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;riddle_solved\&quot;:true,\&quot;is_answer_attempt\&quot;:true}&quot;,True,True)" methodname="BilmeceAlanlari_TureGoreGuvenleOkunur" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="813158939" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000893" asserts="0">
+              <test-case id="1054" name="BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Doğru\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;riddle_solved\&quot;:true,\&quot;is_answer_attempt\&quot;:true}&quot;,True,True)" fullname="AdventureGame.Tests.ParserTests.BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Doğru\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;riddle_solved\&quot;:true,\&quot;is_answer_attempt\&quot;:true}&quot;,True,True)" methodname="BilmeceAlanlari_TureGoreGuvenleOkunur" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1510547768" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.001769" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1055" name="BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Yanlış\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;riddle_solved\&quot;:false,\&quot;is_answer_attempt\&quot;:true}&quot;,False,True)" fullname="AdventureGame.Tests.ParserTests.BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Yanlış\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;riddle_solved\&quot;:false,\&quot;is_answer_attempt\&quot;:true}&quot;,False,True)" methodname="BilmeceAlanlari_TureGoreGuvenleOkunur" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="536938894" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000142" asserts="0">
+              <test-case id="1055" name="BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Yanlış\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;riddle_solved\&quot;:false,\&quot;is_answer_attempt\&quot;:true}&quot;,False,True)" fullname="AdventureGame.Tests.ParserTests.BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Yanlış\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;riddle_solved\&quot;:false,\&quot;is_answer_attempt\&quot;:true}&quot;,False,True)" methodname="BilmeceAlanlari_TureGoreGuvenleOkunur" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1060938297" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000341" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1056" name="BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Alan yok\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}&quot;,False,False)" fullname="AdventureGame.Tests.ParserTests.BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Alan yok\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}&quot;,False,False)" methodname="BilmeceAlanlari_TureGoreGuvenleOkunur" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1350317085" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000092" asserts="0">
+              <test-case id="1056" name="BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Alan yok\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}&quot;,False,False)" fullname="AdventureGame.Tests.ParserTests.BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Alan yok\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}&quot;,False,False)" methodname="BilmeceAlanlari_TureGoreGuvenleOkunur" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="977412777" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000358" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1057" name="BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Metin bool\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;riddle_solved\&quot;:\&quot;true\&quot;,\&quot;is_answer_attempt\&quot;:\&quot;false\&quot;}&quot;,True,False)" fullname="AdventureGame.Tests.ParserTests.BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Metin bool\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;riddle_solved\&quot;:\&quot;true\&quot;,\&quot;is_answer_attempt\&quot;:\&quot;false\&quot;}&quot;,True,False)" methodname="BilmeceAlanlari_TureGoreGuvenleOkunur" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1063572615" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000567" asserts="0">
+              <test-case id="1057" name="BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Metin bool\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;riddle_solved\&quot;:\&quot;true\&quot;,\&quot;is_answer_attempt\&quot;:\&quot;false\&quot;}&quot;,True,False)" fullname="AdventureGame.Tests.ParserTests.BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Metin bool\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;riddle_solved\&quot;:\&quot;true\&quot;,\&quot;is_answer_attempt\&quot;:\&quot;false\&quot;}&quot;,True,False)" methodname="BilmeceAlanlari_TureGoreGuvenleOkunur" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1951520284" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.001264" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1058" name="BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Sayı\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;riddle_solved\&quot;:1,\&quot;is_answer_attempt\&quot;:0}&quot;,False,False)" fullname="AdventureGame.Tests.ParserTests.BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Sayı\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;riddle_solved\&quot;:1,\&quot;is_answer_attempt\&quot;:0}&quot;,False,False)" methodname="BilmeceAlanlari_TureGoreGuvenleOkunur" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1763174545" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000113" asserts="0">
+              <test-case id="1058" name="BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Sayı\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;riddle_solved\&quot;:1,\&quot;is_answer_attempt\&quot;:0}&quot;,False,False)" fullname="AdventureGame.Tests.ParserTests.BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Sayı\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;riddle_solved\&quot;:1,\&quot;is_answer_attempt\&quot;:0}&quot;,False,False)" methodname="BilmeceAlanlari_TureGoreGuvenleOkunur" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="130287219" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000298" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1059" name="BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Nesne\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;riddle_solved\&quot;:{\&quot;x\&quot;:1},\&quot;is_answer_attempt\&quot;:null}&quot;,False,False)" fullname="AdventureGame.Tests.ParserTests.BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Nesne\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;riddle_solved\&quot;:{\&quot;x\&quot;:1},\&quot;is_answer_attempt\&quot;:null}&quot;,False,False)" methodname="BilmeceAlanlari_TureGoreGuvenleOkunur" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1437391683" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000226" asserts="0">
+              <test-case id="1059" name="BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Nesne\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;riddle_solved\&quot;:{\&quot;x\&quot;:1},\&quot;is_answer_attempt\&quot;:null}&quot;,False,False)" fullname="AdventureGame.Tests.ParserTests.BilmeceAlanlari_TureGoreGuvenleOkunur(&quot;{\&quot;response\&quot;:\&quot;Nesne\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;riddle_solved\&quot;:{\&quot;x\&quot;:1},\&quot;is_answer_attempt\&quot;:null}&quot;,False,False)" methodname="BilmeceAlanlari_TureGoreGuvenleOkunur" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1783696169" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000536" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
             </test-suite>
-            <test-suite type="ParameterizedMethod" id="1053" name="BozukJson_IstisnaFirlatmaz_FalseDoner" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.002786" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="ParameterizedMethod" id="1053" name="BozukJson_IstisnaFirlatmaz_FalseDoner" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.007712" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1045" name="BozukJson_IstisnaFirlatmaz_FalseDoner(null)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(null)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="509741256" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.001162" asserts="0">
+              <test-case id="1045" name="BozukJson_IstisnaFirlatmaz_FalseDoner(null)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(null)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1856091933" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.002959" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1046" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;&quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;&quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1772618319" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000072" asserts="0">
+              <test-case id="1046" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;&quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;&quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="722142517" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000334" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1047" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;   &quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;   &quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1060927278" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000059" asserts="0">
+              <test-case id="1047" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;   &quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;   &quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="728556325" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000181" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1048" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;JSON yok, sadece düz metin&quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;JSON yok, sadece düz metin&quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="101763084" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000054" asserts="0">
+              <test-case id="1048" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;JSON yok, sadece düz metin&quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;JSON yok, sadece düz metin&quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1845429798" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000138" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1049" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;{\&quot;response\&quot;: \&quot;Bozuk json, \&quot;action\&quot;: &quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;{\&quot;response\&quot;: \&quot;Bozuk json, \&quot;action\&quot;: &quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="787751703" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000048" asserts="0">
+              <test-case id="1049" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;{\&quot;response\&quot;: \&quot;Bozuk json, \&quot;action\&quot;: &quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;{\&quot;response\&quot;: \&quot;Bozuk json, \&quot;action\&quot;: &quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="2039631604" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000121" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1050" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;{\&quot;response\&quot;: {\&quot;ic\&quot;: 1}, \&quot;action\&quot;: \&quot;none\&quot;}&quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;{\&quot;response\&quot;: {\&quot;ic\&quot;: 1}, \&quot;action\&quot;: \&quot;none\&quot;}&quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1996398844" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000069" asserts="0">
+              <test-case id="1050" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;{\&quot;response\&quot;: {\&quot;ic\&quot;: 1}, \&quot;action\&quot;: \&quot;none\&quot;}&quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;{\&quot;response\&quot;: {\&quot;ic\&quot;: 1}, \&quot;action\&quot;: \&quot;none\&quot;}&quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="540098272" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000201" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1051" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;{\&quot;response\&quot;:\&quot;\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}&quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;{\&quot;response\&quot;:\&quot;\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}&quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1544357964" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000062" asserts="0">
+              <test-case id="1051" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;{\&quot;response\&quot;:\&quot;\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}&quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;{\&quot;response\&quot;:\&quot;\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}&quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="236240596" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000230" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1052" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;null&quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;null&quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1939251969" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000047" asserts="0">
+              <test-case id="1052" name="BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;null&quot;)" fullname="AdventureGame.Tests.ParserTests.BozukJson_IstisnaFirlatmaz_FalseDoner(&quot;null&quot;)" methodname="BozukJson_IstisnaFirlatmaz_FalseDoner" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1669729613" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000130" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
             </test-suite>
-            <test-suite type="ParameterizedMethod" id="1044" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.004161" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="ParameterizedMethod" id="1044" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.010526" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1037" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Geç.\&quot;,\&quot;action\&quot;:\&quot;open_door\&quot;}&quot;,OpenDoor,&quot;Geç.&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Geç.\&quot;,\&quot;action\&quot;:\&quot;open_door\&quot;}&quot;,OpenDoor,&quot;Geç.&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="958719376" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000546" asserts="0">
+              <test-case id="1037" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Geç.\&quot;,\&quot;action\&quot;:\&quot;open_door\&quot;}&quot;,OpenDoor,&quot;Geç.&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Geç.\&quot;,\&quot;action\&quot;:\&quot;open_door\&quot;}&quot;,OpenDoor,&quot;Geç.&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1518616282" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.001654" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1038" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Hayır.\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}&quot;,None,&quot;Hayır.&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Hayır.\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}&quot;,None,&quot;Hayır.&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="887373586" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000128" asserts="0">
+              <test-case id="1038" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Hayır.\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}&quot;,None,&quot;Hayır.&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Hayır.\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}&quot;,None,&quot;Hayır.&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="141706364" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000320" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1039" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;```json\n{\&quot;response\&quot;:\&quot;Kod bloğu\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}\n```&quot;,None,&quot;Kod bloğu&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;```json\n{\&quot;response\&quot;:\&quot;Kod bloğu\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}\n```&quot;,None,&quot;Kod bloğu&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="61464004" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000488" asserts="0">
+              <test-case id="1039" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;```json\n{\&quot;response\&quot;:\&quot;Kod bloğu\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}\n```&quot;,None,&quot;Kod bloğu&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;```json\n{\&quot;response\&quot;:\&quot;Kod bloğu\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}\n```&quot;,None,&quot;Kod bloğu&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1163173558" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.001306" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1040" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;Tabii! İşte: {\&quot;response\&quot;:\&quot;Ön metin\&quot;,\&quot;action\&quot;:\&quot;OPEN-DOOR\&quot;} umarım yardımcı olur&quot;,OpenDoor,&quot;Ön metin&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;Tabii! İşte: {\&quot;response\&quot;:\&quot;Ön metin\&quot;,\&quot;action\&quot;:\&quot;OPEN-DOOR\&quot;} umarım yardımcı olur&quot;,OpenDoor,&quot;Ön metin&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="2050250148" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000136" asserts="0">
+              <test-case id="1040" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;Tabii! İşte: {\&quot;response\&quot;:\&quot;Ön metin\&quot;,\&quot;action\&quot;:\&quot;OPEN-DOOR\&quot;} umarım yardımcı olur&quot;,OpenDoor,&quot;Ön metin&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;Tabii! İşte: {\&quot;response\&quot;:\&quot;Ön metin\&quot;,\&quot;action\&quot;:\&quot;OPEN-DOOR\&quot;} umarım yardımcı olur&quot;,OpenDoor,&quot;Ön metin&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="18337633" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000312" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1041" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Patlat\&quot;,\&quot;action\&quot;:\&quot;explode_door\&quot;}&quot;,None,&quot;Patlat&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Patlat\&quot;,\&quot;action\&quot;:\&quot;explode_door\&quot;}&quot;,None,&quot;Patlat&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1218645754" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000585" asserts="0">
+              <test-case id="1041" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Patlat\&quot;,\&quot;action\&quot;:\&quot;explode_door\&quot;}&quot;,None,&quot;Patlat&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Patlat\&quot;,\&quot;action\&quot;:\&quot;explode_door\&quot;}&quot;,None,&quot;Patlat&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1206928658" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.001463" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -537,7 +537,7 @@ Yankı Taşı parçaları eksik; open_door reddedildi.
                 <output><![CDATA[[NpcDecisionParser] Bilinmeyen aksiyon 'explode_door' → güvenli varsayılan 'none' uygulandı.
 ]]></output>
               </test-case>
-              <test-case id="1042" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Eksik aksiyon\&quot;}&quot;,None,&quot;Eksik aksiyon&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Eksik aksiyon\&quot;}&quot;,None,&quot;Eksik aksiyon&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="172382384" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000761" asserts="0">
+              <test-case id="1042" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Eksik aksiyon\&quot;}&quot;,None,&quot;Eksik aksiyon&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;Eksik aksiyon\&quot;}&quot;,None,&quot;Eksik aksiyon&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1222518374" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.001300" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -545,97 +545,97 @@ Yankı Taşı parçaları eksik; open_door reddedildi.
                 <output><![CDATA[[NpcDecisionParser] Bilinmeyen aksiyon '' → güvenli varsayılan 'none' uygulandı.
 ]]></output>
               </test-case>
-              <test-case id="1043" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;\&quot;,\&quot;action\&quot;:\&quot;open_door\&quot;}&quot;,OpenDoor,&quot;...&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;\&quot;,\&quot;action\&quot;:\&quot;open_door\&quot;}&quot;,OpenDoor,&quot;...&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1180567376" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000145" asserts="0">
+              <test-case id="1043" name="GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;\&quot;,\&quot;action\&quot;:\&quot;open_door\&quot;}&quot;,OpenDoor,&quot;...&quot;)" fullname="AdventureGame.Tests.ParserTests.GecerliVeyaKurtarilabilirJson_DogruAyristirilir(&quot;{\&quot;response\&quot;:\&quot;\&quot;,\&quot;action\&quot;:\&quot;open_door\&quot;}&quot;,OpenDoor,&quot;...&quot;)" methodname="GecerliVeyaKurtarilabilirJson_DogruAyristirilir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1380369689" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000302" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
             </test-suite>
-            <test-suite type="ParameterizedMethod" id="1076" name="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz" fullname="AdventureGame.Tests.ParserTests.Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.005236" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="ParameterizedMethod" id="1076" name="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz" fullname="AdventureGame.Tests.ParserTests.Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.005903" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1069" name="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;Bence cevap SESSİZLİK!&quot;,0,True)" fullname="AdventureGame.Tests.ParserTests.Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;Bence cevap SESSİZLİK!&quot;,0,True)" methodname="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1095390615" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.003266" asserts="0">
+              <test-case id="1069" name="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;Bence cevap SESSİZLİK!&quot;,0,True)" fullname="AdventureGame.Tests.ParserTests.Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;Bence cevap SESSİZLİK!&quot;,0,True)" methodname="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1044502048" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.001176" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1070" name="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;sükût&quot;,0,True)" fullname="AdventureGame.Tests.ParserTests.Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;sükût&quot;,0,True)" methodname="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1433096376" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000130" asserts="0">
+              <test-case id="1070" name="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;sükût&quot;,0,True)" fullname="AdventureGame.Tests.ParserTests.Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;sükût&quot;,0,True)" methodname="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1874911118" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000286" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1071" name="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;sukut olabilir mi&quot;,0,True)" fullname="AdventureGame.Tests.ParserTests.Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;sukut olabilir mi&quot;,0,True)" methodname="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1519764872" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000095" asserts="0">
+              <test-case id="1071" name="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;sukut olabilir mi&quot;,0,True)" fullname="AdventureGame.Tests.ParserTests.Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;sukut olabilir mi&quot;,0,True)" methodname="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="406599736" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000220" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1072" name="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;ayna&quot;,0,False)" fullname="AdventureGame.Tests.ParserTests.Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;ayna&quot;,0,False)" methodname="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="800738667" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000083" asserts="0">
+              <test-case id="1072" name="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;ayna&quot;,0,False)" fullname="AdventureGame.Tests.ParserTests.Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;ayna&quot;,0,False)" methodname="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1392510772" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000192" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1073" name="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;Ayak İzi&quot;,1,True)" fullname="AdventureGame.Tests.ParserTests.Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;Ayak İzi&quot;,1,True)" methodname="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1856611015" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000083" asserts="0">
+              <test-case id="1073" name="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;Ayak İzi&quot;,1,True)" fullname="AdventureGame.Tests.ParserTests.Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;Ayak İzi&quot;,1,True)" methodname="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="842025887" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000193" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1074" name="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;ayakizleri&quot;,1,True)" fullname="AdventureGame.Tests.ParserTests.Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;ayakizleri&quot;,1,True)" methodname="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1878654939" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000075" asserts="0">
+              <test-case id="1074" name="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;ayakizleri&quot;,1,True)" fullname="AdventureGame.Tests.ParserTests.Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;ayakizleri&quot;,1,True)" methodname="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="688408371" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000293" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1075" name="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;sessizlik&quot;,1,False)" fullname="AdventureGame.Tests.ParserTests.Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;sessizlik&quot;,1,False)" methodname="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="314490511" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000073" asserts="0">
+              <test-case id="1075" name="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;sessizlik&quot;,1,False)" fullname="AdventureGame.Tests.ParserTests.Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz(&quot;sessizlik&quot;,1,False)" methodname="Persona_CevapKontrolu_TurkceKarakterVeBuyukHarfeDuyarsiz" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="438576432" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000238" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
             </test-suite>
-            <test-case id="1068" name="Persona_GuvenDegisimi_KabaDusurur_DigerleriArtirir" fullname="AdventureGame.Tests.ParserTests.Persona_GuvenDegisimi_KabaDusurur_DigerleriArtirir" methodname="Persona_GuvenDegisimi_KabaDusurur_DigerleriArtirir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1625180215" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000380" asserts="0">
+            <test-case id="1068" name="Persona_GuvenDegisimi_KabaDusurur_DigerleriArtirir" fullname="AdventureGame.Tests.ParserTests.Persona_GuvenDegisimi_KabaDusurur_DigerleriArtirir" methodname="Persona_GuvenDegisimi_KabaDusurur_DigerleriArtirir" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1908519530" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.001014" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-suite type="ParameterizedMethod" id="1067" name="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr" fullname="AdventureGame.Tests.ParserTests.TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.002333" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="ParameterizedMethod" id="1067" name="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr" fullname="AdventureGame.Tests.ParserTests.TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.005801" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1061" name="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;tone\&quot;:\&quot;polite\&quot;}&quot;,Polite)" fullname="AdventureGame.Tests.ParserTests.TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;tone\&quot;:\&quot;polite\&quot;}&quot;,Polite)" methodname="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="865630780" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000437" asserts="0">
+              <test-case id="1061" name="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;tone\&quot;:\&quot;polite\&quot;}&quot;,Polite)" fullname="AdventureGame.Tests.ParserTests.TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;tone\&quot;:\&quot;polite\&quot;}&quot;,Polite)" methodname="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="100072917" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000949" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1062" name="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;tone\&quot;:\&quot;RUDE\&quot;}&quot;,Rude)" fullname="AdventureGame.Tests.ParserTests.TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;tone\&quot;:\&quot;RUDE\&quot;}&quot;,Rude)" methodname="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1734737052" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000124" asserts="0">
+              <test-case id="1062" name="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;tone\&quot;:\&quot;RUDE\&quot;}&quot;,Rude)" fullname="AdventureGame.Tests.ParserTests.TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;tone\&quot;:\&quot;RUDE\&quot;}&quot;,Rude)" methodname="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="2070813214" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000356" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1063" name="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;tone\&quot;:\&quot;neutral\&quot;}&quot;,Neutral)" fullname="AdventureGame.Tests.ParserTests.TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;tone\&quot;:\&quot;neutral\&quot;}&quot;,Neutral)" methodname="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1835430541" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000099" asserts="0">
+              <test-case id="1063" name="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;tone\&quot;:\&quot;neutral\&quot;}&quot;,Neutral)" fullname="AdventureGame.Tests.ParserTests.TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;tone\&quot;:\&quot;neutral\&quot;}&quot;,Neutral)" methodname="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="725687155" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000315" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1064" name="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}&quot;,Neutral)" fullname="AdventureGame.Tests.ParserTests.TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}&quot;,Neutral)" methodname="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1718425004" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000087" asserts="0">
+              <test-case id="1064" name="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}&quot;,Neutral)" fullname="AdventureGame.Tests.ParserTests.TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;}&quot;,Neutral)" methodname="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="338213759" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000223" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1065" name="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;tone\&quot;:\&quot;furious\&quot;}&quot;,Neutral)" fullname="AdventureGame.Tests.ParserTests.TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;tone\&quot;:\&quot;furious\&quot;}&quot;,Neutral)" methodname="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="268733708" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000087" asserts="0">
+              <test-case id="1065" name="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;tone\&quot;:\&quot;furious\&quot;}&quot;,Neutral)" fullname="AdventureGame.Tests.ParserTests.TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;tone\&quot;:\&quot;furious\&quot;}&quot;,Neutral)" methodname="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1812788213" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000227" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1066" name="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;tone\&quot;:5}&quot;,Neutral)" fullname="AdventureGame.Tests.ParserTests.TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;tone\&quot;:5}&quot;,Neutral)" methodname="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="1474019568" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.000102" asserts="0">
+              <test-case id="1066" name="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;tone\&quot;:5}&quot;,Neutral)" fullname="AdventureGame.Tests.ParserTests.TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr(&quot;{\&quot;response\&quot;:\&quot;a\&quot;,\&quot;action\&quot;:\&quot;none\&quot;,\&quot;tone\&quot;:5}&quot;,Neutral)" methodname="TonAlani_BeyazListeyeGoreOkunur_BilinmeyenNotr" classname="AdventureGame.Tests.ParserTests" runstate="Runnable" seed="763659128" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.000220" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -643,37 +643,37 @@ Yankı Taşı parçaları eksik; open_door reddedildi.
               </test-case>
             </test-suite>
           </test-suite>
-          <test-suite type="TestFixture" id="1077" name="PauseTests" fullname="AdventureGame.Tests.PauseTests" classname="AdventureGame.Tests.PauseTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.320874" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <test-suite type="TestFixture" id="1077" name="PauseTests" fullname="AdventureGame.Tests.PauseTests" classname="AdventureGame.Tests.PauseTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:24Z" duration="0.718600" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
             <properties />
-            <test-case id="1080" name="DiyalogSirasindaDuraklatilipDevamEdilirse_GirdiKilitliKalir" fullname="AdventureGame.Tests.PauseTests.DiyalogSirasindaDuraklatilipDevamEdilirse_GirdiKilitliKalir" methodname="DiyalogSirasindaDuraklatilipDevamEdilirse_GirdiKilitliKalir" classname="AdventureGame.Tests.PauseTests" runstate="Runnable" seed="2044031036" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.049371" asserts="0">
+            <test-case id="1080" name="DiyalogSirasindaDuraklatilipDevamEdilirse_GirdiKilitliKalir" fullname="AdventureGame.Tests.PauseTests.DiyalogSirasindaDuraklatilipDevamEdilirse_GirdiKilitliKalir" methodname="DiyalogSirasindaDuraklatilipDevamEdilirse_GirdiKilitliKalir" classname="AdventureGame.Tests.PauseTests" runstate="Runnable" seed="2056426765" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.112390" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1081" name="DuraklatilmisSahneDegisirse_ZamanNormaleDoner" fullname="AdventureGame.Tests.PauseTests.DuraklatilmisSahneDegisirse_ZamanNormaleDoner" methodname="DuraklatilmisSahneDegisirse_ZamanNormaleDoner" classname="AdventureGame.Tests.PauseTests" runstate="Runnable" seed="1504066333" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.080952" asserts="0">
+            <test-case id="1081" name="DuraklatilmisSahneDegisirse_ZamanNormaleDoner" fullname="AdventureGame.Tests.PauseTests.DuraklatilmisSahneDegisirse_ZamanNormaleDoner" methodname="DuraklatilmisSahneDegisirse_ZamanNormaleDoner" classname="AdventureGame.Tests.PauseTests" runstate="Runnable" seed="737385772" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:23Z" duration="0.195390" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1082" name="KayitliFareHassasiyeti_OyuncuTarafindanOkunur" fullname="AdventureGame.Tests.PauseTests.KayitliFareHassasiyeti_OyuncuTarafindanOkunur" methodname="KayitliFareHassasiyeti_OyuncuTarafindanOkunur" classname="AdventureGame.Tests.PauseTests" runstate="Runnable" seed="717748229" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.090333" asserts="0">
+            <test-case id="1082" name="KayitliFareHassasiyeti_OyuncuTarafindanOkunur" fullname="AdventureGame.Tests.PauseTests.KayitliFareHassasiyeti_OyuncuTarafindanOkunur" methodname="KayitliFareHassasiyeti_OyuncuTarafindanOkunur" classname="AdventureGame.Tests.PauseTests" runstate="Runnable" seed="1423440526" result="Passed" start-time="2026-11-06 11:11:23Z" end-time="2026-11-06 11:11:24Z" duration="0.206880" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1079" name="SetPaused_AyniDegerIkiKez_OlayiTekrarTetiklemez" fullname="AdventureGame.Tests.PauseTests.SetPaused_AyniDegerIkiKez_OlayiTekrarTetiklemez" methodname="SetPaused_AyniDegerIkiKez_OlayiTekrarTetiklemez" classname="AdventureGame.Tests.PauseTests" runstate="Runnable" seed="1979661826" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.052679" asserts="0">
+            <test-case id="1079" name="SetPaused_AyniDegerIkiKez_OlayiTekrarTetiklemez" fullname="AdventureGame.Tests.PauseTests.SetPaused_AyniDegerIkiKez_OlayiTekrarTetiklemez" methodname="SetPaused_AyniDegerIkiKez_OlayiTekrarTetiklemez" classname="AdventureGame.Tests.PauseTests" runstate="Runnable" seed="1037052601" result="Passed" start-time="2026-11-06 11:11:24Z" end-time="2026-11-06 11:11:24Z" duration="0.094627" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1078" name="SetPaused_ZamaniDurdurur_GirdiyiKilitler_DevamEdinceAcar" fullname="AdventureGame.Tests.PauseTests.SetPaused_ZamaniDurdurur_GirdiyiKilitler_DevamEdinceAcar" methodname="SetPaused_ZamaniDurdurur_GirdiyiKilitler_DevamEdinceAcar" classname="AdventureGame.Tests.PauseTests" runstate="Runnable" seed="909299636" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:03Z" duration="0.045541" asserts="0">
+            <test-case id="1078" name="SetPaused_ZamaniDurdurur_GirdiyiKilitler_DevamEdinceAcar" fullname="AdventureGame.Tests.PauseTests.SetPaused_ZamaniDurdurur_GirdiyiKilitler_DevamEdinceAcar" methodname="SetPaused_ZamaniDurdurur_GirdiyiKilitler_DevamEdinceAcar" classname="AdventureGame.Tests.PauseTests" runstate="Runnable" seed="1249731045" result="Passed" start-time="2026-11-06 11:11:24Z" end-time="2026-11-06 11:11:24Z" duration="0.104211" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -681,9 +681,9 @@ Yankı Taşı parçaları eksik; open_door reddedildi.
               </properties>
             </test-case>
           </test-suite>
-          <test-suite type="TestFixture" id="1083" name="WorldSafetyTests" fullname="AdventureGame.Tests.WorldSafetyTests" classname="AdventureGame.Tests.WorldSafetyTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:32Z" duration="28.344686" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <test-suite type="TestFixture" id="1083" name="WorldSafetyTests" fullname="AdventureGame.Tests.WorldSafetyTests" classname="AdventureGame.Tests.WorldSafetyTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-06 11:11:24Z" end-time="2026-11-06 11:11:53Z" duration="28.771282" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
             <properties />
-            <test-case id="1089" name="CiftKilit_PlakaBosken_SalterKopruyuIndirmez_SonraPlakayaBasilincaIner" fullname="AdventureGame.Tests.WorldSafetyTests.CiftKilit_PlakaBosken_SalterKopruyuIndirmez_SonraPlakayaBasilincaIner" methodname="CiftKilit_PlakaBosken_SalterKopruyuIndirmez_SonraPlakayaBasilincaIner" classname="AdventureGame.Tests.WorldSafetyTests" runstate="Runnable" seed="1922749729" result="Passed" start-time="2026-11-06 11:03:03Z" end-time="2026-11-06 11:03:07Z" duration="3.557988" asserts="0">
+            <test-case id="1089" name="CiftKilit_PlakaBosken_SalterKopruyuIndirmez_SonraPlakayaBasilincaIner" fullname="AdventureGame.Tests.WorldSafetyTests.CiftKilit_PlakaBosken_SalterKopruyuIndirmez_SonraPlakayaBasilincaIner" methodname="CiftKilit_PlakaBosken_SalterKopruyuIndirmez_SonraPlakayaBasilincaIner" classname="AdventureGame.Tests.WorldSafetyTests" runstate="Runnable" seed="1771921434" result="Passed" start-time="2026-11-06 11:11:24Z" end-time="2026-11-06 11:11:27Z" duration="3.606938" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -692,14 +692,14 @@ Yankı Taşı parçaları eksik; open_door reddedildi.
               <output><![CDATA[[Robo] Lever fark ettim! Ben hallederim, sen bekle.
 ]]></output>
             </test-case>
-            <test-case id="1090" name="CiftKilit_SadecePlaka_KopruyuIndirmez" fullname="AdventureGame.Tests.WorldSafetyTests.CiftKilit_SadecePlaka_KopruyuIndirmez" methodname="CiftKilit_SadecePlaka_KopruyuIndirmez" classname="AdventureGame.Tests.WorldSafetyTests" runstate="Runnable" seed="1546824112" result="Passed" start-time="2026-11-06 11:03:07Z" end-time="2026-11-06 11:03:08Z" duration="1.040119" asserts="0">
+            <test-case id="1090" name="CiftKilit_SadecePlaka_KopruyuIndirmez" fullname="AdventureGame.Tests.WorldSafetyTests.CiftKilit_SadecePlaka_KopruyuIndirmez" methodname="CiftKilit_SadecePlaka_KopruyuIndirmez" classname="AdventureGame.Tests.WorldSafetyTests" runstate="Runnable" seed="503545077" result="Passed" start-time="2026-11-06 11:11:27Z" end-time="2026-11-06 11:11:28Z" duration="1.108381" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1088" name="HaritaKenarlari_DuvarlarDisariCikarmaz" fullname="AdventureGame.Tests.WorldSafetyTests.HaritaKenarlari_DuvarlarDisariCikarmaz" methodname="HaritaKenarlari_DuvarlarDisariCikarmaz" classname="AdventureGame.Tests.WorldSafetyTests" runstate="Runnable" seed="867352679" result="Passed" start-time="2026-11-06 11:03:08Z" end-time="2026-11-06 11:03:14Z" duration="6.042581" asserts="0">
+            <test-case id="1088" name="HaritaKenarlari_DuvarlarDisariCikarmaz" fullname="AdventureGame.Tests.WorldSafetyTests.HaritaKenarlari_DuvarlarDisariCikarmaz" methodname="HaritaKenarlari_DuvarlarDisariCikarmaz" classname="AdventureGame.Tests.WorldSafetyTests" runstate="Runnable" seed="473082593" result="Passed" start-time="2026-11-06 11:11:28Z" end-time="2026-11-06 11:11:35Z" duration="6.110589" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -709,7 +709,7 @@ Yankı Taşı parçaları eksik; open_door reddedildi.
 [Robo] Platforma zıplıyorum!
 ]]></output>
             </test-case>
-            <test-case id="1087" name="KoprudenYana_Dusulmez" fullname="AdventureGame.Tests.WorldSafetyTests.KoprudenYana_Dusulmez" methodname="KoprudenYana_Dusulmez" classname="AdventureGame.Tests.WorldSafetyTests" runstate="Runnable" seed="865420987" result="Passed" start-time="2026-11-06 11:03:14Z" end-time="2026-11-06 11:03:21Z" duration="6.554977" asserts="0">
+            <test-case id="1087" name="KoprudenYana_Dusulmez" fullname="AdventureGame.Tests.WorldSafetyTests.KoprudenYana_Dusulmez" methodname="KoprudenYana_Dusulmez" classname="AdventureGame.Tests.WorldSafetyTests" runstate="Runnable" seed="387213405" result="Passed" start-time="2026-11-06 11:11:35Z" end-time="2026-11-06 11:11:41Z" duration="6.628908" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -720,7 +720,7 @@ Yankı Taşı parçaları eksik; open_door reddedildi.
 [Robo] Lever çalıştırıldı! Yol açılıyor.
 ]]></output>
             </test-case>
-            <test-case id="1086" name="KopruIndikten_SonraKapiAcilir_OyuncuKopruyeGecebilir" fullname="AdventureGame.Tests.WorldSafetyTests.KopruIndikten_SonraKapiAcilir_OyuncuKopruyeGecebilir" methodname="KopruIndikten_SonraKapiAcilir_OyuncuKopruyeGecebilir" classname="AdventureGame.Tests.WorldSafetyTests" runstate="Runnable" seed="1207462510" result="Passed" start-time="2026-11-06 11:03:21Z" end-time="2026-11-06 11:03:26Z" duration="5.067270" asserts="0">
+            <test-case id="1086" name="KopruIndikten_SonraKapiAcilir_OyuncuKopruyeGecebilir" fullname="AdventureGame.Tests.WorldSafetyTests.KopruIndikten_SonraKapiAcilir_OyuncuKopruyeGecebilir" methodname="KopruIndikten_SonraKapiAcilir_OyuncuKopruyeGecebilir" classname="AdventureGame.Tests.WorldSafetyTests" runstate="Runnable" seed="671005016" result="Passed" start-time="2026-11-06 11:11:41Z" end-time="2026-11-06 11:11:46Z" duration="5.115179" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -730,7 +730,7 @@ Yankı Taşı parçaları eksik; open_door reddedildi.
 [Robo] Platforma zıplıyorum!
 ]]></output>
             </test-case>
-            <test-case id="1084" name="UcurumKenari_KopruKalkikken_OyuncuGecemezVeDusmez" fullname="AdventureGame.Tests.WorldSafetyTests.UcurumKenari_KopruKalkikken_OyuncuGecemezVeDusmez" methodname="UcurumKenari_KopruKalkikken_OyuncuGecemezVeDusmez" classname="AdventureGame.Tests.WorldSafetyTests" runstate="Runnable" seed="87590506" result="Passed" start-time="2026-11-06 11:03:26Z" end-time="2026-11-06 11:03:28Z" duration="2.037955" asserts="0">
+            <test-case id="1084" name="UcurumKenari_KopruKalkikken_OyuncuGecemezVeDusmez" fullname="AdventureGame.Tests.WorldSafetyTests.UcurumKenari_KopruKalkikken_OyuncuGecemezVeDusmez" methodname="UcurumKenari_KopruKalkikken_OyuncuGecemezVeDusmez" classname="AdventureGame.Tests.WorldSafetyTests" runstate="Runnable" seed="409292801" result="Passed" start-time="2026-11-06 11:11:46Z" end-time="2026-11-06 11:11:48Z" duration="2.097111" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -739,7 +739,7 @@ Yankı Taşı parçaları eksik; open_door reddedildi.
               <output><![CDATA[[Robo] Lever fark ettim! Ben hallederim, sen bekle.
 ]]></output>
             </test-case>
-            <test-case id="1085" name="UcurumKenari_KopruYanindan_DeGecilemez" fullname="AdventureGame.Tests.WorldSafetyTests.UcurumKenari_KopruYanindan_DeGecilemez" methodname="UcurumKenari_KopruYanindan_DeGecilemez" classname="AdventureGame.Tests.WorldSafetyTests" runstate="Runnable" seed="335145504" result="Passed" start-time="2026-11-06 11:03:28Z" end-time="2026-11-06 11:03:32Z" duration="4.041304" asserts="0">
+            <test-case id="1085" name="UcurumKenari_KopruYanindan_DeGecilemez" fullname="AdventureGame.Tests.WorldSafetyTests.UcurumKenari_KopruYanindan_DeGecilemez" methodname="UcurumKenari_KopruYanindan_DeGecilemez" classname="AdventureGame.Tests.WorldSafetyTests" runstate="Runnable" seed="488335020" result="Passed" start-time="2026-11-06 11:11:48Z" end-time="2026-11-06 11:11:53Z" duration="4.096111" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
