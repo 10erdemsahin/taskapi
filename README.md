@@ -709,10 +709,6 @@ Ollama kapatıldıktan sonra muhafızla konuşuldu. Oyun **çökmedi** ve donmad
 
 ![Muhafızla sohbet ve kapının açılması (editör)](Docs/Images/04_sohbet_kapi.png)
 
-| Henüz eklenmeyen | Dosya |
-|---|---|
-| Test Runner, tüm testler yeşil | `Docs/Images/08_testler.png` |
-
 ---
 
 ## 11. Görev Dağılımı
