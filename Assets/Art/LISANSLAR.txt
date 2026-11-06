@@ -4,12 +4,12 @@ YANKI TAPINAĞI — KULLANILAN ASSET'LER VE LİSANSLAR
 Tüm texture'lar ambientCG'den alınmıştır.
 Lisans: CC0 1.0 Universal (Public Domain) — atıf zorunlu değil, ticari kullanım dahil serbest.
 Lisans metni: https://docs.ambientcg.com/license/
-Çözünürlük: 1K (1024x1024), JPG. Projeye yalnızca Color, NormalGL ve AmbientOcclusion haritaları eklendi.
+Çözünürlük: zemin, taş ve duvar 2K (2048x2048), diğerleri 1K; JPG. Projeye yalnızca Color, NormalGL ve AmbientOcclusion haritaları eklendi.
 
 Klasör                    | Asset       | Kaynak                                       | Kullanıldığı materyal
 --------------------------|-------------|----------------------------------------------|----------------------
-Textures/Ground/          | Ground068   | https://ambientcg.com/view?id=Ground068      | Materials/Ground.mat  (zemin, tiling 10x10)
-Textures/Stone/           | Bricks113A  | https://ambientcg.com/view?id=Bricks113A     | Materials/Stone.mat   (platform, duvar, tiling 2x2)
+Textures/Ground/          | Ground068 (2K) | https://ambientcg.com/view?id=Ground068      | Materials/Ground.mat  (zemin, tiling 10x10)
+Textures/Stone/           | Bricks113A (2K) | https://ambientcg.com/view?id=Bricks113A     | Materials/Stone.mat   (platform, duvar, tiling 2x2), Materials/Railing.mat (korkuluk, 2x1)
 Textures/Wood/            | Planks037A  | https://ambientcg.com/view?id=Planks037A     | Materials/Wood.mat    (köprü, tiling 1x3)
 Textures/Door/            | Rock063     | https://ambientcg.com/view?id=Rock063        | Materials/Door.mat    (taş kapı)
 Textures/Metal/           | Metal021    | https://ambientcg.com/view?id=Metal021       | Materials/Lever.mat   (paslı şalter kolu)
@@ -17,7 +17,13 @@ Textures/Characters/Player/    | Fabric061       | https://ambientcg.com/view?id
 Textures/Characters/Companion/ | PaintedMetal006 | https://ambientcg.com/view?id=PaintedMetal006 | Materials/Companion.mat (yeşil boyalı paslı metal — Robo)
 Textures/Characters/Guard/     | Leather034C     | https://ambientcg.com/view?id=Leather034C     | Materials/Guard.mat     (dikişli koyu deri, hafif kırmızı ton, tiling 2x2)
 Textures/Ceiling/              | WoodSiding008   | https://ambientcg.com/view?id=WoodSiding008   | Materials/Ceiling.mat   (yosunlu çivili tahta — tapınak tavanı, tiling 4x4)
+Textures/Wall/                 | Bricks113B (2K) | https://ambientcg.com/view?id=Bricks113B      | Materials/Wall.mat      (yosunlu düzensiz taş blok — harita duvarları)
 
 Skybox/TempleSky.mat — Unity'nin yerleşik Skybox/Procedural shader'ı ile hazırlandı (harici asset yok).
 
-İndirme tarihi: 2026-11-05 (ortam), 2026-11-06 (karakterler, tavan) — Ömer
+Kodla üretilenler (harici asset yok, telif sorunu yok):
+- Art/Audio/shard_pickup.wav — Yankı Taşı toplama sesi, VisualAssetBuilder içinde sinüs harmonikleriyle sentezlendi.
+- Prefabs/StoneRailing, BridgeRailing, EchoShard, ShardPickupFX — Unity primitifleri + yukarıdaki materyaller.
+- Materials/EchoShard.mat — Standard shader, emission (turkuaz parıltı), texture yok.
+
+İndirme tarihi: 2026-11-05 (ortam), 2026-11-06 (karakterler, tavan, 2K zemin/taş, duvar) — Ömer
