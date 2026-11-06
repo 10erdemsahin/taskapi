@@ -699,13 +699,17 @@ Ollama kapatıldıktan sonra muhafızla konuşuldu. Oyun **çökmedi** ve donmad
 
 ![Ollama kapalıyken hata mesajı](Docs/Images/07_ollama_kapali.png)
 
+### Duraklatma menüsü
+`Esc` ile açılır, zaman durur (`Time.timeScale = 0`), fare serbest kalır. Arkada 2K zemin ve taş texture'ları görünüyor.
+
+![Duraklatma menüsü](Docs/Images/10_duraklatma.png)
+
 ### Ana menü ve geliştirme sırasında alınan görüntüler
 
 ![Muhafızla sohbet ve kapının açılması (editör)](Docs/Images/04_sohbet_kapi.png)
 
 | Henüz eklenmeyen | Dosya |
 |---|---|
-| Duraklatma menüsü | `Docs/Images/10_duraklatma.png` |
 | Test Runner, tüm testler yeşil | `Docs/Images/08_testler.png` |
 
 ---
@@ -725,7 +729,7 @@ Ayrıntılı görev listeleri: [YAPILACAKLAR.md](YAPILACAKLAR.md) · [GOREVLER_E
 
 ## 12. Kullanılan Asset'ler ve Lisanslar
 
-Tüm texture'lar **[ambientCG](https://ambientcg.com)**'den alındı. Lisans: **CC0 1.0 (Public Domain)**, yani atıf zorunlu değil ve ticari kullanım dahil serbest. Çözünürlük 1K JPG. Projeye yalnızca Color, NormalGL ve AmbientOcclusion haritaları eklendi. Ayrıntı: [Assets/Art/LISANSLAR.txt](Assets/Art/LISANSLAR.txt)
+Tüm texture'lar **[ambientCG](https://ambientcg.com)**'den alındı. Lisans: **CC0 1.0 (Public Domain)**, yani atıf zorunlu değil ve ticari kullanım dahil serbest. Çözünürlük: zemin, taş ve duvar **2K**, diğerleri 1K (JPG); tüm texture'larda Aniso 8 ve yüksek kalite sıkıştırma. Projeye yalnızca Color, NormalGL ve AmbientOcclusion haritaları eklendi. Ayrıntı: [Assets/Art/LISANSLAR.txt](Assets/Art/LISANSLAR.txt)
 
 | Asset | Kaynak | Kullanıldığı materyal |
 |---|---|---|
@@ -738,10 +742,12 @@ Tüm texture'lar **[ambientCG](https://ambientcg.com)**'den alındı. Lisans: **
 | PaintedMetal006 (yeşil boyalı paslı metal) | [ambientcg.com/view?id=PaintedMetal006](https://ambientcg.com/view?id=PaintedMetal006) | `Companion.mat` (Robo) |
 | Leather034C (dikişli koyu deri) | [ambientcg.com/view?id=Leather034C](https://ambientcg.com/view?id=Leather034C) | `Guard.mat` (2×2, hafif kırmızı ton) |
 | WoodSiding008 (yosunlu çivili tahta) | [ambientcg.com/view?id=WoodSiding008](https://ambientcg.com/view?id=WoodSiding008) | `Ceiling.mat` (tapınak tavanı, 4×4) |
+| Bricks113B (yosunlu düzensiz taş blok, 2K) | [ambientcg.com/view?id=Bricks113B](https://ambientcg.com/view?id=Bricks113B) | `Wall.mat` (harita duvarları) |
+| Kodla üretilenler | Unity primitifleri + yukarıdaki materyaller; ses sinüs harmonikleriyle sentezlendi | `StoneRailing`/`BridgeRailing` korkulukları, `EchoShard` (Yankı Taşı), `ShardPickupFX`, `shard_pickup.wav` |
 | TempleSky | Unity yerleşik *Skybox/Procedural* shader'ı (harici asset yok) | Skybox |
 | LiberationSans SDF | TextMeshPro ile gelen font (SIL Open Font License) | Tüm UI yazıları |
 
-**Görsel tasarım kararları:** Tema *antik tapınak / orman*. Tüm texture'lar aynı kaynaktan seçildi, böylece tek bir gerçekçi PBR tarzı korundu. Renk paleti toprak tonları (taş grisi, yosun yeşili, eski ahşap kahvesi) ve sıcak alacakaranlık gökyüzüdür. Menüde altın sarısı başlık ve kahverengi butonlar kullanıldı. Texture'lar GitHub LFS kotası (1 GB) göz önünde tutularak 1K tutuldu.
+**Görsel tasarım kararları:** Tema *antik tapınak / orman*. Tüm texture'lar aynı kaynaktan seçildi, böylece tek bir gerçekçi PBR tarzı korundu. Renk paleti toprak tonları (taş grisi, yosun yeşili, eski ahşap kahvesi) ve sıcak alacakaranlık gökyüzüdür. Menüde altın sarısı başlık ve kahverengi butonlar kullanıldı. Yakından bakılan zemin, taş ve duvar 2K; diğerleri GitHub LFS kotası (1 GB) göz önünde tutularak 1K bırakıldı.
 
 ---
 
