@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777f14ae7189f054181314c298203fdc, type: 3}
+  m_Name: EchoStoneHint
+  m_EditorClassIdentifier: AdventureGame::AdventureGame.QuestHintData
+  questName: "Yank\u0131 Ta\u015F\u0131"
+  hintText: "\"Muhaf\u0131z\u0131n ilk sorusunu duydu\u011Funda sus ve dinle: konu\u015Ftu\u011Fun an kaybolan \u015Fey cevapt\u0131r.\n\u0130kincisinde ise geldi\u011Fin yola d\xF6n ve yere bak: her ad\u0131m\u0131n arkanda ne b\u0131rak\u0131yor?\""
+  completionMessage: "Be\u015F par\xE7a birle\u015Fti; ta\u015F sana f\u0131s\u0131ld\u0131yor."
