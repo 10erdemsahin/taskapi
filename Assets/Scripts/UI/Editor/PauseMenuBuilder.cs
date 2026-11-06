@@ -10,13 +10,13 @@ using M = AdventureGame.EditorTools.MainMenuBuilder;
 namespace AdventureGame.EditorTools
 {
     /// <summary>
-    /// Duraklatma menüsü prefab'ını tek tıkla üretir: Assets/Art/Prefabs/PauseMenu.prefab.
+    /// Duraklatma menüsü prefab'ını tek tıkla üretir: Assets/Art/Resources/PauseMenu.prefab.
     /// Sahneye DOKUNMAZ; prefab'ı Main.unity'deki Canvas'ın altına Erdem yerleştirir.
     /// Menü: Tools → AdventureGame → 4) Duraklatma Menüsü Prefab'ını Oluştur
     /// </summary>
     public static class PauseMenuBuilder
     {
-        public const string PrefabPath = "Assets/Art/Prefabs/PauseMenu.prefab";
+        public const string PrefabPath = "Assets/Art/Resources/PauseMenu.prefab";
 
         [MenuItem("Tools/AdventureGame/4) Duraklatma Menüsü Prefab'ını Oluştur")]
         public static void Build()

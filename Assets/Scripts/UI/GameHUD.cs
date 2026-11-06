@@ -53,6 +53,11 @@ namespace AdventureGame
                 _llm = InterfaceResolver.Resolve<ILLMService>(llmServiceBehaviour, this, nameof(llmServiceBehaviour));
             }
 
+            // Yankı Taşı sayacı + ipucu paneli: sahnede görev varsa kendini kurar, yoksa sessiz kalır.
+            if (GetComponent<QuestHUD>() == null) gameObject.AddComponent<QuestHUD>();
+
+            EnsurePauseMenu();
+
             if (victoryPanel != null) victoryPanel.SetActive(false);
             if (notificationGroup != null) notificationGroup.alpha = 0f;
             SetPrompt(null);
@@ -60,6 +65,28 @@ namespace AdventureGame
             if (restartButton != null) restartButton.onClick.AddListener(RestartScene);
             if (quitButton != null) quitButton.onClick.AddListener(QuitGame);
             if (mainMenuButton != null) mainMenuButton.onClick.AddListener(GoToMainMenu);
+        }
+
+        /// <summary>
+        /// Sahnede duraklatma menüsü yoksa Resources/PauseMenu prefab'ından Canvas altına kurar.
+        /// Böylece Esc menüsü sahne yeniden kurulmasa da çalışır; sahnede zaten varsa hiçbir şey yapmaz.
+        /// </summary>
+        private void EnsurePauseMenu()
+        {
+            if (FindAnyObjectByType<PauseMenuUI>(FindObjectsInactive.Include) != null) return;
+
+            GameObject prefab = Resources.Load<GameObject>("PauseMenu");
+            Canvas canvas = GetComponentInParent<Canvas>();
+            if (canvas == null) canvas = FindAnyObjectByType<Canvas>();
+            if (prefab == null || canvas == null)
+            {
+                Debug.LogWarning("GameHUD: Duraklatma menüsü kurulamadı (prefab veya Canvas yok).", this);
+                return;
+            }
+
+            GameObject menu = Instantiate(prefab, canvas.transform, false);
+            menu.name = prefab.name;
+            menu.transform.SetAsLastSibling(); // Diğer HUD öğelerinin üstünde çizilsin.
         }
 
         private void Start()
