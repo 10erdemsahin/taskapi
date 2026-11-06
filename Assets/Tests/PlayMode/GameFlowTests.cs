@@ -232,6 +232,23 @@ namespace AdventureGame.Tests
         }
 
         [UnityTest]
+        public IEnumerator Bolum2_LLMBayragiFalseDese_DogruCevapSayilir_AmaKapiyiLLMAcar()
+        {
+            yield return LowerBridge();
+            // Gerçek oyunda gözlenen durum: model doğru cevapta riddle_solved=false ve action=none döndürüyor.
+            InjectMock(MockLLMService.MockMode.AlwaysRefuse);
+            OpenDialogue();
+
+            yield return Talk("Cevap sessizlik");
+            Assert.AreEqual(1, _guard.SolvedRiddleCount, "Doğru cevap, LLM bayrağı false olsa da sayılmalı");
+
+            yield return Talk("ayak izi");
+            Assert.AreEqual(2, _guard.SolvedRiddleCount);
+            yield return new WaitForSeconds(0.5f);
+            Assert.IsFalse(_door.IsOpen, "LLM open_door demedikçe kapı açılmamalı");
+        }
+
+        [UnityTest]
         public IEnumerator Bolum2_IkinciCevapOnceVerilirse_SayilmazKapiAcilmaz()
         {
             yield return LowerBridge();

@@ -14,8 +14,8 @@ namespace AdventureGame
     /// Bağımlılıklar yalnızca arayüzlerdir: ILLMService, IDialogueView, INpcContextProvider.
     ///
     /// Zorluk kuralları (hepsi Unity tarafında doğrulanır, LLM kandırılsa bile geçerlidir):
-    ///  - İki bilmece sırayla çözülmeli. Bir bilmece, LLM "çözüldü" dese bile oyuncunun mesajında
-    ///    o bilmecenin kabul edilen cevabı geçmiyorsa çözülmüş SAYILMAZ.
+    ///  - İki bilmece sırayla çözülmeli. Bilmece sayacına Unity karar verir: oyuncunun mesajında SIRADAKİ
+    ///    bilmecenin kabul edilen cevabı geçiyorsa çözülür (LLM'in riddle_solved bayrağına güvenilmez).
     ///  - open_door yalnızca tüm bilmeceler çözülünce GameManager'a iletilir.
     ///  - Art arda yanlış cevap denemesi sınırı → bekleme süresi (bu sırada mesaj LLM'e gitmez).
     ///  - Cevap sızıntısı filtresi: NPC sıradaki bilmecenin cevabını söylerse yanıt gösterilmez.
@@ -351,11 +351,14 @@ namespace AdventureGame
         {
             Riddle riddle = CurrentRiddle;
 
-            // Unity doğrulaması: LLM "çözüldü" dese bile mesajda sıradaki bilmecenin cevabı olmalı.
-            bool solved = riddle != null && decision.RiddleSolved && riddle.IsMentionedIn(playerMessage);
-            if (riddle != null && decision.RiddleSolved && !solved)
+            // Bilmece sayacının tek yetkilisi Unity'dir: oyuncunun mesajında SIRADAKİ bilmecenin kabul edilen
+            // cevabı geçiyorsa bilmece çözülür. LLM'in riddle_solved bayrağı yalnızca loglanır, çünkü küçük model
+            // doğru cevapta sık sık "doğru" deyip bayrağı false bırakıyor (oyunda 1. bilmece hiç sayılmıyordu).
+            // Kapıyı açma kararı yine LLM'in open_door aksiyonundan gelir.
+            bool solved = riddle != null && riddle.IsMentionedIn(playerMessage);
+            if (riddle != null && decision.RiddleSolved != solved)
             {
-                Debug.LogWarning("[GuardNPC] LLM bilmeceyi çözülmüş saydı ama oyuncunun mesajında sıradaki cevap yok; yok sayıldı.", this);
+                Debug.LogWarning($"[GuardNPC] LLM riddle_solved={decision.RiddleSolved}, Unity kararı={solved} (oyuncu mesajındaki cevaba göre).", this);
             }
 
             string dialogue = leaked ? persona.GetRandomFallbackLine() : decision.Dialogue;
@@ -449,8 +452,8 @@ namespace AdventureGame
             Riddle riddle = CurrentRiddle;
             if (riddle == null) return false;
 
-            // Bu mesajla bilmece gerçekten çözüldüyse NPC'nin cevabı tekrar etmesi sızıntı değildir.
-            if (decision.RiddleSolved && riddle.IsMentionedIn(playerMessage)) return false;
+            // Cevabı oyuncu kendisi söylediyse NPC'nin onu tekrar etmesi sızıntı değildir.
+            if (riddle.IsMentionedIn(playerMessage)) return false;
 
             return riddle.IsMentionedIn(decision.Dialogue);
         }

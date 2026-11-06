@@ -542,7 +542,7 @@ Assets/
 
 ### 9.1 Otomatik PlayMode testleri
 *Window → General → Test Runner → PlayMode → Run All* (veya batch mode: `Unity.exe -batchmode -runTests -testPlatform PlayMode`).
-Son çalıştırma: **Unity 6000.6.7f1, 6 Kasım 2026 13:45, 78 test → 78 geçti, 0 kaldı** (duvar materyali, korkuluklar ve duraklatma menüsü sahneye eklendikten sonra), toplam ~4 dk. Ham sonuç dosyası: [Docs/Tests/playmode_sonuclari.xml](Docs/Tests/playmode_sonuclari.xml)
+Son çalıştırma: **Unity 6000.6.7f1, 6 Kasım 2026 13:45, 79 test → 78 geçti, 0 kaldı, 1 atlandı** (gerçek Ollama testi, Ollama açıkken bilerek atlanır), toplam ~4 dk. Ham sonuç dosyası: [Docs/Tests/playmode_sonuclari.xml](Docs/Tests/playmode_sonuclari.xml)
 
 | Test | Doğruladığı | Sonuç |
 |---|---|---|
@@ -564,7 +564,8 @@ Son çalıştırma: **Unity 6000.6.7f1, 6 Kasım 2026 13:45, 78 test → 78 geç
 | `Bolum2_MockLLM_TumHataModlarinda_OyunCokmez_KapiKapaliKalir` | Bozuk JSON, bilinmeyen aksiyon, istisna, zaman aşımı → çökme yok | ✅ |
 | `PauseTests` (5 test) | `SetPaused`: zaman durur, girdi kilitlenir, diyalogla birlikte doğru kilit, sahne değişince zaman normale döner, kayıtlı fare hassasiyeti okunur | ✅ 5/5 |
 | `ParserTests` (35 vaka) | Bozuk JSON, beyaz liste, boolean/ton alanlarının tür güvenli okunması, Türkçe cevap eşleşmesi | ✅ 35/35 |
-| `Bolum2_GercekOllamaServisi_SunucuYokken_...` | Gerçek servis, sunucu yokken güvenli hata | ✅ |
+| `Bolum2_GercekOllamaServisi_SunucuYokken_...` | Gerçek servis, sunucu yokken güvenli hata | ⏭️ Ollama açıkken atlanır (kapalıyken ✅) |
+| `Bolum2_LLMBayragiFalseDese_DogruCevapSayilir_AmaKapiyiLLMAcar` | Model doğru cevapta `riddle_solved: false` dese de bilmece sayılır; kapı yine yalnızca LLM `open_door` derse açılır | ✅ |
 
 Güven çubuğu (`TrustMeterUI`) ayrıca geçici bir PlayMode testiyle doğrulandı. Diyalog açılınca çubuk görünüyor. Kaba mesajdan sonra 50'den 35'e iniyor ve "Güven: 35/100 (gereken 60)" yazıyor. Pencere kapanınca gizleniyor.
 
